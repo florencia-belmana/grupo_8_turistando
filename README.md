@@ -8,9 +8,9 @@ Nuestros servicios estan apuntados a todo el publico mayor de edad con ganas de 
 
 Los integrantes del grupo son:
 
-Belmaña Florencia
-Fuentes Joaquín
-Sopeña Figueroa Alvaro
+- Belmaña Florencia
+- Sopeña Figueroa Alvaro
+
 Sitios de referencia:
 
 ARGENTINA TURISMO - https://www.argentina.tur.ar/#!/ar/home
