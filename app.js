@@ -25,3 +25,4 @@ app.use('/', mainRouter);
 const productsRouter = require('./src/routes/productsRouter');
 
 app.use('/', productsRouter);
+
