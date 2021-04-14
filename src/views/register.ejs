@@ -8,7 +8,7 @@
     <%- include('partials/header.ejs') %>
     <main>
         <div class="register-form">
-            <h1>Formulario de registro</h1>
+            <h1>Inicia sesión</h1>
             <form action="exito.html" method="POST">
                 <div class="row">
                     <label for="first-name">Nombre: </label>
@@ -52,24 +52,7 @@
             </form>
         </div>
         <hr>
-        <div>
-            <h2>Contacto</h2>
-            <form action="contacto.html">
-                <div class="row">
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" id="email" placeholder="Ingresa un email válido">
-                </div>
-
-                <div class="row">
-                    <label for="message">Mensaje: </label>
-                    <textarea name="message" id="message" rows="5" placeholder="Ingresa la razón del contacto aquí"></textarea>
-                </div>
-
-                <div class="row">
-                    <button type="submit">Enviar</button>
-                </div>
-            </form>
-        </div>
+ 
     </main>
     <%- include('partials/footer.ejs') %>
 </body>
