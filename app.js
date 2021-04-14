@@ -22,3 +22,6 @@ const mainRouter = require('./src/routes/mainRouter');
 
 app.use('/', mainRouter);
 
+const productsRouter = require('./src/routes/productsRouter');
+
+app.use('/products', productsRouter);
