@@ -6,15 +6,9 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/index.html'));
+    res.sendFile(path.join(__dirname, 'src/views/index.html'));
 })
 
-// Levantamos el servidor
-app.listen(3000, () => { 
-    console.log('-----------------------------------------------')
-    console.log('¡Todo joya! Ya podés ir a http://localhost:3000');
-    console.log('-----------------------------------------------')
-})
 
 // Atajamos todas las rutas que no existen
 app.get('*', (req, res) => {
@@ -25,3 +19,12 @@ app.get('*', (req, res) => {
 
 // Iniciar el servidor
 app.listen(3000, () => console.log('El servidor está corriendo en el puerto 3000.'));
+
+
+
+//Rutas
+
+const mainRouter = require('./src/routes/mainRouter');
+
+
+app.use('/', mainRouter);
