@@ -9,11 +9,41 @@
     </header>
     <main>
         <h1> Bienvenidos elegi tu destino </h1>
+        <div class="box">
+            <h2> Turisteamos en:  </h2>
+               <select name="lista-provincia">
+                
+                <option value="Ciudad Autonoma de Buenos Aires">Ciudad Autonoma de Buenos Aires</option> 
+                <option value="Buenos Aires">Buenos Aires</option> 
+                <option value="Catamarca">Catamarca</option>
+                <option value="Chaco">Chaco</option>
+                <option value="Chubut">Chubut</option>
+                <option value="Córdoba">Córdoba</option>
+                <option value="Corrientes">Corrientes</option>
+                <option value="Entre Ríos">Entre Ríos</option>
+                <option value="Formosa">Formosa</option>
+                <option value="Jujuy">Jujuy</option>
+                <option value="La Pampa">La Pampa</option>
+                <option value="La Rioja">La Rioja</option>
+                <option value="Mendoza">Mendoza</option>
+                <option value="Misiones">Misiones</option>
+                <option value="Neuquén">Neuquén</option>
+                <option value="Rio Negro">Rio Negro</option>
+                <option value="Salta">Salta</option>
+                <option value="San Juan">San Juan</option>
+                <option value="San Luis">San Luis</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="Santa Fe">Santa Fe</option>
+                <option value="Santiago del Estero">Santiago del Estero</option> 
+                <option value="Tierra del Fuego">Tierra del Fuego</option> 
+                <option value="Tucumán">Tucumán</option> 
+             </select>
+         </div>
         <!-- -->  
          <!-- MAPA -->
     <section class="mapa" > 
-        <script type="text/javascript" src="../../map/jquery.vmap.js"></script>
-        <script type="text/javascript" src="../../map/jquery.vmap.argentina.js" charset="utf-8"></script>
+        <script type="text/javascript" src="/public/map/jquery.vmap.js"></script>
+        <script type="text/javascript" src="/public/map/jquery.vmap.argentina.js" charset="utf-8"></script>
         <script>
          jQuery(document).ready(function () {
             jQuery('#vmap').vectorMap({
@@ -26,48 +56,15 @@
              }
          });
         });
-     </script>
+        </script>
     </section>
          <!-- MAPA -->
 
     <div class ="map"> 
-        <div id="vmap" style="width: 800px; height: 900px; opacity: 0.8; display: none"></div>
+        <div id="vmap" style="width: 800px; height: 900px; opacity: 0.8;"></div>
     </div>
 
-    <div class="box">
-        <h2> Turisteamos en:  </h2>
-          <div class="container-1">
-           <span class="icon"><i class="fa fa-search"></i></span>
-           <input type="search" id="search" placeholder="Mendoza, Tucumán, Córdoba..." />
-          </div>
-          <select name="lista-provincia">
-            
-            <option value="Ciudad Autonoma de Buenos Aires">Ciudad Autonoma de Buenos Aires</option> 
-            <option value="Buenos Aires">Buenos Aires</option> 
-            <option value="Catamarca">Catamarca</option>
-            <option value="Chaco">Chaco</option>
-            <option value="Chubut">Chubut</option>
-            <option value="Córdoba">Córdoba</option>
-            <option value="Corrientes">Corrientes</option>
-            <option value="Entre Ríos">Entre Ríos</option>
-            <option value="Formosa">Formosa</option>
-            <option value="Jujuy">Jujuy</option>
-            <option value="La Pampa">La Pampa</option>
-            <option value="La Rioja">La Rioja</option>
-            <option value="Mendoza">Mendoza</option>
-            <option value="Misiones">Misiones</option>
-            <option value="Neuquén">Neuquén</option>
-            <option value="Rio Negro">Rio Negro</option>
-            <option value="Salta">Salta</option>
-            <option value="San Juan">San Juan</option>
-            <option value="San Luis">San Luis</option>
-            <option value="Santa Cruz">Santa Cruz</option>
-            <option value="Santa Fe">Santa Fe</option>
-            <option value="Santiago del Estero">Santiago del Estero</option> 
-            <option value="Tierra del Fuego">Tierra del Fuego</option> 
-            <option value="Tucumán">Tucumán</option> 
-         </select>
-     </div>
+
         
     </main>
     <footer>

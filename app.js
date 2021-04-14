@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
+
 // Configuro el directorio de recursos estáticos
 app.use(express.static('public'));
 app.set('view engine', 'ejs');

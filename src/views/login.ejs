@@ -1,34 +1,38 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <%- include('partials/head.ejs') %>
 </head>
 
+<header> 
+    <%- include('partials/header.ejs') %>  
+</header>
+
 <body>
-    <%- include('partials/header.ejs') %>
+    <section class="login-completo">
+       
+        <div class="login-cuadro">
+            <div class="login-superior">
 
     <div class="login-form">
         <h1>Inicia sesión</h1>
-        <form action="exito.html" method="POST">
-            <div class="row">
-                <label for="email">Email: </label>
-                <input type="email" name="email" id="email" placeholder="Ingresa un email válido">
+        <div class="login">
+            <form action="/login.html" method="POST">
+            <div class="nombreUsuario">
+                 <label for="nombre"><i class="fas fa-user">Nombre Usuario:</i> </label>
+                 <input type="text" name="nombre-usuario" id="nombre" placeholder="Ingrese nombre de usuario aquí">
             </div>
-
-            <div class="row">
-                <label for="password">Contraseña: </label>
-                <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
+            <div class="contraseñaUsuario">
+                 <label for="clave"><i class="fas fa-key"></i> Contraseña:</label>
+                 <input type="password" name="clave" id="clave" placeholder="Ingrese su contraseña aquí">
             </div>
-
             <div class="row">
                 <p>Perfil de usuario:</p>
                 <label>
-                    <input type="checkbox" name="user-type" id="user-type-buyer" value="buyer"> Comprador
+                    <input type="checkbox" name="user-type" id="user-type-traveller" value="traveller"> Viajero
                 </label>
                 <label>
-                    <input type="checkbox" name="user-type" id="user-type-seller" value="seller"> Vendedor
+                    <input type="checkbox" name="user-type" id="user-type-admin" value="admin"> Administrador
                 </label>
             </div>
 
@@ -37,6 +41,9 @@
             </div>
         </form>
     </div>
+</div>
+</div>
+</section>
     <footer>
          <%- include('partials/footer.ejs') %>
     </footer>
