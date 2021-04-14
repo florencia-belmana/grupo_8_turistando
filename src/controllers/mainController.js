@@ -1,19 +1,19 @@
 module.exports = {
     /** Página principal */
     index: (req, res) => {
-        res.render("index.html");
+        res.render("index");
     },
 
     register: (req, res) => {
-        res.render("register.html");
+        res.render("register");
         
     },
     contact: (req, res) => {
-        res.render("contact.html");
+        res.render("contact");
         
     },
     login: (req, res) => {
-        res.render("login.html");
+        res.render("login");
         
-    },
+    }
 };
