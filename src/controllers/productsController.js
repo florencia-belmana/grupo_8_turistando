@@ -1,6 +1,6 @@
 module.exports = {
     buenosaires:(req, res)  =>  {
-        res.render ('/products/buenosaires');
+        res.render ('products/buenosaires')
         } }
 
 
