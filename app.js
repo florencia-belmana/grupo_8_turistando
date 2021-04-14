@@ -5,6 +5,7 @@ const app = express();
 // Configuro el directorio de recursos estáticos
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
+app.set('views', 'src/views');
 
 //app.get('/', (req, res) => {
   //  res.sendFile(path.join(__dirname, 'src/views/index.html'));

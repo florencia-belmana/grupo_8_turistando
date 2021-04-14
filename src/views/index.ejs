@@ -9,22 +9,7 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="header-right">
-                <a href="#"><span class="logo">turistANDO</span></a>
-                <nav>
-                    <a href="#">Cómo funciona</a>
-                    <a href="#">Conseguí laburo</a>
-                </nav>
-            </div>
-            <div class="header-left">
-                <nav>
-                    <a href="/src/views/login.html">Ingresá</a>
-                    <a href="/src/views/register.html">Registrate</a>
-                    <a href="#">Creá un proyecto</a>
-                </nav>
-            </div>
-        </div>
+        <%- include('partials/header.ejs') %>
     </header>
     <main>
         <section class="hero"> <!-- Este lo uso para el fondo -->
@@ -43,5 +28,6 @@
             </div>
         </section>
     </main>
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>
