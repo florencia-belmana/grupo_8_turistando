@@ -8,7 +8,7 @@
         <%- include('partials/header.ejs') %>
     </header>
     <main>
-        
+        <div class="container">
         <h1> Bienvenidos elegi tu destino </h1>
 
         <div class="menu">
@@ -52,6 +52,7 @@
         <!-- -->  
          <!-- MAPA -->
     <section class="mapa" > 
+        <script type="text/javascript" src="/jQuery-3.6.0.js"></script>
         <script type="text/javascript" src="/public/map/jquery.vmap.js"></script>
         <script type="text/javascript" src="/public/map/jquery.vmap.argentina.js" charset="utf-8"></script>
         <script>
@@ -68,10 +69,12 @@
         });
         </script>
     </section>
+    <h2> MAPA --></h2>
          <!-- MAPA -->
 
     <div class ="map"> 
         <div id="vmap" style="width: 800px; height: 900px; opacity: 0.8;"></div>
+    </div>
     </div>
 
 
