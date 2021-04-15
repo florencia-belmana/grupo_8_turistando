@@ -9,33 +9,31 @@
     <main>
         <div class="container">
         <div class="register-form">
-            <h1>Inicia sesión</h1>
             <form action="exito.html" method="POST">
-                <div class="row">
-                    <label for="first-name">Nombre: </label>
-                    <input type="text" name="first-name" id="first-name" placeholder="Ingresa tu nombre aquí">
-                </div>
 
-                <div class="row">
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" id="email" placeholder="Ingresa un email válido">
-                </div>
-
-                <div class="row">
-                    <p>Perfil de usuario:</p>
-                    <!--
-                        <label for="user-type-buyer">Comprador</label>
-                        <input type="checkbox" name="user-type" id="user-type-buyer" value="buyer"> 
-                    -->
-
-                    <label>
-                        <input type="checkbox" name="user-type" id="user-type-buyer" value="buyer"> Comprador
-                    </label>
-                    <label>
-                        <input type="checkbox" name="user-type" id="user-type-seller" value="seller"> Vendedor
-                    </label>
-                </div>
-
+            <section>
+                <div class="login register">
+               
+                  <h1 id="header">Registrate gratis</h1>
+                  <div class="registro">
+                    <form action="register.html" method="POST" enctype="multipart/form-data">
+                    <div class="nombreUsuario">
+                         <label for="nombre"> <i><fas fa-user-alt></fas>Nombre:</i> </label>
+                         <input type="text" name="Usuario" id="nombre" placeholder="Ingrese aquí su nombre completo">
+                    </div>
+                    <div class="apellidoUsuario">
+                        <label for="apellido"> <i><fas fa-user-alt></fas>Apellido:</i> </label>
+                        <input type="text" name="Usuario" id="apellido" placeholder="Ingrese aquí su apellido">
+                   </div>
+                   <div class="usuario">
+                    <label for="usuario"><i class="fas fa-user"> Email:</i> </label>
+                    <input type="text" name="Usuario" id="usuario" placeholder="Tu email será tu nombre de usuario">
+                   </div>
+                    <div class="contraseñaUsuario">
+                         <label for="clave"> <i class="fas fa-key"></i> Contraseña:</label>
+                         <input type="password" name="clave" id="clave" placeholder=" Ingrese aquí su Contraseña">
+                    </div>
+                
                 <div class="row">
                     <label for="country">País</label>
                     <select name="country" id="country" required>
@@ -44,18 +42,27 @@
                         <option value="chi">Chile</option>
                         <option value="bra">Brasil</option>
                         <option value="col">Colombia</option>
+                        <option value="uru">Uruguay</option>
+                        <option value="par">Paraguay</option>
+
                     </select>
                 </div>
-
+                
                 <div class="row">
                     <button type="submit">Enviar</button>
                 </div>
+                
+            </section>
+         
+
+                
             </form>
         </div>
         <hr>
     </div>
  
     </main>
+
     <%- include('partials/footer.ejs') %>
 </body>
 </html>
