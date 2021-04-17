@@ -3,7 +3,7 @@ module.exports = {
         res.render ('products/buenosaires')
         },
         
-        carrito:(req, res) => {
+    carrito:(req, res) => {
             res.render ("products/carrito", {
     
             })
