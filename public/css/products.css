@@ -1,5 +1,14 @@
 * { box-sizing: border-box; }
 
+.container {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+   
+}
+
 .pic-container {
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +27,7 @@
     width: calc(100% - 1rem);
     /* height: 100px; */
 
-    background-color:rgb(139, 186, 248);
+    background-color:lightblue;
     margin-right: .5rem;
     margin-left: .5rem;
     margin-bottom: .5rem;
