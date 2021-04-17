@@ -27,3 +27,6 @@ const productsRouter = require('./src/routes/productsRouter');
 
 app.use('/', productsRouter);
 
+const usersRouter = require('./src/routes/usersRouter');
+
+app.use('/', usersRouter);
