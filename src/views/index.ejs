@@ -15,10 +15,16 @@
           
         <div class="box">
             <h2> Turisteamos en:  </h2>
-               <select name="lista-provincia">
-                
+            <Script language="JavaScript">
+                function goto(form) { var index=form.select.selectedIndex
+                if (form.select.options[index].value != "0") {
+                location=form.select.options[index].value;}} 
+            </SCRIPT>
+              <FORM NAME="form1">
+            <SELECT NAME="select" ONCHANGE="goto(this.form)" SIZE="1">
+                <OPTION VALUE="">-------Choose a Selection-------
                 <option value="Ciudad Autonoma de Buenos Aires">Ciudad Autonoma de Buenos Aires</option> 
-                <option value="Buenos Aires">Buenos Aires</option> 
+                <option value="/buenosaires">Buenos Aires</option> 
                 <option value="Catamarca">Catamarca</option>
                 <option value="Chaco">Chaco</option>
                 <option value="Chubut">Chubut</option>
@@ -43,7 +49,13 @@
                 <option value="Tucumán">Tucumán</option> 
              </select>
          </div>
-        <!-- -->  
+
+
+  
+           
+
+            
+  
          <!-- MAPA -->
     <section class="mapa" > 
         <script type="text/javascript" src="/jQuery-3.6.0.js"></script>
