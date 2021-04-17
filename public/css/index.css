@@ -1,0 +1,49 @@
+*{box-sizing: border-box;}
+/* sets whole page to Open Sans and sets background color */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+    
+  }
+
+.contendor {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    
+   
+}
+
+.header {
+    font-size: 20px;
+    
+}
+
+.buscador{
+    
+        display: flex;
+        align-items: center;
+        
+
+        border-radius: var(--default-padding);
+        overflow: hidden;
+    }
+
+    @media (min-width: 600px) {
+        .pic-item {
+            width: calc(50% - 1rem);
+        }
+    }
+    
+    
+    @media (min-width: 900px) {
+        .pic-item {
+            width: calc(33.3333% - 1rem);
+        }
+    }
+    
+    
+    @media (min-width: 1200px) {
+        .pic-item {
+            width: calc(25% - 1rem);
+        }
+    }
