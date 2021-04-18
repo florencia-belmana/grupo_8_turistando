@@ -1,7 +1,12 @@
 * {
 	box-sizing: border-box;
 	
+	
   }
+
+.colorfondo{
+	background-color: gray;
+}
 .footer {
 	
 	flex-wrap: wrap;
@@ -17,6 +22,7 @@
 	color: whitesmoke;
 	justify-content: space-between;
 	margin-bottom: 20px;
+	
 	
 	
   }

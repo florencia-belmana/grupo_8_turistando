@@ -1,6 +1,7 @@
 * { box-sizing: border-box; }
 
 
+
 a {
     color: black;
     text-decoration: none;
@@ -73,9 +74,11 @@ header .logo {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 700px;
   position: relative;
   margin: auto;
+  background-attachment: scroll;
+
 }
 
 /* Hide the images by default */
