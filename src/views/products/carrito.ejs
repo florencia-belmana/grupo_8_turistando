@@ -4,13 +4,17 @@
     <%- include('../partials/head.ejs') %>
 </head>
 <body>
+ <!--esto se superpone con lo siguiente -->
     <div class="container">
     <header class="header">
         <%- include('../partials/header.ejs') %>
         <div class="header-img">
             <img src="/public/images/imagenheader.jpg" width=300px height=300px alt="logo">
          </div>   
-        
+        </div>
+
+<!--ESTO SE SUPERPONE CON EL CARRUSEL-->
+      
         <div class ="text"> 
             <h2> Hagamos la reserva!</h2>
                 <p class= "compra"><i class=""> </i> Reservá solo con tu tarjeta de crédito</p>
@@ -22,7 +26,8 @@
                 <a class="fab fa-cc-visa"> </a>
             
         </div>
-        
+        </div>
+ 
     </header>
 
 
@@ -48,7 +53,7 @@
         <br>
         
     </div>
-    
+
 
     </section>
 
@@ -89,7 +94,7 @@
         </div>
         </div>
     </section>
-
+<br>
     <footer>
   <%- include('../partials/footer.ejs') %>
     </footer>
