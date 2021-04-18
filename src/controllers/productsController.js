@@ -7,6 +7,18 @@ module.exports = {
             res.render ("products/carrito", {
     
             })
-        } }
+        },
+    
+    
+    
+    
+        bairesnoche:(req, res) => {
+            res.render ("products/bairesnoche", {
+    
+            })
+        },
+    }
 
+
+        
 

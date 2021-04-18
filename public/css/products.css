@@ -8,9 +8,9 @@ body {
 
 .color-h3{
     
-    padding: 60px 0;
-    color: black;
-    background-color:pink;
+    padding: 20px 0;
+    color:white;
+    background-color:rgb(124, 146, 243);
     background-size: 10px;
     font-size: 20px;
     text-align: center
@@ -27,6 +27,7 @@ body {
     margin: auto;
     overflow: hidden;
     text-align: center;
+ 
     flex-direction: row;
 }
 

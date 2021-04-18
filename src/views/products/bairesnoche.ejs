@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/products.css">
+    <title>Buenos Aires</title>
+    <%- include('../partials/head.ejs') %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <main>
+        <h1>Buenos Aires de noche</h1>
+
+        <div class="container1">
+            <div class="pic-container1">
+                <div class="pic-item">
+                    <img src="/images/teatrocolon.jpg" alt="colon">
+                    
+                    <!--link que te lleva a Buenos Aires de noche-->
+                    <p>
+                       <nav><a href="/bairesnoche">Obras en el Teatro Colón</a></nav> 
+        
+                    </p>
+        
+                </div>
+        
+                <div class="pic-item">
+                    <img src="/images/bar.jpg" alt="bar">
+        
+                    <p>
+                        Tour de bares
+                    </p>
+        
+                </div>
+             
+              
+         </div>
+        </div>
+</main>
+
+<!--FOOTER-->
+
+    <footer>  <%- include('../partials/footer.ejs') %></footer>
+</body>
+</html>
