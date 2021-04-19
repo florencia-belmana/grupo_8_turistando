@@ -4,6 +4,16 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
     
   }
+h1.estilo{
+    padding: 20px 0;
+    color:white;
+    background-color:rgb(124, 146, 243);
+    background-size: 10px;
+    font-size: 35px;
+    text-align: center
+ 
+}
+
 h2{
     text-align: center;
 }
