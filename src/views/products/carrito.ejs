@@ -3,11 +3,16 @@
 <head>
     <%- include('../partials/head.ejs') %>
 </head>
-<body>
- <!--esto se superpone con lo siguiente -->
-    <div class="container">
-    <header class="header">
+
+    <body>
+        <header class="header">
         <%- include('../partials/header.ejs') %>
+        </header>
+
+        <!-- agregue un main, saque un /header que estbaa de mas pero sigue superpuesto-->
+<main>
+
+    <div class="container">
         <div class="header-img">
             <img src="/public/images/imagenheader.jpg" width=300px height=300px alt="logo">
          </div>   
@@ -27,8 +32,7 @@
             
         </div>
         </div>
- 
-    </header>
+
 
 
         <div class= "resumen">
@@ -95,6 +99,7 @@
         </div>
     </section>
 <br>
+</main>
     <footer>
   <%- include('../partials/footer.ejs') %>
     </footer>
