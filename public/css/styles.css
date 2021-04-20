@@ -29,56 +29,21 @@ header a {
     margin: .5rem;
 }
 
-header nav a:hover {
-    color:lightseagreen;
-} 
 
 header .header-right { display: flex; }
 
-header .logo {
-    font-style: italic;
-    font-weight: bold;
-    color: deeppink;
-}
-
-/* Hero */
-
-.hero {
-    background-color: #333;
-    color: white;
-}
-
-.hero-item {
-    height: 600px;
-
-    background-image: url('../img/hero-bg.jpeg');
-    background-size: cover;
-}
-
-/* block element modifier */
-
-/*
-.header-logo {}
-.header-logo--xmas {}
-
-.header-main-nav {}
-
-.button {}
-.button--big {}
-*/
 
 
-/* carousel */
-
-    * {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 700px;
+  max-width: 100%;
   position: relative;
   margin: auto;
   background-attachment: scroll;
-
+  margin-bottom: -1px;
+  margin-top: -1px;
+  
 }
 
 /* Hide the images by default */
