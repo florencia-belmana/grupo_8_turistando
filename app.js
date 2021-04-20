@@ -21,16 +21,25 @@ app.use(express.urlencoded({ extended: false }));*/
 app.listen(3000, () => console.log('El servidor está corriendo en el puerto 3000.'));
 
 
-//Rutas
 
+
+//Rutas
+//Main
 const mainRouter = require('./src/routes/mainRouter');
 
 app.use('/', mainRouter);
 
+//Productos
 const productsRouter = require('./src/routes/productsRouter');
 
 app.use('/', productsRouter);
 
+//Usuarios
 const usersRouter = require('./src/routes/usersRouter');
 
 app.use('/', usersRouter);
+
+//Not found
+app.use((req,res,next)=> {
+  res.status(404).render("404")
+})
