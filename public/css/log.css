@@ -1,14 +1,8 @@
 *{box-sizing: border-box;}
+/* LOGIN Y REGISTER FORMS */
 
-.contendor {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 /* Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-
 
 
 /* login div */

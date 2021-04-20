@@ -1,5 +1,5 @@
 *{box-sizing: border-box;}
-/* sets whole page to Open Sans and sets background color */
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
     
@@ -27,15 +27,14 @@ h2{
 
 .header {
     font-size: 20px;
+    margin-top: -50px;
     
 }
 
-.buscador{
-    
+
+.top{
         display: flex;
         align-items: center;
-        
-
         border-radius: var(--default-padding);
         overflow: hidden;
     }
