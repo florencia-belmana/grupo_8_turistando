@@ -3,10 +3,10 @@ const  router = express.Router ( ) ;
 
 
 const multer = require ('multer');
-const path = require('path');
+const path = require('path');path-multer
 
 
-//ver si funcuina hasta upload
+//ver si funcuina hasta upload/
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
         callback(null, path.join(__dirname, '../../public/img/users/'));
