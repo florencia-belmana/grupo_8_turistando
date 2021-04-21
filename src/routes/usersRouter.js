@@ -1,9 +1,10 @@
 const  express  =  require ( 'express' ) ;
 const  router = express.Router ( ) ;
-
-
 const multer = require ('multer');
 const path = require('path');path-multer
+
+const  controller  =  require ( '../controllers/usersController' );
+
 
 
 //ver si funcuina hasta upload/
@@ -17,26 +18,26 @@ const storage = multer.diskStorage({
         callback(null, 'user-' + Date.now() + path.extname(file.originalname));
     }
 });
+
 const upload = multer({ storage });
 
 
 
-
-
-const  controller  =  require ( '../controllers/usersController' )
-
 router.get( '/login' , controller.login ) ;
 router.get( '/register' , controller.register );
-router.get( '/detail' , controller.detail );
+// router.get( '/detail' , controller.detail );
 
+router.get('/userList', controller.userList);
+router.get('/userList/:id', controller.show);
 
+//vendria a ser el register
+//router.get('/create', controller.create);
 
-router.get('/:id', controller.show);
-router.post('/', upload.single('image'), controller.store); // Procesa el formulario de creación
+//Procesa el formulario de creación
+router.post('/', upload.single('image'), controller.store); 
 router.get('/:id/edit', controller.edit);
 router.put('/:id', upload.single('image'), controller.update);
-router.delete('/:id', controller.destroy);
-
+//router.delete('/:id', controller.destroy);
 
 
 
