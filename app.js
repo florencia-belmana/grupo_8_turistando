@@ -31,6 +31,7 @@ app.use('/', productsRouter);
 //Usuarios
 const usersRouter = require('./src/routes/usersRouter');
 app.use('/', usersRouter);
+app.use('/user', usersRouter);
 app.use('/users', usersRouter);
 
 //Not found
