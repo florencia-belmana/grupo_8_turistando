@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();
+const methodOverride = require('method-override');
 
 
 // Configuro el directorio de recursos estáticos
@@ -17,10 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 //})
 
 
-// Iniciar el servidor
-app.listen(3000, () => console.log('El servidor está corriendo en el puerto 3000.'));
 
-
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 //Rutas
 //Main
 const mainRouter = require('./src/routes/mainRouter');
@@ -38,3 +38,10 @@ app.use('/', usersRouter);
 app.use((req,res,next)=> {
   res.status(404).render("404")
 })
+
+
+
+// Iniciar el servidor
+app.listen(3000, () => console.log('El servidor está corriendo en el puerto 3000.'));
+
+
