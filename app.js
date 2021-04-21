@@ -8,8 +8,8 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
-/*ver si esto esta ok acá, es multer
-app.use(express.urlencoded({ extended: false }));*/
+
+app.use(express.urlencoded({ extended: false }));
 
 
 //app.get('/', (req, res) => {

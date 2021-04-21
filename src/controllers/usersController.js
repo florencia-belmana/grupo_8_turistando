@@ -7,6 +7,15 @@ module.exports = {
             res.render ("users/register", {
     
             })
-        } }
+        }, 
+    
+
+        detail:(req, res) => {
+            res.render ("users/detail", {
+    
+            })
+        }, 
+    
+    }
 
 
