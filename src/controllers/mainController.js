@@ -1,5 +1,5 @@
 module.exports = {
-    /** Página principal */
+    
     index: (req, res) => {
         res.render("index");
     },

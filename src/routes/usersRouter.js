@@ -1,9 +1,10 @@
 const  express  =  require ( 'express' ) ;
 const  router = express.Router ( ) ;
-
-
 const multer = require ('multer');
 const path = require('path');
+
+const  controller  =  require ( '../controllers/usersController' );
+
 
 
 //ver si funcuina hasta upload
@@ -22,21 +23,18 @@ const upload = multer({ storage });
 
 
 
-
-const  controller  =  require ( '../controllers/usersController' )
-
+router.get('/listado', controller.userList);
 router.get( '/login' , controller.login ) ;
 router.get( '/register' , controller.register );
 router.get( '/detail' , controller.detail );
 
 
-
-router.get('/:id', controller.show);
-router.post('/', upload.single('image'), controller.store); // Procesa el formulario de creación
-router.get('/:id/edit', controller.edit);
-router.put('/:id', upload.single('image'), controller.update);
-router.delete('/:id', controller.destroy);
-
+//
+//router.get('/:id', controller.show);
+//router.post('/', upload.single('image'), controller.store); // Procesa el formulario de creación
+//router.get('/:id/edit', controller.edit);
+//router.put('/:id', upload.single('image'), controller.update);
+//router.delete('/:id', controller.destroy);
 
 
 

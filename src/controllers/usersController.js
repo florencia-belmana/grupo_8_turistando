@@ -1,4 +1,14 @@
 module.exports = {
+
+    userList:(req, res) => {
+        res.render ("users/userList", {
+            title: 'Listado de usuarios', 
+            users : [
+                { first_name: 'Juan' } , { first_name: 'María' }
+            ]
+        })
+    }, 
+
     login:(req, res)  =>  {
         res.render ('users/login')
         },
@@ -9,27 +19,18 @@ module.exports = {
             })
         }, 
     
-
-        detail:(req, res) => {
+    detail:(req, res) => {
             res.render ("users/detail", {
     
             })
         }, 
     
-        edit:(req, res) => {
+    edit:(req, res) => {
             res.render ("users/edit", {
     
             })
         }, 
     
-
-        userList:(req, res) => {
-            res.render ("users/userList", {
-    
-            })
-        }, 
-
-
     }
 
 
