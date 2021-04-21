@@ -16,6 +16,20 @@ module.exports = {
             })
         }, 
     
+        edit:(req, res) => {
+            res.render ("users/edit", {
+    
+            })
+        }, 
+    
+
+        userList:(req, res) => {
+            res.render ("users/userList", {
+    
+            })
+        }, 
+
+
     }
 
 
