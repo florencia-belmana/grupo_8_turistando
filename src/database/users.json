@@ -52,5 +52,72 @@
   "country": "arg",
   "category": "vendedor",
   "id": 12
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Sopeña",
+  "email": "alvarosopenaf@gmail.com",
+  "password": "456545",
+  "country": "arg",
+  "category": "Administrador",
+  "id": 13
+ },
+ {
+  "first_name": "Florencia",
+  "last_name": "Belmaña",
+  "email": "alvarosopenaf@gmail.com",
+  "password": "asdasd",
+  "country": "arg",
+  "category": "Administrador",
+  "image": "user-1619053721159.png",
+  "id": 14
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Sopeña",
+  "email": "alvarosopenaf@gmail.com",
+  "password": "asdsd",
+  "country": "arg",
+  "category": "Administrador",
+  "image": "user-1619053809354.png",
+  "id": 15
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Sopeña",
+  "email": "alvarosopenaf@gmail.com",
+  "password": "asdasd",
+  "country": "arg",
+  "category": "Administrador",
+  "image": "user-1619053866866.png",
+  "id": 16
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Sopeña",
+  "email": "alvarosopenaf@gmail.com",
+  "password": "ddd",
+  "country": "arg",
+  "category": "Administrador",
+  "image": "user-1619054006553.png",
+  "id": 17
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Sopeña",
+  "email": "alvarosopenaf@gmail.com",
+  "password": "$2a$10$AgXRrZ5i2uus0WdrgrondOdb2xVleTovriDDN8FJZucZOoW2.kL4S",
+  "country": "arg",
+  "category": "Administrador",
+  "id": 18
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Sopeña",
+  "email": "a@a.com",
+  "password": "$2a$10$zBN6HyEjNxGIsuHpK8IC4OE8WEgymJa6NsV7.5n5pOTHhR0yieYZm",
+  "country": "arg",
+  "category": "Administrador",
+  "id": 19
  }
 ]

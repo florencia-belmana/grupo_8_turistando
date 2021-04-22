@@ -3,14 +3,16 @@ const  router = express.Router ( ) ;
 const multer = require ('multer');
 const path = require('path');
 
-const  controller  =  require ( '../controllers/usersController' );
+const controller  =  require ( '../controllers/usersController' );
+
+///C
+const validate = require('../middlewares/usersValidation')
 
 
 
-//ver si funcuina hasta upload
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-        callback(null, path.join(__dirname, '../../public/img/users/'));
+        callback(null, path.join(__dirname, '../../public/images/users/'));
     },
     filename: (req, file, callback) => {
         // Mejor usar algo como esto en lugar de Date.now()
@@ -37,8 +39,10 @@ router.get('/userList/:id', controller.show);
 router.post('/', upload.single('image'), controller.store); 
 router.get('/:id/edit', controller.edit);
 router.put('/:id', upload.single('image'), controller.update);
-//router.delete('/:id', controller.destroy);
+router.delete('/:id', controller.destroy);
 
-
+//// Proceso form de login
+router.post('/login', validate.login, controller.authenticate);
+router.get('/logout', controller.logout);
 
 module.exports = router

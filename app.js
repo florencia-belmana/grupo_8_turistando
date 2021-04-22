@@ -3,11 +3,25 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
 
+//
+const session = require('express-session'); //npm instal express-session
+const auth = require('./src/middlewares/auth');
 
 // Configuro el directorio de recursos estáticos
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
+
+//////CCCCCCCC
+
+// Sessiones y cookies
+app.use(session({
+  secret: 'Mi sitio',
+  resave: false, // no vuelve a guardar si no hay cambios
+  saveUninitialized: true, // guarda sessiones aunque todavía no haya datos
+}));
+app.use(auth);
+//////
 
 // Formularios
 app.use(express.urlencoded({ extended: false }));
