@@ -10,41 +10,29 @@
         <%- include('../partials/header.ejs') %>
         </header>
 
-        <!-- agregue un main, saque un /header que estbaa de mas pero sigue superpuesto-->
 <main>
 
     <div class="container">
-        <div class="header-img">
-            <img src="/public/images/imagenheader.jpg" width=300px height=300px alt="logo">
-         </div>   
-       
-
-<!--ESTO SE SUPERPONE CON EL CARRUSEL-->
-      
-        <div class ="text"> 
-            <h2> Hagamos la reserva!</h2>
-                <p class= "compra"><i class=""> </i> Reservá solo con tu tarjeta de crédito</p>
+        <div> 
+            <h2 style="font-size: 50px;"> Hagamos la reserva!</h2>
+            <hr>
+            <h3 style="font-size: 35px"> Chequea que todo este correcto!</h3>
+                
+            <p class= "compra" style= "font-size: 25px">  Reservá solo con tu tarjeta de crédito</p>
             <br>
-            <div class ="methods">
+            <div class ="methods" style="font-size: 35px; text-align: center;"> 
                 <a class="fab fa-cc-mastercard"> </a>
                 <a class="fab fa-cc-paypal"> </a>
                 <a class="fab fa-cc-amex"> </a>
                 <a class="fab fa-cc-visa"> </a>
-            
-        </div>
-        </div>
-
-
-
+            </div>
+        </div> 
+        <br>
+  <hr>
         <div class= "resumen">
             <h2> Resumen de tus reservas</h2>
-
-            <h3>Chequea que todo este correcto!</h3>
-                  
-            
-    <section class="detail">
-        
-        <div class ="detail">
+                            
+           <div class ="detail">
             <p>
                 <ul>
                     <li> <a href ="#"> Item 1 </a><p>Descripción</p></li>
@@ -54,15 +42,12 @@
                 </ul>
             </p>
         </div>
-        <div class ="boton-borrar"><input type="button" value="Vaciar carrito"></div>
+        <div class ="boton-borrar" style="font-size: 35px; text-align: center;"><input type="button" value="Vaciar carrito"></div>
         <br>
         
     </div>
 
-
-    </section>
-
-  
+<hr>
 
     <section class="payment">
         <div class="payment">
@@ -91,8 +76,8 @@
                 <input type="date" name="fecha" id="fecha" placeholder="">
             </div>
 
-                <div class="boton-confirmar">
-                    <button type="submit"> Confirmar </button>
+                <div class="boton">
+                    <div class ="confirmar"><input type="button" value="Confirmar"></div>
                 </div>
                 </form>
             </div>
