@@ -14,6 +14,7 @@
     <!-- login div -->
 <div class="login">
     <!-- login header -->
+    
       <h1 id="header">Ingresá con tu nombre y contraseña</h1>
       <form id="form" action="/login.html" method="POST">
         <div class="nombreUsuario">
@@ -24,13 +25,14 @@
              <label for="clave"><i class="fas fa-key"></i> Contraseña:</label>
              <input type="password" name="clave" id="clave" placeholder="Ingrese su contraseña aquí">
         </div>
+
         <div class="user-type">
             <p>Perfil de usuario:</p>
             <label>
                 <input type="checkbox" name="user-type" id="user-type-traveller" value="traveller"> Viajero
             </label>
             <label>
-                <input type="checkbox" name="user-type" id="user-type-admin" value="admin"> Administrador
+                <input type="checkbox" name="user-type" id="user-type-admin" value="admin" > Administrador
             </label>
             <div class="row">
                 <button type="submit">Enviar</button>

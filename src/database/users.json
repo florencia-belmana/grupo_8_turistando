@@ -119,5 +119,15 @@
   "country": "arg",
   "category": "Administrador",
   "id": 19
+ },
+ {
+  "first_name": "florencia",
+  "last_name": "belmaña",
+  "email": "florbel_03@hotmail.com",
+  "password": "$2a$10$T9MHJbql/c8yguGq7XiFGOBACfkrhMU89TfcKjSXIJpu68ZvGA4vW",
+  "country": "arg",
+  "category": "Administrador",
+  "image": "user-1619058637000.jpg",
+  "id": 20
  }
 ]

@@ -7,7 +7,7 @@
 
 /* login div */
 .login {
-  background-color: #eee;
+  background-color:rgb(191, 191, 207);
   width: 420px;
   height: 450px;
   margin: 0 auto;
@@ -17,9 +17,9 @@
 
 /* login header */
 h1 {
-  color: #55acee;
+  color:white;
   text-align: center;
-  font-size: 36px;
+  font-size: 30px;
   padding-top: 10px;
 }
 
@@ -43,6 +43,7 @@ input:not([type="button"]) {
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   font-size: 16px;
+
 }
 
 input:focus:not([type="button"]) {
@@ -65,6 +66,7 @@ input[type="button"] {
   box-shadow: 0px 5px 0px 0px #3C93D5;
   outline: none;
   border: none;
+  
 }
 
 input[type="button"]:active {
