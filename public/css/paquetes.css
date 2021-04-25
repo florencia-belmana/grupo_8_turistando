@@ -1,3 +1,6 @@
+* {
+    box-sizing: content-box;
+}
 .container1 {
     padding: 60px 0;
     width: 90%;
@@ -7,4 +10,45 @@
     text-align: center;
  
     flex-direction: row;
+}
+
+ul{
+    text-align: center;
+}
+li{
+    text-align: center;
+}
+
+.h2{
+    background-color:lightblue;
+    color: white;
+}
+
+.pic-container1 {
+    background-color: lightblue;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+    
+
+    margin: 0 -.5rem;
+}
+
+.pic-item {
+    width: 100px;
+    /* height: 100px; */
+    size: 100px;
+    background-color:lightblue;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    margin-bottom: .5rem;
+    padding: .5rem;
+}
+
+.pic-item img { width: 80%; }
+
+.lista{
+    
 }
