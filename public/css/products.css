@@ -7,10 +7,10 @@ body {
   }
 
 a   {
-      color: white;
+      color: black;
       text-transform:uppercase;
       font-weight: bold;
-      font-size: 25px;
+      font-size: 20px;
   }
 
 .color-h3{
@@ -19,7 +19,7 @@ a   {
     color:white;
     background-color:rgb(124, 146, 243);
     background-size: 10px;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center
  
 
