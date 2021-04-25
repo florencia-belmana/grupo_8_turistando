@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/products.css">
-    <title>Buenos Aires</title>
+    <title>Patagonia en verano</title>
     <%- include('../partials/head.ejs') %>
 </head>
 <body>
@@ -13,29 +13,51 @@
         <%- include('../partials/header.ejs') %>
     </header>
     <main>
-        <h1>Buenos Aires de noche</h1>
+        <h1>Patagonia en verano</h1>
 
         <div class="container1">
             <div class="pic-container1">
                 <div class="pic-item">
-                    <img src="/images/teatrocolon.jpg" alt="colon">
-                    
-                    <!--link que te lleva a Buenos Aires de noche-->
-                    <p>
-                       <!-- <nav><a href="/paquete1">Obras en el Teatro Colón</a></nav> -->
-        
-                    </p>
-        
+                    <img src="/images/barilo2.jpg" alt="picture">
+                <section>
+                    <h2>Conocé los mejores paisajes de la Patagonia Argentina durante el verano</h2>
+                </section>
                 </div>
-        
-                <div class="pic-item">
-                    <img src="/images/bar.jpg" alt="bar">
-        
-                    <p>
-                        Tour de bares
-                    </p>
-        
+      <!--todo esto va debajo de la foto-->      
+                <article class="include">
+                    <p>Nuestro paquete incluye;</p>
+                    <div class="items">Avion</div>
+                    <div class="items">Traslados</div>
+                    <div class="items">Alojamiento</div>
+                </article>
+
+
+         <!--CHECKBOX DE ACTIVIDADES, DEJARLO FIJO o hacer un cirulo - va debajo de INCLUDE
+        -->      
+             <article class="conjunto">
+                <div class="textopaquete">
+                    <h2>Excursiones y actividades</h2>
                 </div>
+                <div class="itemspaquete"></div>
+                <div>
+                    <input type="checkbox" id="exc1">
+                    <label for="exc1"></label>
+                    "Gastronomia"
+                     </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="exc1">
+                    <label for="exc1"></label>
+                    "Recorrida por los lagos"
+                     </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="exc1">
+                    <label for="exc1"></label>
+                    "Dia de camping"
+                     </label>
+                </div>
+             </article>
              
               
          </div>
