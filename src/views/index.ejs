@@ -2,17 +2,83 @@
 <html lang="en">
 <head>
     <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
     <header>
         <%- include('partials/header.ejs') %>
     </header>
-    <main>
-        <div class="container">
-        <h1 class="estilo"> ElegÍ tu próximo destino </h1>
 
-       
-          
+
+    <main>
+
+     
+<h3 class="color-h3">Elegi tu próximo destino</h3>
+
+      <!--primer box de fotos -->
+    
+    <div class="container1">
+    <div class="pic-container1">
+
+<!--SUR PAQUETE1-->
+        <div class="pic-item">
+            <img src="/images/barilo2.jpg" alt="picture">
+            <div class="button">
+            <button class= btn sm btn-pink-outline>
+                <a href="/paquete1">+INFO</a>
+            </button>
+            </div>
+
+            <p>
+               <nav><a href="/paquete1">El sur en invierno</a></nav> 
+
+            </p>
+
+        </div>
+<!--NORTE PQUETE2-->
+        <div class="pic-item">
+            <img src="/images/norte2.jpg" alt="picture">
+            <div class="button">
+            <button class= btn sm btn-pink-outline>
+                <a href="/paquete2">+INFO</a>
+            </button>
+        </div>
+               <p>
+                    <nav><a href="/paquete2">Recorriendo el norte: Jujuy 360°</a></nav> 
+                </p>
+
+        </div>
+
+<!-- MZAPAQUETE3-->
+        <div class="pic-item">
+            <img src="images/vino2.jpg" alt="picture">
+            <div class="button">
+                <button class= btn sm btn-pink-outline>
+                    <a href="/paquete3">+INFO</a>
+                </button>
+            </div>
+
+            <p>
+                <nav><a href="/paquete3">La ruta del vino en mendoza</a></nav> 
+            </p>
+            </div>
+--------------------------------------------------------
+          </div>
+
+
+        </div>
+
+  
+</main>
+
+    <footer>
+    <%- include('partials/footer.ejs') %>
+</footer>
+</body>
+</html>
+
+
+      <!--TODO ANTERIOR 
         <div class="box">
             <h2> Turisteamos en:  </h2>
             <Script language="JavaScript">
@@ -51,12 +117,12 @@
          </div>
 
 
-  
+  -->   
            
 
             
   
-         <!--MAPA-->
+         <!--MAPA
     <section class="mapa" > 
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="/public/map/jquery.vmap.js"></script>
@@ -79,14 +145,4 @@
         <div class ="map"> 
          <div id="vmap" style="width: 800px; height: 900px; opacity: 0.8;"></div>
         </div>
-    
-    </div>
-
-    
-        
-    </main>
-    <footer>
-    <%- include('partials/footer.ejs') %>
-</footer>
-</body>
-</html>
+    -->

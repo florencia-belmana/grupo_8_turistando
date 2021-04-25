@@ -9,16 +9,31 @@ module.exports = {
             })
         },
     
+   
+      
+        paquetes:(req, res) => {
+            res.render ("products/paquetes", {
     
-    
-    
-        bairesnoche:(req, res) => {
-            res.render ("products/bairesnoche", {
+            })
+        },
+//lo que es buenosairesnoche
+        paquete1:(req, res) => {
+            res.render ("products/paquete1", {
     
             })
         },
 
+        paquete2:(req, res) => {
+            res.render ("products/paquete2", {
+    
+            })
+        },
 
+        paquete3:(req, res) => {
+            res.render ("products/paquete3", {
+    
+            })
+        },
 
 
     }
