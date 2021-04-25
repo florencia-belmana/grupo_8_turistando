@@ -129,5 +129,14 @@
   "category": "Administrador",
   "image": "user-1619058637000.jpg",
   "id": 20
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Sopeña",
+  "email": "alvarosopenaf@gmail.com",
+  "password": "$2a$10$HR33utfYzUzLYUJC03zmm.RJHMVdszgC2E1G27obVN2zSADSaiW7C",
+  "country": "arg",
+  "category": "Administrador",
+  "id": 21
  }
 ]
