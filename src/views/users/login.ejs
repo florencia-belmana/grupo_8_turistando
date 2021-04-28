@@ -15,17 +15,52 @@
 <div class="login">
     <!-- login header -->
     
-      <h1 id="header">Ingresá con tu nombre y contraseña</h1>
-      <form id="form" action="/login" method="POST">
-        <div class="nombreUsuario">
+      <h1 id="header">Ingresá con tu email y contraseña</h1>
+      <form id="form" action="/login" method="POST"><!--probe con userList y no  anda -->
+        
+        <!--antes estaba nombreUsuario y toda su categoria-->
+       <!-- <div class="nombreUsuario">
              <label for="nombre"><i class="fas fa-user">Nombre Usuario:</i> </label>
              <input type="text" name="nombre-usuario" id="nombre" placeholder="Ingrese nombre de usuario aquí">
-        </div>
-        <div class="contraseñaUsuario">
-             <label for="clave"><i class="fas fa-key"></i> Contraseña:</label>
-             <input type="password" name="clave" id="clave" placeholder="Ingrese su contraseña aquí">
+        </div>-->
+        <!--llega hasta aca-->
+
+        <!--EMAIL ES LO NUEVO-->
+        <div class="field">
+            <label for="email">Email</label>
+            <div class="control">
+                <input type="text" name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %>">
+            </div>
+            <% if (locals.errors && errors.email) { %>
+                <p class="feedback is-danger"><%= errors.email.msg %></p>
+            <% } %>
         </div>
 
+
+        <!--ANTES ERA ESTO -->
+       <!-- <div class="contraseñaUsuario">
+             <label for="clave"><i class="fas fa-key"></i> Contraseña:</label>
+             <input type="password" name="clave" id="clave" placeholder="Ingrese su contraseña aquí">
+        </div>-->
+
+
+
+<!--AHORA ES ESTO-->
+
+
+<div class="field">
+    <label for="password">Password</label>
+    <div class="control">
+        <input type="password" name="password" id="password">
+    </div>
+    <% if (locals.errors && errors.password) { %>
+        <p class="feedback is-danger"><%= errors.password.msg %></p>
+    <% } %>
+</div>
+
+
+
+<!--HASTA ACA -->
         <div class="user-type">
             <p>Perfil de usuario:</p>
             <label>

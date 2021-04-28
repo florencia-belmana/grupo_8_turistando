@@ -77,9 +77,9 @@ module.exports = {
         }, 
 
     store: (req, res) => {
-         // Valido los campos
+         // Valido los campos - aca ver req.file
          let errors = validationResult(req);
-
+       
          // Me fijo si no hay errores
         if (errors.isEmpty()) {
 

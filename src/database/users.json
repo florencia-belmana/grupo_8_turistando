@@ -7,5 +7,15 @@
   "country": "arg",
   "category": "Administrador",
   "id": 1
+ },
+ {
+  "first_name": "florencia",
+  "last_name": "belmaña",
+  "email": "florbel_03@hotmail.com",
+  "password": "$2a$10$0isCkG4qtCgS.LUIu9yAWOeHsS/m2OQT0Qc7jE2NfhvSRRA4wgh7.",
+  "country": "arg",
+  "category": "Administrador",
+  "image": "user-1619575367212.jpg",
+  "id": 2
  }
 ]

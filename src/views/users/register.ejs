@@ -21,6 +21,9 @@
                                     <input type="text" name="first_name" id="first_name" value="">
                                 </div>
                                <!--  <p class="feedback is error">Un error</p>-->
+                               <% if (locals.errors && errors.first_name) { %>
+                                <p class="feedback is-danger"><%= errors.first_name.msg %></p>
+                            <% } %>
                             </div>
 
                             <div class="field">
@@ -28,7 +31,9 @@
                                 <div class="control">
                                     <input type="text" name="last_name" id="last_name" value="">
                                 </div>
-                                <p class="feedback"></p>
+                                <% if (locals.errors && errors.last_name) { %>
+                                    <p class="feedback is-danger"><%= errors.last_name.msg %></p>
+                                <% } %>
                             </div>
 
                             <div class="field">
@@ -36,7 +41,9 @@
                                 <div class="control">
                                     <input type="text" name="email" id="email" value="">
                                 </div>
-                                <p class="feedback"></p>
+                                <% if (locals.errors && errors.email) { %>
+                                    <p class="feedback is-danger"><%= errors.email.msg %></p>
+                                <% } %>
                             </div>
 
                             <div class="field">
