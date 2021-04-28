@@ -33,7 +33,7 @@ module.exports = function (sequelize, dataTypes) {
         type: dataTypes.DATE,
       },
       category_id: {
-      type: DataTypes.INTEGER,
+        type: dataTypes.INTEGER,
       }
     };
 

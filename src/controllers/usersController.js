@@ -7,6 +7,8 @@ const usersTable = jsonTable('users');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs'); //npm install bcryptjs
 //
+//DATABASE
+let db = require ("../../database/models")
 
 module.exports = {
 

@@ -1,3 +1,6 @@
+let db = require ("../../database/models")
+
+
 module.exports = {
     buenosaires:(req, res)  =>  {
         res.render ('products/buenosaires')
@@ -37,14 +40,18 @@ module.exports = {
         //crear productos
         
        crear:(req, res) => {
-            res.render ("products/crear", {
+           // res.render ("products/crear", {
+                db.Product.findAll()
+                    .then(function(products){
+                        return res.render ("productos", {products:products})
+                    })
     
-            })
-        },
+        //    })
+        }
 
 
-    }
+    };
 
 
-        
+   
 

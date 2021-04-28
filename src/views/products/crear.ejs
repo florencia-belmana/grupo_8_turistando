@@ -10,13 +10,43 @@
     </header>
     <main>
      
-<h3 class="color-h3">CREAR PAQUETE</h3>
+<h3>CREAR PAQUETE</h3>
 <ul>
     <li>
         <a href=""> CREAR PAQUETE</a>
-    </li>
-    <li>
-        <a href=""> VER PAQUETES</a>
+        <form action="../index.ejs" method="POST"> 
+        <div>
+            <label for="">Paquete</label>
+            <input type="text" name="paquete">
+        </div>
+        <div>
+            <label for="">IMAGEN</label>
+            <input type="img" name="image">
+        </div>
+        <div>
+            <label for="">Descripcion</label>
+            <input type="text" name="description">
+        </div>
+        <div>
+            <label for="">Precio</label>
+            <input type="text" name="price">
+        </div>
+        <div>
+            <label for="">Categoria</label>
+            <select name = "categories">
+                <% for (let i = 0; i<categories.length; i++){%>
+                    <option value="<%= categories[i].id%">">
+                        <%= categories[i].name %>
+                    
+                    </option>
+
+                <% } %>
+            </select>
+            <input type="text" name="price">
+        </div>
+        
+        
+        </form>
     </li>
 </ul>
 

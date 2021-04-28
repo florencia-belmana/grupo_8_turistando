@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 const session = require('express-session'); //npm instal express-session
 const auth = require('./src/middlewares/auth');
 
+
 // Configuro el directorio de recursos estáticos
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
