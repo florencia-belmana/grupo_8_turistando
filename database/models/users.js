@@ -43,20 +43,24 @@ module.exports = function(sequelize, dataTypes){
           },
           deletedAt: {
             type: dataTypes.DATE,
-          },
+          }
     };
+
     let config = {
         tableName: "users",
         timestamps: true,
         paranoid: true,
-      };
+      }
 
     let Users = sequelize.define(alias,cols, config);
-    
-    Users.associate = function (models){
-        Users.belongsTo(models.User_id,{
-            as: "User",
-            ForeignKey: "user_id",
-        })
-    }
+   
+
+//    Users.associate = function (models){
+  //      Users.belongsTo(models.User_id,{
+   //         as: "User",
+    //        ForeignKey: "user_id",
+     //   })
+  //  }
+ 
+  return Users;
 }

@@ -32,20 +32,28 @@ module.exports = function (sequelize, dataTypes) {
       deletedAt: {
         type: dataTypes.DATE,
       },
+      category_id: {
+      type: DataTypes.INTEGER,
+      }
     };
 
     let config = {
       tableName: "products",
       timestamps: true,
-      paranoid: false
+    //  paranoid: false
     }
+
+    let Product = sequelize.define(alias,cols,config);
+
+    
     Product.associate = models => {
       Product.belongsTo(models.Category, {
           as: 'category',
           foreignKey: 'category_id'
       })
+  
+  }
 
-    
-}
   return Product;
+
 }

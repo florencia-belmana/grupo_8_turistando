@@ -50,4 +50,7 @@ router.delete('/:id', controller.destroy);
 router.post('/login', validate.login, controller.authenticate);
 router.get('/logout', controller.logout);
 
+/// sequalize - crear usuarios
+router.get("/crear")
+
 module.exports = router

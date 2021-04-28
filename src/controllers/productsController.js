@@ -9,8 +9,7 @@ module.exports = {
             })
         },
     
-   
-      
+       
         paquetes:(req, res) => {
             res.render ("products/paquetes", {
     
@@ -31,6 +30,14 @@ module.exports = {
 
         paquete3:(req, res) => {
             res.render ("products/paquete3", {
+    
+            })
+        },
+
+        //crear productos
+        
+       crear:(req, res) => {
+            res.render ("products/crear", {
     
             })
         },
