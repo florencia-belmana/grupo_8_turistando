@@ -11,4 +11,10 @@ router.get( '/paquetes' , controller.paquetes ) ;
 router.get( '/paquete1' , controller.paquete1 ) ;
 router.get( '/paquete2' , controller.paquete2 ) ;
 router.get( '/paquete3' , controller.paquete3 ) ;
+
+/// secualise
+router.get("/crear")
+
+
+
 module.exports = router
