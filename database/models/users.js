@@ -32,10 +32,7 @@ module.exports = function(sequelize, dataTypes){
         user_img :{
             type: dataTypes.STRING
         },
-        admin :{
-            type: dataTypes.INTEGER
-        },
-        createdAt: {
+              createdAt: {
             type: dataTypes.DATE,
           },
           updatedAt: {
@@ -43,6 +40,9 @@ module.exports = function(sequelize, dataTypes){
           },
           deletedAt: {
             type: dataTypes.DATE,
+          },
+          category_id: {
+            type: dataTypes.INTEGER,
           }
     };
 
@@ -53,7 +53,13 @@ module.exports = function(sequelize, dataTypes){
       }
 
     let Users = sequelize.define(alias,cols, config);
-   
+
+    Users.associate = models => {
+       Users.belongsTo(models.Category, {
+            as: 'category',
+            foreignKey: 'category_id'
+        })
+    }
 
 //    Users.associate = function (models){
   //      Users.belongsTo(models.User_id,{

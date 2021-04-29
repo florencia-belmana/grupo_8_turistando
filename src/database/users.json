@@ -17,5 +17,23 @@
   "category": "Administrador",
   "image": "user-1619575367212.jpg",
   "id": 2
+ },
+ {
+  "first_name": "Alvaro2",
+  "last_name": "Sopeña",
+  "email": "alvaro@gmail.com",
+  "password": "$2a$10$IsrE0KLnBTI4mxzQBoZ.RuzziEW5mWzx8Y/5JqrwHdA4XjC2w/pKW",
+  "country": "arg",
+  "category": "Administrador",
+  "id": 3
+ },
+ {
+  "first_name": "Alvaro",
+  "last_name": "Sopeña",
+  "email": "alvarosopenaf@gmail.com",
+  "password": "$2a$10$mDWhk0HlkyCGCQFwiNWGEOq73S7muZnslnaGSOtF.e.OAFgYEGiDy",
+  "country": "arg",
+  "category": "Administrador",
+  "id": 4
  }
 ]

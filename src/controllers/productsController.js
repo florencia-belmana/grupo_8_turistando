@@ -41,10 +41,7 @@ module.exports = {
         
        crear:(req, res) => {
            // res.render ("products/crear", {
-                db.Product.findAll()
-                    .then(function(products){
-                        return res.render ("productos", {products:products})
-                    })
+            
     
         //    })
         }
