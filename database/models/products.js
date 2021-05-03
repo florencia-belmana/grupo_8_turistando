@@ -1,6 +1,6 @@
 
 module.exports = function (sequelize, dataTypes) {
-    let alias = "Product";
+    let alias = "Products";
     let cols = {
       id: {
         type: dataTypes.INTEGER,
@@ -43,13 +43,13 @@ module.exports = function (sequelize, dataTypes) {
     //  paranoid: false
     }
 
-    let Product = sequelize.define(alias,cols,config);
+    let Products = sequelize.define(alias,cols,config);
 
 
 // aca falta asociar=========
     
 //CAMBIE EL NOMBRE DEL ARCHIVO, SIN LA S FINAL
 
-  return Product;
+  return Products;
 
 }

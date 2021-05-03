@@ -7,7 +7,7 @@ router.get( '/buenosaires' , controller.buenosaires ) ;
 router.get( '/carrito' , controller.carrito )
 
 
-router.get( '/paquetes' , controller.paquetes ) ;
+// router.get( '/paquetes' , controller.paquetes ) ;
 
 router.get( '/paquete1' , controller.paquete1 ) ;
 router.get( '/paquete2' , controller.paquete2 ) ;
