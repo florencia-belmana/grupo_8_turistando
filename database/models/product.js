@@ -45,8 +45,10 @@ module.exports = function (sequelize, dataTypes) {
 
     let Product = sequelize.define(alias,cols,config);
 
-    
 
+// aca falta asociar=========
+    
+//CAMBIE EL NOMBRE DEL ARCHIVO, SIN LA S FINAL
 
   return Product;
 

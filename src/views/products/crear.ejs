@@ -11,10 +11,9 @@
     <main>
      
 <h3>CREAR PAQUETE</h3>
-<ul>
-    <li>
+
         <a href=""> CREAR PAQUETE</a>
-        <form action="../index.ejs" method="POST"> 
+        <form action="/crear" method="POST"> 
         <div>
             <label for="">Paquete</label>
             <input type="text" name="paquete">
@@ -32,28 +31,8 @@
             <input type="text" name="price">
         </div>
         <div>
-            <label for="">Categoria</label>
-            <select name = "categories">
-                <% for (let i = 0; i<categories.length; i++){%>
-                    <option value="<%= categories[i].id%">">
-                        <%= categories[i].name %>
-                    
-                    </option>
-
-                <% } %>
-            </select>
-            <input type="text" name="price">
-        </div>
-        
-        
-        </form>
-    </li>
-</ul>
-
-      <!--primer box de fotos -->
-    <div class="container1">
-    <div class="pic-container1">
-
+  
+            </form>
 
 
 </main>

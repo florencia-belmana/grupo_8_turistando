@@ -1,3 +1,4 @@
+
 const  express  =  require ( 'express' ) ;
 const  router = express.Router ( ) ;
 const  controller  =  require ( '../controllers/productsController' )
@@ -14,6 +15,7 @@ router.get( '/paquete3' , controller.paquete3 ) ;
 
 /// sequalize - crear productos 
 router.get("/crear", controller.crear)
+router.post("/crear", controller.guardar)
 
 
 

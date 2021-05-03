@@ -1,7 +1,10 @@
 //const { FOREIGNKEYS } = require("sequelize/types/lib/query-types");
 
+//CAMBIE EL NOMBRE DEL ARCHIVO, SIN S
+
+
 module.exports = function(sequelize, dataTypes){
-    let alias = "Users"
+    let alias = "User"
     let cols ={
         id :{
             type: dataTypes.INTEGER,
@@ -68,5 +71,5 @@ module.exports = function(sequelize, dataTypes){
      //   })
   //  }
  
-  return Users;
+  return User;
 }

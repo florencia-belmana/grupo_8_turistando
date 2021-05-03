@@ -12,13 +12,13 @@ module.exports = {
             })
         },
     
-       
-        paquetes:(req, res) => {
-            res.render ("products/paquetes", {
+       //esto no sirve ahora, era uno general para que contenga todos los dem+
+        //paquetes:(req, res) => {
+           // res.render ("products/paquetes", {
     
-            })
-        },
-//lo que es buenosairesnoche
+          //  })
+   //     },
+
         paquete1:(req, res) => {
             res.render ("products/paquete1", {
     
@@ -40,12 +40,14 @@ module.exports = {
         //crear productos
         
        crear:(req, res) => {
-           // res.render ("products/crear", {
-            
-    
-        //    })
-        }
+           res.render ("products/crear")
 
+        },
+
+        guardar:(req, res) => {
+            res.send (req.body)
+ 
+         },
 
     };
 
