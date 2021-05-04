@@ -8,9 +8,15 @@ module.exports = function (sequelize, dataTypes) {
         autoIncrement: true,
         primaryKey: true,
       },
-      product: {
+      product_name: {
         type: dataTypes.STRING,
         allowNull: false,
+        
+      },
+      title:{
+        type: dataTypes.STRING,
+        allowNull: false,
+        
       },
       price: {
         type: dataTypes.DECIMAL,
@@ -25,16 +31,17 @@ module.exports = function (sequelize, dataTypes) {
       },
       createdAt: {
         type: dataTypes.DATE,
+        allowNull: true
       },
       updatedAt: {
         type: dataTypes.DATE,
+        allowNull: true
       },
       deletedAt: {
         type: dataTypes.DATE,
+        allowNull: true
       },
-      category_id: {
-        type: dataTypes.INTEGER,
-      }
+    
     };
 
     let config = {

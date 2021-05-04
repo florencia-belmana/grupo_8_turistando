@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="css/paquetes.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <main>
+        <ul>    
+            <li>
+                <a href="../products/crear.ejs"> Crear paquete </a>
+            </li>
+        </ul>
+        <ul>   
+            <% for (let i = 0; i<products.length; i++) { %>
+                <li>
+                    <%=products[i].name %>
+                </li>
+
+          <%  } %>
+
+        </ul>
+
+
+
+
+
+       
+
+
+
+
+
+
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+</footer>
+</body>
+</html>

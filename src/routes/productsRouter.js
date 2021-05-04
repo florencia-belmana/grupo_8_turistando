@@ -14,8 +14,14 @@ router.get( '/paquete2' , controller.paquete2 ) ;
 router.get( '/paquete3' , controller.paquete3 ) ;
 
 /// sequalize - crear productos 
+//router.get("/productos", controller.crear)
 router.get("/crear", controller.crear)
 router.post("/crear", controller.guardar)
+
+//lectura
+router.get("/listaProductos", controller.listado)
+
+
 
 
 

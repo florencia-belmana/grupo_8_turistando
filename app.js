@@ -42,7 +42,8 @@ app.use('/', mainRouter);
 //Productos
 const productsRouter = require('./src/routes/productsRouter');
 app.use('/', productsRouter);
-app.use('/crear', productsRouter)
+app.use('/crear', productsRouter);
+app.use('/productos', productsRouter);
 
 //Usuarios
 const usersRouter = require('./src/routes/usersRouter');

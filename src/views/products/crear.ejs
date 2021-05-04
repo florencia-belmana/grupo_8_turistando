@@ -13,17 +13,21 @@
 <h3>CREAR PAQUETE</h3>
 
         <a href=""> CREAR PAQUETE</a>
-        <form action="/crear" method="POST"> 
+        <form action="/crear" method="POST" enctype="multipart/form-data"> 
         <div>
-            <label for="">Paquete</label>
-            <input type="text" name="paquete">
+            <label for="">Nombre</label>
+            <input type="text" name="title">
         </div>
         <div>
-            <label for="">IMAGEN</label>
-            <input type="img" name="image">
+            <label for="">Nombre paquete</label>
+            <input type="text" name="product_name">
         </div>
         <div>
-            <label for="">Descripcion</label>
+            <label for="">Imagen</label>
+            <input type="file" name="image" id="image">>
+        </div>
+        <div>
+            <label for="">Descripción</label>
             <input type="text" name="description">
         </div>
         <div>
@@ -31,6 +35,11 @@
             <input type="text" name="price">
         </div>
         <div>
+            <div class="field">
+                <div class="control">
+                    <input type="submit" value="Crear paquete">
+                </div>
+            </div> 
   
             </form>
 

@@ -1,4 +1,5 @@
-let db = require ("../../database/models")
+let db = require ("../../database/models");
+// const products = require("../../database/models/products");
 
 
 module.exports = {
@@ -41,13 +42,33 @@ module.exports = {
         
        crear:(req, res) => {
            res.render ("products/crear")
+            db.Products.findAll()
+            .then(function(Products){
+                return res.render("/crear", {Products})
+            })
 
         },
 
-        guardar:(req, res) => {
-            res.send (req.body)
+        guardar: function (req, res) {
+            db.Products.create({
+                product_name: req.body.product_name,
+                title: req.body.title ,
+                price: req.body.price,
+                image: req.body.image ,
+                description: req.body.description,
+
+
+            })
+            res.redirect("listaProductos")
  
          },
+         listado: function (req, res){
+             db.Products.findAll()
+                .then(function(products) {
+                    res.render("listaProductos", {products})
+                }   )
+         },
+   
 
     };
 

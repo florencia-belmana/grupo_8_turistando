@@ -51,6 +51,7 @@ router.post('/login', validate.login, controller.authenticate);
 router.get('/logout', controller.logout);
 
 /// sequalize - crear usuarios
-router.get("/crear")
+//router.get("/crear")
+router.get( '/register' , controller.register );
 
 module.exports = router
