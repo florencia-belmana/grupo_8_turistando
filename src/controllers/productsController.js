@@ -46,6 +46,10 @@ module.exports = {
             .then(function(Products){
                 return res.render("/crear", {Products})
             })
+            .catch((error) => {
+                console.log(error);
+                res.send("Ha ocurrido un error");
+              });
 
         },
 
@@ -59,13 +63,22 @@ module.exports = {
 
 
             })
-            res.redirect("listaProductos")
+            .then(() => {
+             //   res.redirect(`/productos/${id}`);
+             res.redirect("products/listaProductos")
+              })
+
+            .catch((errors) => {
+                console.log(errors);
+              });
+            
+
  
          },
          listado: function (req, res){
              db.Products.findAll()
                 .then(function(products) {
-                    res.render("listaProductos", {products})
+                    res.render("products/listaProductos", {products})
                 }   )
          },
    
