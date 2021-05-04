@@ -19,7 +19,7 @@ router.get("/crear", controller.crear)
 router.post("/crear", controller.guardar)
 
 //lectura
-router.get("/listaProductos", controller.listado)
+router.get("/lista", controller.listado)
 
 
 

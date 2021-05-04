@@ -44,7 +44,7 @@ module.exports = {
            res.render ("products/crear")
             db.Products.findAll()
             .then(function(Products){
-                return res.render("/crear", {Products})
+                return res.render("products/crear", {Products})
             })
             .catch((error) => {
                 console.log(error);
@@ -65,11 +65,12 @@ module.exports = {
             })
             .then(() => {
              //   res.redirect(`/productos/${id}`);
-             res.redirect("products/listaProductos")
+             res.redirect("products/lista")
               })
 
             .catch((errors) => {
                 console.log(errors);
+                res.send("Ha ocurrido un error")
               });
             
 
@@ -78,8 +79,12 @@ module.exports = {
          listado: function (req, res){
              db.Products.findAll()
                 .then(function(products) {
-                    res.render("products/listaProductos", {products})
+                    res.render("products/lista", {products})
                 }   )
+                .catch((errors) => {
+                    console.log(errors);
+                    res.send("Ha ocurrido un error")
+                  });
          },
    
 
