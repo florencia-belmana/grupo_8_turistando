@@ -46,8 +46,8 @@ module.exports = function (sequelize, dataTypes) {
 
     let config = {
       tableName: "products",
-      timestamps: true,
-    //  paranoid: false
+      timestamps: false, //hay que arreglar created_at para q sea true
+    //  paranoid: false //deleted_at
     }
 
     let Products = sequelize.define(alias,cols,config);

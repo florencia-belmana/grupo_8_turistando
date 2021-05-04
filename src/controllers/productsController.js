@@ -43,8 +43,8 @@ module.exports = {
        crear:(req, res) => {
            res.render ("products/crear")
             db.Products.findAll()
-            .then(function(Products){
-                return res.render("products/crear", {Products})
+            .then(function(productList){
+                return res.render("products/lista", {products: productList})
             })
             .catch((error) => {
                 console.log(error);
@@ -76,10 +76,10 @@ module.exports = {
 
  
          },
-         listado: function (req, res){
+         lista: function (req, res){
              db.Products.findAll()
-                .then(function(products) {
-                    res.render("products/lista", {products})
+                .then(function(productList) {
+                    res.render("products/lista", {products: productList})
                 }   )
                 .catch((errors) => {
                     console.log(errors);
