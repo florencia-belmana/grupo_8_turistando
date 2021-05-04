@@ -16,6 +16,16 @@
             </li>
         </ul>
         <ul>   
+            <h2>Detalle de productos</h2>
+            <div class='products'>
+                <%products.forEach(product => { %>
+                    <p class='product'>
+                        <img src="<%=product.image%>" height="100"/> <br>
+                        <a href='/products/<%= product.id%>'><%=product.name%> ( <%= product.price%>)
+                        </a>
+                        </p>
+              <% }) %>
+            </div>
            
 
         </ul>

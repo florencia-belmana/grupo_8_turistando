@@ -44,9 +44,9 @@ module.exports = {
         
        crear:(req, res) => {
            res.render ("products/crear")
-            db.Product.findAll()
-            .then(function(productList){
-                return res.render("products/lista", {products: productList})
+            db.Products.findAll()
+            .then(function(products){
+                return res.render("products/lista", {products : products})
             })
             .catch((error) => {
                 console.log(error);
@@ -56,7 +56,7 @@ module.exports = {
         },
 
         guardar: function (req, res) {
-            db.Product.create({
+            db.Products.create({
                 product_name: req.body.product_name,
                 title: req.body.title ,
                 price: req.body.price,
@@ -67,7 +67,7 @@ module.exports = {
             })
             .then(() => {
              //   res.redirect(`/productos/${id}`);
-             return res.redirect("products/lista")
+             return res.redirect("products/lista", {products})
               })
 
             .catch((errors) => {
@@ -79,9 +79,9 @@ module.exports = {
  
          },
          lista: function (req, res){
-             db.Product.findAll()
+             db.Products.findAll()
              .then(products => {
-                return res.render('/lista', { products })
+                return res.render('products/lista', { products })
             })
                 
                 .catch((errors) => {
@@ -97,12 +97,12 @@ module.exports = {
             let id = req.params.id
             db.products.findOne({ where: { id } })
             .then(products => {
-                res.render('/lista', { products })
+                res.render('products/lista', { products })
             })
             .catch(err => console.log(err))
                 .catch(() => {
                     // la base de datos falló por algún motivo
-                    res.render('error')
+                    res.render('404')
                 })
                 
         },
