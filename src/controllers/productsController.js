@@ -20,7 +20,7 @@ module.exports = {
           //  })
    //     },
 
-        paquete1:(req, res) => {
+     /*   paquete1:(req, res) => {
             res.render ("products/paquete1", {
     
             })
@@ -36,7 +36,9 @@ module.exports = {
             res.render ("products/paquete3", {
     
             })
-        },
+           },*/
+  
+
 
         //crear productos
         
@@ -65,7 +67,7 @@ module.exports = {
             })
             .then(() => {
              //   res.redirect(`/productos/${id}`);
-             res.redirect("products/lista")
+             return res.redirect("products/lista")
               })
 
             .catch((errors) => {
@@ -78,9 +80,9 @@ module.exports = {
          },
          lista: function (req, res){
              db.Product.findAll()
-                .then(function(productList) {
-                    res.render("products/lista", {products: productList})
-                }   )
+             .then(products => {
+                return res.render('/lista', { products })
+            })
                 
                 .catch((errors) => {
                     console.log(errors);
@@ -89,15 +91,21 @@ module.exports = {
          },
    
      //detail nueno 
-         detail: function (req, res){
-            db.Product.findByPk(req.params.id)
-               .then(function(productDetail) {
-                   res.render("products/detail", {products: productDetail})
-               }   )
-               
-              
+  
+   
+        detail(req, res) {
+            let id = req.params.id
+            db.products.findOne({ where: { id } })
+            .then(products => {
+                res.render('/lista', { products })
+            })
+            .catch(err => console.log(err))
+                .catch(() => {
+                    // la base de datos falló por algún motivo
+                    res.render('error')
+                })
+                
         },
-
 
 
 
