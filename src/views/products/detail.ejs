@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="css/paquetes.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+        <h2>Detalle de productos</h2>
+        <div class='products'>
+            <%products.forEach(product => { %>
+                <p class='product'>
+                    <img src="<%=product.image%>" height="100"/> <br>
+                    <a href='/products/<%= product.id%>'><%=product.name%> ( <%= product.price%>)
+                    </a>
+                    </p>
+          <% }) %>
+        </div>
+
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+</body>
+</html>

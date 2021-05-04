@@ -10,7 +10,7 @@ module.exports = function (sequelize, dataTypes) {
       },
       product_name: {
         type: dataTypes.STRING,
-        
+        //quizas poniendo name: y aclarando field: product_name
         
       },
       title:{
@@ -46,7 +46,7 @@ module.exports = function (sequelize, dataTypes) {
 
     let config = {
       tableName: "products",
-      timestamps: false, //hay que arreglar created_at para q sea true
+      timestamps: true, //hay que arreglar created_at para q sea true
     //  paranoid: false //deleted_at
     }
 

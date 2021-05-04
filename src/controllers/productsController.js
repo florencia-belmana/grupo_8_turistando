@@ -1,11 +1,11 @@
-let db = require ("../../database/models");
+const db = require ("../../database/models");
 // const products = require("../../database/models/products");
 
 
 module.exports = {
     buenosaires:(req, res)  =>  {
-        res.render ('products/buenosaires')
-        },
+       res.render ('products/buenosaires')
+   }, 
         
     carrito:(req, res) => {
             res.render ("products/carrito", {
@@ -42,7 +42,7 @@ module.exports = {
         
        crear:(req, res) => {
            res.render ("products/crear")
-            db.Products.findAll()
+            db.Product.findAll()
             .then(function(productList){
                 return res.render("products/lista", {products: productList})
             })
@@ -54,7 +54,7 @@ module.exports = {
         },
 
         guardar: function (req, res) {
-            db.Products.create({
+            db.Product.create({
                 product_name: req.body.product_name,
                 title: req.body.title ,
                 price: req.body.price,
@@ -77,19 +77,33 @@ module.exports = {
  
          },
          lista: function (req, res){
-             db.Products.findAll()
+             db.Product.findAll()
                 .then(function(productList) {
                     res.render("products/lista", {products: productList})
                 }   )
+                
                 .catch((errors) => {
                     console.log(errors);
                     res.send("Ha ocurrido un error")
                   });
          },
    
+     //detail nueno 
+         detail: function (req, res){
+            db.Product.findByPk(req.params.id)
+               .then(function(productDetail) {
+                   res.render("products/detail", {products: productDetail})
+               }   )
+               
+              
+        },
+
+
+
+
+         
 
     };
 
 
    
-
