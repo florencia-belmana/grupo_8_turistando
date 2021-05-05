@@ -37,8 +37,9 @@ module.exports = function(sequelize, dataTypes){
         },
         category_id: {
           type: dataTypes.INTEGER,
-        }    
-         
+        }    ,
+     
+
        /*  createdAt: {
             type: dataTypes.DATE,
           },
