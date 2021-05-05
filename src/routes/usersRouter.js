@@ -8,7 +8,6 @@ const controller  =  require ( '../controllers/usersController' );
 const validate = require('../middlewares/usersValidation')
 
 
-
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
         callback(null, path.join(__dirname, '../../public/images/users/'));
@@ -19,12 +18,9 @@ const storage = multer.diskStorage({
         // const newFilename = 'imageusuario' + Date.now() + path.extname(file.originalname);
         //cb(null, newFile);     }
 
-   
-     
         callback(null, 'user-' + Date.now() + path.extname(file.originalname));
     }
 });
-
 const upload = multer({ storage });
 
 

@@ -35,6 +35,10 @@ module.exports = function(sequelize, dataTypes){
         image:{
             type: dataTypes.STRING
         },
+        category_id: {
+          type: dataTypes.INTEGER,
+        }    
+         
        /*  createdAt: {
             type: dataTypes.DATE,
           },
@@ -44,10 +48,8 @@ module.exports = function(sequelize, dataTypes){
           deletedAt: {
             type: dataTypes.DATE,
           },
-
-          category_id: {
-            type: dataTypes.INTEGER,
-          }*/
+          */
+         
     };
 
     let config = {

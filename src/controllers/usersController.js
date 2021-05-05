@@ -1,11 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const jsonTable = require('../database/jsonTable');
-const usersTable = jsonTable('users');
+//const jsonTable = require('../database/jsonTable');
+//const usersTable = jsonTable('users');
 
 //C
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs'); //npm install bcryptjs
+
 //
 //DATABASE
 let db = require ("../../database/models")
@@ -26,7 +27,8 @@ module.exports = {
             // Si no hay errores
             if (errors.isEmpty()) {
                 // Verifico que el usuario exista
-                let user = usersTable.findByField('email', req.body.email);
+                let user =  db.Users.findByField('email', req.body.email);
+                //VIEJO let user = usersTable.findByField('email', req.body.email);
     
                 // Si el usuario existe
                 if (user) {
@@ -71,9 +73,9 @@ module.exports = {
         },
 
     /////////
-
+        //register nada mas render
     register:(req, res) => {
-            res.render ("users/register", {
+        res.render ("users/register", {
     
             })
         }, 
@@ -88,7 +90,30 @@ module.exports = {
             // Generamos el nuevo usuario
             let user = req.body;
             user.password = bcrypt.hashSync(user.password);
-    
+     
+     //// NUEVO DE DB
+     
+            db.Users.create({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name ,
+                email: req.body.email,
+                password: req.body.password ,
+                image: req.body.image,
+                country: req.body.country
+
+
+            })
+            .then(() => {
+             //   res.redirect(`/productos/${id}`);
+             return res.redirect("users/detail", {users})
+              })
+
+            .catch((errors) => {
+                console.log(errors);
+                res.send("Ha ocurrido un error")
+              });
+
+    ///////
             if (req.file) {
                 user.image = req.file.filename;
             } 
@@ -97,9 +122,10 @@ module.exports = {
             //    res.send('La imagen es obligatoria');
             //} NO ES NECESARIO
             
-            let userId = usersTable.create(user);
+    //        let userId = usersTable.create(user);
             
-            res.redirect('users/userList/' + userId);
+            res.redirect('users/userList/' + //userId
+            {user});
 
         // Si hay errores    
         } else {
@@ -110,49 +136,81 @@ module.exports = {
     
 
     userList:(req, res) => {
-        let users = usersTable.all()
-        res.render ("users/userList", {
+        db.Users.findAll()
+        .then(users => {
+           return res.render('users/userList', { users })
+       })
+           
+           .catch((errors) => {
+               console.log(errors);
+               res.send("Ha ocurrido un error")
+             });
+
+              //VIEJO
+      /*  let users = usersTable.all()
+         res.render ("users/userList", {
             title: 'Listado de usuarios', 
             users
-        })
-    }, 
+        })*/
+
+    },
+     
+      
 
     show: (req, res) => {
-        let user = usersTable.find(req.params.id);
+       //VIEJO
+      /* let user = usersTable.find(req.params.id);
 
         if ( user ) {
             res.render('users/detail', { user });
         } else {
             res.send('No encontré el usuario');
         }
+        */
     },
        
     edit: (req, res) => {
-        let user = usersTable.find(req.params.id);
+        let id = req.params.id
+        db.Users.findOne({ where: { id } })
+            .then(users => {
+                res.render('users/detail', { users })
+            })
+            .catch(err => console.log(err))
+
+        //VIEJO
+       /* let user = usersTable.find(req.params.id);
 
         res.render('users/edit', { user });
+        */ 
     },
 
     destroy: (req, res) => {
-        let users = usersTable.all()
+        //VIEJO
+        /* let users = usersTable.all()
 
         usersTable.delete(req.params.id);
 
         res.redirect("users/userList", {
             title: 'Listado de usuarios', 
             users
-        })
+        })*/
     },
 
     detail:(req, res) => {
-        res.render ("users/detail", {
+        let id = req.params.id
+        db.Users.findOne({ where: { id } })
+            .then(users => {
+                res.render('users/detail', { users })
+            })
+            .catch(err => console.log(err))
+       /* res.render ("users/detail", {
     
-        })
+        })*/
     }, 
     
    
         update: (req, res) => {
-            let user = req.body;
+           /* let user = req.body;
             user.id = Number(req.params.id);
     
             // Si viene una imagen nueva la guardo
@@ -166,7 +224,7 @@ module.exports = {
     
             let userId = usersTable.update(user);
     
-            res.redirect('/users/' + userId);
+            res.redirect('/users/' + userId);*/
         },
     
 

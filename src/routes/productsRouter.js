@@ -15,13 +15,10 @@ const storage = multer.diskStorage({
         //VER SI FUNCIONARIA ALGO ASI:
         // const newFilename = 'imageusuario' + Date.now() + path.extname(file.originalname);
         //cb(null, newFile);     }
-
-   
-     
-        callback(null, 'destino' + Date.now() + path.extname(file.originalname));
+        
+        callback(null, 'destino' + path.extname(file.originalname));
     }
 });
-
 const upload = multer({ storage });
 
 
