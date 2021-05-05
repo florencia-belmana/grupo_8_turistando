@@ -24,9 +24,19 @@
                         <a href='/lista/<%= product.id%>'>
                         <img src="<%=product.image%>" height="100"/> <br>
                          <p>Ver detalle</p></a> <%=product.title%>  ( <a>$ </a><%= product.price%> )
-                        <p>Editar paquete </p> 
-                        <p>Borrar paquete </p>
-                        
+           
+
+                        <div class="button">
+                            <button class= btn sm btn-pink-outline>
+                                <a href="/edit/<%= product.id%>">EDITAR</a>
+                            </button>
+                        </div>
+                        <br>
+                        <div class="button">
+                            <button class= btn sm btn-pink-outline>
+                                <a href="/carrito">BORRAR</a>
+                            </button>
+                        </div>
                         <hr>
                         
                         </p>

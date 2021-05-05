@@ -41,7 +41,8 @@ router.post("/crear", upload.single('image'), controller.guardar)
 router.get("/lista", controller.lista)
 router.get("/lista/:id", controller.detail)
 
-
+router.get("/edit/:id", controller.getproduct)
+/*router.put("/edit/:id", controller.update) */
 
 
 module.exports = router

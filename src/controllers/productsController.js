@@ -47,7 +47,7 @@ module.exports = {
            res.render ("products/crear");
             db.Products.findAll()
             .then((products)=> {
-                return res.render("products/lista", {products:products});
+                return res.render("admin/lista", {products:products});
             })
             .catch((error) => {
                 console.log(error);
@@ -68,7 +68,7 @@ module.exports = {
             })
             .then((products) => {
              //   res.redirect(`/productos/${id}`);
-             return res.redirect("products/lista")
+             return res.redirect("admin/lista")
               })
 
             .catch((errors) => {
@@ -82,7 +82,7 @@ module.exports = {
          lista: function (req, res){
              db.Products.findAll()
              .then(products => {
-                return res.render('products/lista', { products })
+                return res.render('admin/lista', { products })
             })
                 
                 .catch((errors) => {
@@ -90,10 +90,28 @@ module.exports = {
                     res.send("Ha ocurrido un error")
                   });
          },
-   
+
+
+   // getproduct metodo nuevo para que al editar productos me traiga solo el que tengo que editar
+
+   getproduct: (req, res) => {
+    // Implementar APIs, levantarlas con JS y borrar el resto, dejar solo esta
+    // return res.render('productDetail')
+    let idP = req.params.id;
+    db.Products.findOne({ where: { id: idP } })
+        .then(function (product) {
+           res.render('admin/edit/'+idP, { product })
+        })
+        .catch(err => console.log(err))
+},
+
+
+
+
+
+
      //detail nueno 
   
-   
   detail: (req, res) => {
         // Implementar APIs, levantarlas con JS y borrar el resto, dejar solo esta
         // return res.render('productDetail')
@@ -108,9 +126,33 @@ module.exports = {
 
 
 
-         
+    update: function (req, res) {
+        db.Products.update({
+            product_name: req.body.product_name,
+            title: req.body.title ,
+            price: req.body.price,
+            image: req.body.image ,
+            description: req.body.description,
 
-    };
+
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then((products) => {
+         //   res.redirect(`/productos/${id}`);
+         return res.redirect("admin/lista")
+          })
+
+        .catch((errors) => {
+            console.log(errors);
+            res.send("Ha ocurrido un error")
+          });
+
+    },
 
 
    
+
+   };
