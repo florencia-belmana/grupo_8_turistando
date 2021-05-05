@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require('../controllers/mainController')
 
 router.get('/', controller.index);
+router.get('/index-admin', controller.indexAdmin);
 router.get('/contacto', controller.contact);
 
 
