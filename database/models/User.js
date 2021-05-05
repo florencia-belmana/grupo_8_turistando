@@ -35,7 +35,7 @@ module.exports = function(sequelize, dataTypes){
         image:{
             type: dataTypes.STRING
         },
-         createdAt: {
+       /*  createdAt: {
             type: dataTypes.DATE,
           },
           updatedAt: {
@@ -47,13 +47,13 @@ module.exports = function(sequelize, dataTypes){
 
           category_id: {
             type: dataTypes.INTEGER,
-          }
+          }*/
     };
 
     let config = {
         tableName: "users",
-        timestamps: true,
-        paranoid: true,
+        timestamps: false,
+      /*  paranoid: true,*/
       }
 
     let Users = sequelize.define(alias,cols, config);
