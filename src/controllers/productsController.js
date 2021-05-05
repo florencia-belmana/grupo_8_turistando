@@ -106,10 +106,6 @@ module.exports = {
 },
 
 
-
-
-
-
      //detail nueno 
   
   detail: (req, res) => {

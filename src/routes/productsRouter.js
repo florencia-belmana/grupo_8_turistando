@@ -22,7 +22,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-
 router.get( '/buenosaires' , controller.buenosaires ) ;
 router.get( '/carrito' , controller.carrito )
 
@@ -41,7 +40,7 @@ router.post("/crear", upload.single('image'), controller.guardar)
 router.get("/lista", controller.lista)
 router.get("/lista/:id", controller.detail)
 
-router.get("/edit/:id", controller.getproduct)
+router.get("/lista/:id", controller.getproduct)
 /*router.put("/edit/:id", controller.update) */
 
 

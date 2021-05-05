@@ -10,42 +10,22 @@
     </header>
     <main>
         <br>
-        <form action="/crear">
-            <input type="submit" value="Crear nuevo paquete"/>
-        </form>
-        <br>
-
-        <ul>   
-            <h2>Detalle de paquetes</h2>
-            <hr>
+        <form action="/delete"></form>
             <div class='products'>
                 <%products.forEach(product => { %>
                     <p class='product'>
                         <a href='/lista/<%= product.id%>'>
                         <img src="<%=product.image%>" height="100"/> <br>
                          <p>Ver detalle</p></a> <%=product.title%>  ( <a>$ </a><%= product.price%> )
-           
+                        <div class="button">
+                            <button class= btn sm btn-pink-outline>
+                                <a href="/delete/<%= product.id%>">BORRAR</a>
+                            </button>
+                        </div>
 
-                        <div class="button">
-                            <button class= btn sm btn-pink-outline>
-                                <a href="/lista/<%= product.id%>">EDITAR</a>
-                            </button>
-                        </div>
-                        <br>
-                        <div class="button">
-                            <button class= btn sm btn-pink-outline>
-                                <a href="">BORRAR</a>
-                            </button>
-                        </div>
-                        <hr>
-                        
-                        </p>
               <% }) %>
               
             </div>
-           
-        </ul>
-
     </main>
     <footer>
         <%- include('../partials/footer.ejs') %>
