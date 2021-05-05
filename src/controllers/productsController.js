@@ -93,19 +93,17 @@ module.exports = {
      //detail nueno 
   
    
-        detail(req, res) {
-            let id = req.params.id
-            db.products.findOne({ where: { id } })
-            .then(products => {
-                res.render('products/lista', { products })
+  detail: (req, res) => {
+        // Implementar APIs, levantarlas con JS y borrar el resto, dejar solo esta
+        // return res.render('productDetail')
+        let id = req.params.id
+        db.Products.findOne({ where: { id } })
+            .then(product => {
+                res.render('products/detail', { product })
             })
             .catch(err => console.log(err))
-                .catch(() => {
-                    // la base de datos falló por algún motivo
-                    res.render('404')
-                })
-                
-        },
+    },
+
 
 
 
