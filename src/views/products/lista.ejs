@@ -9,37 +9,32 @@
         <%- include('../partials/header.ejs') %>
     </header>
     <main>
+        <br>
+        <form action="/crear">
+            <input type="submit" value="Crear nuevo paquete"/>
+        </form>
+        <br>
 
-        <ul>    
-            <li>
-                <a href="../products/crear.ejs"> Crear paquete </a>
-            </li>
-        </ul>
         <ul>   
-            <h2>Detalle de productos</h2>
+            <h2>Detalle de paquetes</h2>
+            <hr>
             <div class='products'>
                 <%products.forEach(product => { %>
                     <p class='product'>
+                        <a href='/lista/<%= product.id%>'>
                         <img src="<%=product.image%>" height="100"/> <br>
-                        <a href='/products/<%= products.id%>'><%=product.title%> ( <%= product.price%>)
-                        </a>
+                         <p>Ver detalle</p></a> <%=product.title%>  ( <a>$ </a><%= product.price%> )
+                        <p>Editar paquete </p> 
+                        <p>Borrar paquete </p>
+                        
+                        <hr>
+                        
                         </p>
               <% }) %>
+              
             </div>
            
-
         </ul>
-
-
-
-
-<!--ACA PODRIA IR  LO DE DETAIL -->
-       
-
-
-
-
-
 
     </main>
     <footer>
