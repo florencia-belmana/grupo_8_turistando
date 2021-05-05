@@ -3,15 +3,11 @@ module.exports = function (sequelize, dataTypes) {
     let alias = "Products";
     let cols = {
       id: {
-        type: dataTypes.INTEGER,
-       
+        type: dataTypes.INTEGER, 
         autoIncrement: true,
         primaryKey: true,
-      },
-      product_name: {
-        type: dataTypes.STRING,
-        //quizas poniendo name: y aclarando field: product_name
-        
+     
+ 
       },
       title:{
         type: dataTypes.STRING,
@@ -29,18 +25,19 @@ module.exports = function (sequelize, dataTypes) {
       description: {
         type: dataTypes.TEXT,
       },
-      created_at: {
+     /* createdAt: {
         type: dataTypes.DATE,
-        
-      },
-      updated_at: {
+        allowNull: true
+     },
+       updatedAt: {
         type: dataTypes.DATE,
-        
-      },
-      deleted_at: {
-        type: dataTypes.DATE,
-        
-      },
+        allowNull: true
+     },
+      deletedAt: {
+      type: dataTypes.DATE,
+      allowNull: true
+     }*/
+
     
     };
 

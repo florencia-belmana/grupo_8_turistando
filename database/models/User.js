@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes){
             autoIncrement: true,
             primaryKey: true,
         },
-        name :{
+        first_name :{
             type: dataTypes.STRING,
             allowNull: false,
         },
@@ -32,10 +32,10 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING,
             allowNull: false,
         },
-        user_img :{
+        image:{
             type: dataTypes.STRING
         },
-              createdAt: {
+         createdAt: {
             type: dataTypes.DATE,
           },
           updatedAt: {
@@ -44,6 +44,7 @@ module.exports = function(sequelize, dataTypes){
           deletedAt: {
             type: dataTypes.DATE,
           },
+
           category_id: {
             type: dataTypes.INTEGER,
           }

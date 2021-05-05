@@ -21,7 +21,7 @@
                 <%products.forEach(product => { %>
                     <p class='product'>
                         <img src="<%=product.image%>" height="100"/> <br>
-                        <a href='/products/<%= product.id%>'><%=product.name%> ( <%= product.price%>)
+                        <a href='/products/<%= products.id%>'><%=product.title%> ( <%= product.price%>)
                         </a>
                         </p>
               <% }) %>

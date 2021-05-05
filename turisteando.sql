@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2021 a las 04:49:50
+-- Tiempo de generación: 05-05-2021 a las 02:13:50
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -48,24 +48,24 @@ INSERT INTO `categories` (`id`, `type`) VALUES
 
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `product_name` varchar(255) COLLATE utf8_bin NOT NULL,
   `title` varchar(255) COLLATE utf8_bin NOT NULL,
-  `price` decimal(10,5) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   `image` varchar(255) COLLATE utf8_bin NOT NULL,
   `description` varchar(255) COLLATE utf8_bin NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `delete_at` timestamp NULL DEFAULT NULL
+  `createdAt` timestamp NULL DEFAULT NULL,
+  `updateAt` timestamp NULL DEFAULT NULL,
+  `deletedAt` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `product_name`, `title`, `price`, `image`, `description`, `created_at`, `updated_at`, `delete_at`) VALUES
-(1, 'paquete1', 'patagonia en verano', '50.99000', '', 'Recorré el sur con nosotros, te mostramos los mejores paisajes y actividades.', NULL, NULL, NULL),
-(2, 'paquete2', 'RECORRIENDO EL NORTE: JUJUY 360°', '40.50000', '', 'Conocé todos los pasiajes del norte y sus atracciones.', NULL, NULL, NULL),
-(3, 'paquete3', 'LA RUTA DEL VINO EN MENDOZA', '52.99000', '', 'Conocé las mejores bodegas de la región', NULL, NULL, NULL);
+INSERT INTO `products` (`id`, `title`, `price`, `image`, `description`, `createdAt`, `updateAt`, `deletedAt`) VALUES
+(1, 'PATAGONIA EN VERANO', '50990.00', 'https://volemos.nyc3.digitaloceanspaces.com/blog/wp-content/uploads/2018/09/fitzroy-nevado.jpg', 'Recorré el sur con nosotros, te mostramos los mejores paisajes y actividades.', NULL, NULL, NULL),
+(2, 'RECORRIENDO EL NORTE: JUJUY 360°', '40500.00', 'https://www.elancasti.com.ar/u/fotografias/m/2020/5/6/f800x450-192553_243999_5050.jpg', 'Conocé todos los pasiajes del norte y sus atracciones.', NULL, NULL, NULL),
+(3, 'LA RUTA DEL VINO EN MENDOZA', '52990.00', 'https://assets.turismocity.com/cdn-cgi/image/format=auto,width=1400,fit=scale-down/valle%20de%20uco.png', 'Conocé las mejores bodegas de la región', NULL, NULL, NULL),
+(4, '', '0.00', '', '', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -80,9 +80,9 @@ CREATE TABLE `users` (
   `email` varchar(100) COLLATE utf8_bin NOT NULL,
   `password` varchar(255) COLLATE utf8_bin NOT NULL,
   `country` varchar(45) COLLATE utf8_bin NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
+  `createdAt` timestamp NULL DEFAULT NULL,
+  `updatedAt` timestamp NULL DEFAULT NULL,
+  `deletedAt` timestamp NULL DEFAULT NULL,
   `image` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `category_id` varchar(45) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -91,7 +91,7 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `country`, `created_at`, `updated_at`, `deleted_at`, `image`, `category_id`) VALUES
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `country`, `createdAt`, `updatedAt`, `deletedAt`, `image`, `category_id`) VALUES
 (1, 'florencia', 'belmaña', 'florbel_03@hotmail.com', '$2a$10$0P0dl/dNqKWTo.0F3N8u5.h906LQyRE6La7pJt', 'arg', NULL, NULL, NULL, 'user-1620083695889.jpg', '1'),
 (2, 'alvaro', 'sopeña', 'alvarosopenaf@gmail.com', '$2a$10$lEdY9WUNyAF5aGLicbe78eF8mtWzqbsfmExBij', 'arg', NULL, NULL, NULL, 'user-1620083787486.jpg', '1'),
 (3, 'juan', 'perez', 'juanperez@gmail.com', '$2a$10$eq7Wj8IPqnYxrcyoAq7FjOiW9rqZVwBn7GmvUS', 'arg', NULL, NULL, NULL, 'user-1620083844430.jpg', '2'),
@@ -135,7 +135,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
