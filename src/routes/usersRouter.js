@@ -13,12 +13,7 @@ const storage = multer.diskStorage({
         callback(null, path.join(__dirname, '../../public/images/users/'));
     },
     filename: (req, file, callback) => {
-        // Mejor usar algo como esto en lugar de Date.now()
-        //VER SI FUNCIONARIA ALGO ASI:
-        // const newFilename = 'imageusuario' + Date.now() + path.extname(file.originalname);
-        //cb(null, newFile);     }
-
-        callback(null, 'user-' + Date.now() + path.extname(file.originalname));
+         callback(null, 'user-' + Date.now() + path.extname(file.originalname));
     }
 });
 const upload = multer({ storage });
