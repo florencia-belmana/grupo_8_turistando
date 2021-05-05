@@ -27,16 +27,17 @@ module.exports = {
             // Si no hay errores
             if (errors.isEmpty()) {
                 // Verifico que el usuario exista
-                let user =  db.Users.findByField('email', req.body.email);
+                let user =  db.Users.findOne({ where:{'email': req.body.email}});
+                
                 //VIEJO let user = usersTable.findByField('email', req.body.email);
     
                 // Si el usuario existe
                 if (user) {
                     // La contraseña es la correcta
-                    if (bcrypt.compareSync(req.body.password, user.password)) {
+                    if (bcrypt.compareSync(req.body.password, db.Users.password)) {
                         req.session.user = user;
     
-                        return res.redirect('/userList/' + user.id)
+                        return res.redirect('/userList/' + db.Users.id)
     
                     // Si la contraseña es incorrecta
                     } else {
@@ -99,8 +100,8 @@ module.exports = {
                 email: req.body.email,
                 password: req.body.password ,
                 image: req.body.image,
-                country: req.body.country
-
+                country: req.body.country,
+                category_id: req.body.category_id
 
             })
             .then(() => {
