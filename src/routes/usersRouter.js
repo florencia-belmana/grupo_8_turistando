@@ -7,7 +7,7 @@ const controller  =  require ( '../controllers/usersController' );
 ///C
 const validate = require('../middlewares/usersValidation')
 
-//configuraci{on de almacenamiento
+//configuracion de almacenamiento
 
 
 const storage = multer.diskStorage({
@@ -21,18 +21,17 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
+//Login / Register
 
 router.get( '/login' , controller.login ) ;
 router.get( '/register' , controller.register );
-// router.get( '/detail' , controller.detail );
 
+//Vista de usuarios
 router.get('/userList', controller.userList);
 router.get('/userList/:id', controller.detail);
 
-//vendria a ser el register
-//router.get('/create', controller.create);
-
 //Procesa el formulario de creación
+router.get( '/register' , controller.register );
 router.post('/', upload.single('image'), controller.store); 
 router.get('/:id/edit', controller.edit);
 router.put('/:id', upload.single('image'), controller.update);
@@ -42,8 +41,5 @@ router.delete('/:id', controller.destroy);
 router.post('/login', validate.login, controller.authenticate);
 router.get('/logout', controller.logout);
 
-/// sequalize - crear usuarios
-//router.get("/crear")
-router.get( '/register' , controller.register );
 
 module.exports = router
