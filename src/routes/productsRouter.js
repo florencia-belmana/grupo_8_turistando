@@ -43,6 +43,6 @@ router.put("/admin/edit/:id", controller.update)
 
 //DELETE
 
-router.delete('/admin/delete/:id', controller.destroy);
+router.delete('/admin/edit/:id', controller.destroy);
 
 module.exports = router
