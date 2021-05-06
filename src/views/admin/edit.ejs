@@ -4,24 +4,20 @@
     <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/paquetes.css">
 </head>
-<body>
-    <header>
+    <body>
+<header>
         <%- include('../partials/header.ejs') %>
-    </header>
+</header>
 
 
     <h2>Editar producto</h2>
-    <form action="/edit"<%= product.id %>?_method="PUT" enctype="multipart/form-data"></form>
-
+            <form action="/edit<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
     <h2><%= product.title %></h2> 
-        
-
        <div class="field">
         <label for="first_name">Titulo</label>
         <div>
             <input type="text" name="titulo" id="first_name" value="<%= product.title %>">
-        </div>
-      
+        </div>     
     </div>
 
     <div class="field">
@@ -29,7 +25,6 @@
         <div>
             <input type="text" name="price" id="price" value="<%= product.price %>">
         </div>    
-
     </div>
 
     <div class="field">
@@ -37,21 +32,23 @@
         <div>
             <input type="file" name="image" id="image" value="<%= product.image %>">
         </div>
+    </div>  
     </div>
-  
-</div>
 
 
 
-<div class="button">
-    <button class= btn sm btn-pink-outline>
-        <a href="/lista">EDITAR</a>
-    </button>
-</div>
 
 
-<form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=delete" method="POST">
-    <button class="button is-danger">BORRAR</button>
+
+        <div class="button">
+            <button class= btn sm btn-pink-outline>
+                <a href="/lista">EDITAR</a>
+            </button>
+        </div>
+
+
+        <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=delete" method="POST">
+            <button class="button is-danger">BORRAR</button>
 
 
 

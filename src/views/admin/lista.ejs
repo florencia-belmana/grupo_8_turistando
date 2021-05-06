@@ -22,22 +22,29 @@
                 <%products.forEach(product => { %>
                     <p class='product'>
                         <a href='/lista/<%= product.id%>'>
-                        <img src="<%=product.image%>" height="100"/> <br>
-                         <p>Ver detalle</p></a> <%=product.title%>  ( <a>$ </a><%= product.price%> )
-           
 
+                        <img src="<%=product.image%>" height="100"/>
+                         <br>         
+                   </a> <%=product.title%>  ( <a>$ </a><%= product.price%> )
+           
+                         <div class="button">
+                          <button class= btn sm btn-pink-outline>
+                               <a href="/lista/<%= product.id%>">VER DETALLE</a>
+                           </button>
+                          </div>
+                        <br>
                         <div class="button">
                             <button class= btn sm btn-pink-outline>
-                                <a href="/lista/<%= product.id%>">EDITAR</a>
+                                <a href="admin/edit/<%= product.id%>">EDITAR</a>
                             </button>
                         </div>
                         <br>
-                        <div class="button">
+                        <!-- <div class="button">
                             <button class= btn sm btn-pink-outline>
                                 <a href="">BORRAR</a>
                             </button>
                         </div>
-                        <hr>
+                        <hr> -->
                         
                         </p>
               <% }) %>
