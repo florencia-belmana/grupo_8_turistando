@@ -9,24 +9,20 @@
     <%- include('partials/header.ejs') %>
     <main>
          
-        <h2> Sección usuario </h2>
+        <h2> Turisteando es la pagina que estabas buscando para empezar tus vacaciones por Argentina </h2>
+        <div class="pic-container1">
         <ul>
-            <li><a href="/user/2"> Tu perfil de viajero: - que el id y el nombre se pase cuando se haga el login </a> </li>
+            <li><a href="/user/2"> Bienvenido: viajer@ / name ! - que el el name se pase cuando se haga el login / viajero si no esta registrado</a> </li>
             <li><a href="/logout">Cerra sesión </li>
         </ul>
-              
-<h3 class="color-h3">Elegi tu próximo destino</h3>
+    </div>
+    <h3 class="color-h3">Elegi tu próximo destino</h3>
 
-      <!--primer box de fotos -->
-            
-       
         <br>
-        <div class="container1"></div>
-    <div class="pic-container1">
+    <div class="container"> <!-- que la pagina este en containter-->
+    <div class="pic-container1"> <!-- que las paquetes esten en fila-->
   
-
-<!--SUR PAQUETE1-->
-
+    <!--PAQUETE1-->
         <div class="pic-item">
             <img src="/images/barilo2.jpg" alt="picture">
             <div class="button">
@@ -34,10 +30,8 @@
                     <a href="/lista/1">+INFO</a>
                 </button>
             </div>
-
             <p>
                <nav><a href="/lista/1">Patagonia en verano</a></nav> 
-
             </p>
             <div class="card-text">
                 <p>Recorré el sur con nosotros, te mostramos los mejores paisajes y actividades.</p>
@@ -46,7 +40,8 @@
                 <p>$50.990</p>
             </div>
         </div>
-<!--NORTE PQUETE2-->
+
+    <!--PAQUETE2-->
         <div class="pic-item">
             <img src="/images/norte2.jpg" alt="picture">
             <div class="button">
@@ -65,17 +60,14 @@
                 </div>
         </div>
 
-<!-- MZAPAQUETE3-->
+    <!--PAQUETE3-->
         <div class="pic-item">
             <img src="images/vino2.jpg" alt="picture">
             <div class="button">
                 <button class= btn sm btn-pink-outline>
                     <a href="/lista/3">+INFO</a>
-
                 </button>
-                
             </div>
-
             <p>
                 <nav><a href="/lista/3">La ruta del vino en mendoza</a></nav> 
             </p>
@@ -86,10 +78,9 @@
                 <p>$52.990</p>
             </div>
         </div>
-          </div>
-
-
-        </div>
+        
+    </div>
+    </div>
      
 
         <!-- PARTE CON BD -->
