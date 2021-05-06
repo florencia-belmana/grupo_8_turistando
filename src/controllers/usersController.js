@@ -221,6 +221,18 @@ module.exports = {
     },
 
     destroy: (req, res) => {
+
+        
+            const id = req.params.id
+            db.Users.destroy( {
+                where : {
+                    id
+                }
+            })
+            .then ( () => { 
+                 res.redirect ("/")
+            })
+         
             //VIEJO
             /* let users = usersTable.all()
     
@@ -231,19 +243,7 @@ module.exports = {
                 users
             })*/
         },
-    
-        // 
-        show: (req, res) => {
-            //VIEJO
-           /* let user = usersTable.find(req.params.id);
-             if ( user ) {
-                 res.render('users/detail', { user });
-             } else {
-                 res.send('No encontré el usuario');
-             }*/
-             
-         },
-
+  
 
     }
 
