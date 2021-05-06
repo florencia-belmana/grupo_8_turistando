@@ -95,22 +95,21 @@ module.exports = {
    // getproduct metodo nuevo para que al editar productos me traiga solo el que tengo que editar
 
    getproduct: (req, res) => {
-    // Implementar APIs, levantarlas con JS y borrar el resto, dejar solo esta
-    // return res.render('productDetail')
-    let idP = req.params.id;
-    db.Products.findOne({ where: { id: idP } })
-        .then(function (product) {
-           res.render('admin/edit/'+idP, { product })
+
+    db.Products.findByPk(req.params.id)
+        .then(function (response) {
+           let product = response.dataValues;
+          /*  res.send(product) */
+         res.render('admin/edit', { product }) 
         })
         .catch(err => console.log(err))
+ 
 },
 
 
-     //detail nueno 
+//DETALLE DE CADA PRODUCTO
   
   detail: (req, res) => {
-        // Implementar APIs, levantarlas con JS y borrar el resto, dejar solo esta
-        // return res.render('productDetail')
         let id = req.params.id
         db.Products.findOne({ where: { id } })
             .then(product => {
@@ -137,7 +136,7 @@ module.exports = {
             }
         })
         .then((products) => {
-         //   res.redirect(`/productos/${id}`);
+
          return res.redirect("admin/lista")
           })
 

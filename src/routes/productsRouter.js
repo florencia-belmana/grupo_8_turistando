@@ -25,7 +25,7 @@ const upload = multer({ storage });
 router.get( '/buenosaires' , controller.buenosaires ) ;
 router.get( '/carrito' , controller.carrito )
 
-
+//RUTAS VIEJAS ANTES DE DB
 // router.get( '/paquetes' , controller.paquetes ) ;
 
 /* router.get( '/paquete1' , controller.paquete1 ) ;
@@ -40,8 +40,8 @@ router.post("/crear", upload.single('image'), controller.guardar)
 router.get("/lista", controller.lista)
 router.get("/lista/:id", controller.detail)
 
-router.get("/lista/:id", controller.getproduct)
-/*router.put("/edit/:id", controller.update) */
+router.get("/admin/edit/:id", controller.getproduct)
+router.put("/admin/edit/:id", controller.update) 
 
 
 module.exports = router
