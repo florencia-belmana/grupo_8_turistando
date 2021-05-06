@@ -30,8 +30,8 @@ router.post('/', upload.single('image'), validate.register, controller.store);
 
 //edit y destroy
 router.get('/edit/:id', controller.edit);
-router.put('/edit/:id', upload.single('image'), validate.update, controller.update);
-router.delete('/edit/:id', controller.destroy);
+router.put('/edit/:id', upload.single('image'), controller.update);
+//router.delete('/edit/:id', controller.destroy);
 
 //// login
 router.get( '/login', controller.login ) ;

@@ -25,8 +25,8 @@
             <p>Email: <a href="mailto:<%= users.email %>" target="_blank"><%= users.email %></a></p>
             <div>
                
-                <a class="button is-warning" href="/userList/<%= users.id %>/edit">Editar</a>
-                <form class="form is-inline" action="/userList/<%= users.id %>?_method=delete" method="POST">
+                <a class="button is-warning" href="/edit/<%= users.id %>">Editar</a>
+                <form class="form is-inline" action="/edit/<%= users.id %>?_method=delete" method="POST">
                     <button class="button is-danger">Borrar</button>
                 </form>
 

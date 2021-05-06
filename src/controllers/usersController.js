@@ -160,7 +160,7 @@ module.exports = {
         let id = req.params.id
         db.Users.findOne({ where: { id } })
             .then(users => {
-                res.render('users/detail', { users })
+                res.render('users/edit', { users })
             })
             .catch((errors) => {
                 console.log(errors);
@@ -175,8 +175,7 @@ module.exports = {
  
     
     update: (req, res) => {
-
-        db.Users.update({
+        db.Products.update({
             first_name: req.body.first_name,
             last_name: req.body.last_name ,
             email: req.body.email,
@@ -190,14 +189,16 @@ module.exports = {
                 id: req.params.id
             }
         })
-        .then(users => {
-            res.render('users/edit', { users })
-        })
+        .then((products) => {
+
+         return res.redirect("users/detail")
+          })
 
         .catch((errors) => {
             console.log(errors);
             res.send("Ha ocurrido un error")
           });
+
            /* let user = req.body;
             user.id = Number(req.params.id);
     

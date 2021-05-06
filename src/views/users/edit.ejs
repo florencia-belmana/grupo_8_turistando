@@ -15,7 +15,7 @@
                 <div class="columns is-centered">
                     <div class="column is-6">
                         <h1>Editar usuario</h1>
-                        <form action="/users/<%= users.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <form action="/users/<%= users.id %>?_method=PUT" method="PUT" enctype="multipart/form-data">
 
                             <div class="field">
                                 <label for="first_name">Nombre</label>
@@ -63,8 +63,8 @@
                                 <div class="control">
                                     <select name="category" id="category">
                                         <option value="">Seleccione una opción</option>
-                                        <option value="Administrador" <%= user.category == 'Administrador' ? 'selected' : ''; %>>Administrador</option>
-                                        <option value="Viajero" <%= user.category == 'Viajero' ? 'selected' : ''; %>>Viajero</option>
+                                        <option value="Administrador" <%= users.category == 'Administrador' ? 'selected' : ''; %>>Administrador</option>
+                                        <option value="Viajero" <%= users.category == 'Viajero' ? 'selected' : ''; %>>Viajero</option>
                                     </select>
                                 </div>
                                 <p class="feedback"></p>
