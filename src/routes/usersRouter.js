@@ -9,7 +9,6 @@ const validate = require('../middlewares/usersValidation')
 
 //configuracion de almacenamiento
 
-
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
         callback(null, path.join(__dirname, '../../public/images/users/'));
@@ -21,24 +20,24 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-//Login / Register
-
-router.get( '/login' , controller.login ) ;
-router.get( '/register' , controller.register );
-
 //Vista de usuarios
 router.get('/userList', controller.userList);
 router.get('/userList/:id', controller.detail);
 
 //Procesa el formulario de creación
 router.get( '/register' , controller.register );
-router.post('/', upload.single('image'), controller.store); 
-router.get('/:id/edit', controller.edit);
-router.put('/:id', upload.single('image'), controller.update);
-router.delete('/:id', controller.destroy);
+router.post('/', upload.single('image'), validate.register, controller.store); 
 
+//edit y destroy
+router.get('/edit/:id', controller.edit);
+router.put('/edit/:id', upload.single('image'), validate.update, controller.update);
+router.delete('/edit/:id', controller.destroy);
+
+//// login
+router.get( '/login', controller.login ) ;
 //// Proceso form de login
 router.post('/login', validate.login, controller.authenticate);
+
 router.get('/logout', controller.logout);
 
 

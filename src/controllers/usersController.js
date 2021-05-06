@@ -12,7 +12,7 @@ const bcrypt = require('bcryptjs'); //npm install bcryptjs
 let db = require ("../../database/models")
 
 module.exports = {
-    ///LISTADO DE USUARIOS POR GET
+    ///LISTADO DE USUARIOS Y DETAIL POR GET
     userList:(req, res) => {
         db.Users.findAll()
 
@@ -31,6 +31,20 @@ module.exports = {
             title: 'Listado de usuarios', 
             users})*/
     },
+
+    detail:(req, res) => {
+        let id = req.params.id
+        db.Users.findOne({ where: { id } })
+            .then(users => {
+                res.render('users/detail', { users })
+            })
+            .catch((errors) => {
+                console.log(errors);
+                res.send("Ha ocurrido un error")
+            });
+       /* res.render ("users/detail", {
+        })*/
+    }, 
 
     ///LOGIN Y AUTENTICACION
     login:(req, res)  =>  {
@@ -95,7 +109,7 @@ module.exports = {
         }, 
 
     ////////STORE POST
-    store: (req, res) => {
+    store: async (req, res) => {
         // Valido los campos - aca ver req.file
          let errors = validationResult(req);
         // Me fijo si no hay errores
@@ -132,7 +146,8 @@ module.exports = {
             //USUARIO CREADO - REDIRECT INDEX 
             //let userId = usersTable.create(user);
             return res.redirect("/")
-           // return res.redirect('/userList/' + {user: user.id}) //NO REDIRECCIONA A ID 
+            //NO REDIRECCIONA A ID 
+            //return await res.redirect('/userList/' + {user}) 
     
             // Si hay errores    
             } else {
@@ -140,7 +155,7 @@ module.exports = {
             return res.render('users/register', { errors: errors.mapped(), old: req.body });
         }
     },
-    
+    ///EDIT GET
     edit: (req, res) => {
         let id = req.params.id
         db.Users.findOne({ where: { id } })
@@ -158,22 +173,31 @@ module.exports = {
         */ 
     },
  
-    detail:(req, res) => {
-        let id = req.params.id
-        db.Users.findOne({ where: { id } })
-            .then(users => {
-                res.render('users/detail', { users })
-            })
-            .catch((errors) => {
-                console.log(errors);
-                res.send("Ha ocurrido un error")
-            });
-       /* res.render ("users/detail", {
-    
-        })*/
-    }, 
     
     update: (req, res) => {
+
+        db.Users.update({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name ,
+            email: req.body.email,
+            password: req.body.password ,
+            image: req.body.image,
+            country: req.body.country,
+            category_id: req.body.category_id
+
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(users => {
+            res.render('users/edit', { users })
+        })
+
+        .catch((errors) => {
+            console.log(errors);
+            res.send("Ha ocurrido un error")
+          });
            /* let user = req.body;
             user.id = Number(req.params.id);
     
