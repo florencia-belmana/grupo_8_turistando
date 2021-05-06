@@ -135,22 +135,28 @@ module.exports = {
 
     },
 
-    destroy: function(req, res) {
-            db.Product.destroy({
-                where: {
-                    id: req.params.id
-                }
-            })          
-        .then(()=>{
-            res.redirect('/admin/lista'); 
-        })
-        .catch((errors) => {
-            console.log(errors);
-            res.send("Ha ocurrido un error")
-          });
-    }
+  
+
+    destroy: (req, res) => {
+        db.Products.destroy(req.params.id)
+        ({
+            where: {
+                id: req.params.id
+            }
+        })   
+            .then(() => {
+             
+             res.render('admin/delete') 
+            })
+            .catch((errors) => {
+                console.log(errors);
+                res.send("Ha ocurrido un error")
+              });
+    },
 
    };
+
+
 
 
 

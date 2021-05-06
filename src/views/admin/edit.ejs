@@ -9,18 +9,51 @@
         <%- include('../partials/header.ejs') %>
     </header>
 
-        <h2>Detalle de productos</h2>
-        <h2><%= product.title %></h2>
 
-        <div class="product-info">
-        <p>Precio: <%= product.price %> </p>
-        <p><img src=" <%= product.image %>" alt=""></p>
+    <h2>Editar producto</h2>
+    <form action="/edit"<%= product.id %>?_method="PUT" enctype="multipart/form-data"></form>
 
-        <p>Descripción del paquete: <%= product.description %> </p>
- 
-                                            
+    <h2><%= product.title %></h2> 
+        
+
+       <div class="field">
+        <label for="first_name">Titulo</label>
+        <div>
+            <input type="text" name="titulo" id="first_name" value="<%= product.title %>">
+        </div>
+      
+    </div>
+
+    <div class="field">
+        <label for="price">Precio</label>
+        <div>
+            <input type="text" name="price" id="price" value="<%= product.price %>">
+        </div>    
+
+    </div>
+
+    <div class="field">
+        <label for="price">Imagen</label>
+        <div>
+            <input type="file" name="image" id="image" value="<%= product.image %>">
+        </div>
+    </div>
+  
+</div>
+
+
+
+<div class="button">
+    <button class= btn sm btn-pink-outline>
+        <a href="">EDITAR</a>
+    </button>
+</div>
+
+
+             
 <footer>
     <%- include('../partials/footer.ejs') %>
 </footer>
 </body>
 </html>
+
