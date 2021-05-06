@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
     Category.associate = function (models) {
         Category.hasMany(models.Users, { 
             as: 'users' ,
-            foreingKey: "category_id"
+            
 
         })
     }  

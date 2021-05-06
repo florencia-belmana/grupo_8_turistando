@@ -7,6 +7,8 @@ const controller  =  require ( '../controllers/usersController' );
 ///C
 const validate = require('../middlewares/usersValidation')
 
+//configuraci{on de almacenamiento
+
 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -25,7 +27,7 @@ router.get( '/register' , controller.register );
 // router.get( '/detail' , controller.detail );
 
 router.get('/userList', controller.userList);
-router.get('/userList/:id', controller.show);
+router.get('/userList/:id', controller.detail);
 
 //vendria a ser el register
 //router.get('/create', controller.create);

@@ -105,7 +105,7 @@ module.exports = {
 
             })
             .then(() => {
-             //   res.redirect(`/productos/${id}`);
+             
              return res.redirect("users/detail", {user})
               })
 
