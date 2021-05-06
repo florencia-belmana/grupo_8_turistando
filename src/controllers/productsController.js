@@ -1,6 +1,5 @@
 const db = require ("../../database/models");
-// const products = require("../../database/models/products");
-
+//const products = require("../../database/models/products");
 
 module.exports = {
     buenosaires:(req, res)  =>  {
@@ -37,10 +36,8 @@ module.exports = {
     
             })
            },*/
-  
 
-
-        //crear productos
+//CREAR PRODUCTOS
         
        crear:(req, res) => {
            
@@ -63,8 +60,6 @@ module.exports = {
                 price: req.body.price,
                 image: req.body.image ,
                 description: req.body.description,
-
-
             })
             .then((products) => {
              //   res.redirect(`/productos/${id}`);
@@ -75,9 +70,7 @@ module.exports = {
                 console.log(errors);
                 res.send("Ha ocurrido un error")
               });
-            
 
- 
          },
          lista: function (req, res){
              db.Products.findAll()
@@ -91,11 +84,9 @@ module.exports = {
                   });
          },
 
-
-   // getproduct metodo nuevo para que al editar productos me traiga solo el que tengo que editar
+// getproduct metodo nuevo para que al editar productos me traiga solo el que tengo que editar
 
    getproduct: (req, res) => {
-
     db.Products.findByPk(req.params.id)
         .then(function (response) {
            let product = response.dataValues;
@@ -118,9 +109,7 @@ module.exports = {
             .catch(err => console.log(err))
     },
 
-
-
-
+//EDICION
     update: function (req, res) {
         db.Products.update({
             product_name: req.body.product_name,
@@ -128,7 +117,6 @@ module.exports = {
             price: req.body.price,
             image: req.body.image ,
             description: req.body.description,
-
 
         }, {
             where: {
@@ -147,7 +135,22 @@ module.exports = {
 
     },
 
-
-   
+    destroy: function(req, res) {
+            db.Product.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })          
+        .then(()=>{
+            res.redirect('/admin/lista'); 
+        })
+        .catch((errors) => {
+            console.log(errors);
+            res.send("Ha ocurrido un error")
+          });
+    }
 
    };
+
+
+

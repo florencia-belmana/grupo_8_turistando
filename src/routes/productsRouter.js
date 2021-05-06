@@ -11,10 +11,6 @@ const storage = multer.diskStorage({
         callback(null, path.join(__dirname, '../../public/images/destinos/'));
     },
     filename: (req, file, callback) => {
-        // Mejor usar algo como esto en lugar de Date.now()
-        //VER SI FUNCIONARIA ALGO ASI:
-        // const newFilename = 'imageusuario' + Date.now() + path.extname(file.originalname);
-        //cb(null, newFile);     }
         
         callback(null, 'destino' + path.extname(file.originalname));
     }
@@ -31,17 +27,22 @@ router.get( '/carrito' , controller.carrito )
 /* router.get( '/paquete1' , controller.paquete1 ) ;
 router.get( '/paquete2' , controller.paquete2 ) ;router.get( '/paquete3' , controller.paquete3 ) ; */
 
-/// sequalize - crear productos 
+/// SEQUELIZE
+//CREAR
 router.get("/products", controller.crear)
 router.get("/crear", controller.crear)
 router.post("/crear", upload.single('image'), controller.guardar)
 
-//lectura
+//LECTURA
 router.get("/lista", controller.lista)
 router.get("/lista/:id", controller.detail)
 
+//EDICION
 router.get("/admin/edit/:id", controller.getproduct)
 router.put("/admin/edit/:id", controller.update) 
 
+//DELETE
+
+router.post('/admin/delete/:id', controller.destroy);
 
 module.exports = router
