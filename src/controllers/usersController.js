@@ -50,6 +50,10 @@ module.exports = {
     login:(req, res)  =>  {
         res.render ('users/login')
     },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect('/');
+    },  
     
     //////////////////////// le saque bcrypt por las dudas 
     authenticate: (req, res) => {
@@ -106,7 +110,7 @@ module.exports = {
         res.render ("users/register", {
     
             })
-        }, 
+    }, 
 
     ////////STORE POST
     store: async (req, res) => {
@@ -172,8 +176,7 @@ module.exports = {
         res.render('users/edit', { user });
         */ 
     },
- 
-    
+    ///EDIT POST
     update: (req, res) => {
         db.Products.update({
             first_name: req.body.first_name,
@@ -215,11 +218,7 @@ module.exports = {
             res.redirect('/users/' + userId);*/
     },
 
-    logout: (req, res) => {
-            req.session.destroy();
-            res.redirect('/');
-    },
-
+    ///EDIT DELETE
     destroy: (req, res) => {
 
             const id = req.params.id
@@ -241,7 +240,6 @@ module.exports = {
             })*/
         },
   
-
     }
 
 
