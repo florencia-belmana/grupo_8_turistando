@@ -239,6 +239,18 @@ module.exports = {
                 users
             })*/
         },
+
+        userProfile:(req, res) => {
+            let id = req.params.id
+            db.Users.findOne({ where: { id } })
+                .then(users => {
+                    res.render('users/detail', { users })
+                })
+                .catch((errors) => {
+                    console.log(errors);
+                    res.send("Ha ocurrido un error")
+                });
+            }
   
     }
 

@@ -2,7 +2,8 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-const methodOverride = require('method-override');
+const methodOverride = require('method-override'); //npm install method-override --save para usar metodo put y delete
+
 
 //
 const session = require('express-session'); //npm instal express-session
@@ -26,8 +27,9 @@ app.use(auth);
 //////
 
 // Formularios
-app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
+app.use(express.urlencoded({ extended: false }));//De esta forma le estamos aclarando a la aplicación que todo aquello que llegue desde un formulario, queremos capturarlo en forma de objeto literal.
+app.use(express.json());                         // Y a su vez, tener la posibilidad de convertir esa información en un formato JSON, en caso de necesitarlo
+app.use(methodOverride('_method'));             //Para poder sobreescribir el método original y poder implementar los métodos PUT o DELETE
 
 
 //app.get('/', (req, res) => {

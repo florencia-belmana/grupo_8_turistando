@@ -20,7 +20,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-//Vista de usuarios
+//perfil user habría que hacer una vista para /user/:id igual que la de detail
+router.get('/user/:id', controller.userProfile);
+
+//Vista de usuarios de admin
 router.get('/userList', controller.userList);
 router.get('/userList/:id', controller.detail);
 
