@@ -222,7 +222,6 @@ module.exports = {
 
     destroy: (req, res) => {
 
-        
             const id = req.params.id
             db.Users.destroy( {
                 where : {
@@ -230,14 +229,12 @@ module.exports = {
                 }
             })
             .then ( () => { 
-                 res.redirect ("/")
+                res.redirect ("/")
             })
-         
-            //VIEJO
+            
+            //JSON
             /* let users = usersTable.all()
-    
             usersTable.delete(req.params.id);
-    
             res.redirect("users/userList", {
                 title: 'Listado de usuarios', 
                 users
