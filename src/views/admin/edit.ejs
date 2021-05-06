@@ -11,7 +11,9 @@
 
 
     <h2>Editar producto</h2>
-            <form action="/edit<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+<!-- SI PONGO ESTO DEJA DE ANDAR EL DELETE/
+      <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=PUT" method="POST"> -->
+
     <h2><%= product.title %></h2> 
        <div class="field">
         <label for="first_name">Titulo</label>
@@ -35,14 +37,9 @@
     </div>  
     </div>
 
-
-
-
-
-
         <div class="button">
             <button class= btn sm btn-pink-outline>
-                <a href="/lista">EDITAR</a>
+                <a href="/lista">GUARDAR EDICI[ON</a>
             </button>
         </div>
 
