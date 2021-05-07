@@ -44,7 +44,7 @@ module.exports = {
            res.render ("products/crear");
             db.Products.findAll()
             .then((products)=> {
-                return res.render("admin/lista", {products:products});
+                return res.render("/lista", {products:products});
             })
             .catch((error) => {
                 console.log(error);
@@ -61,9 +61,10 @@ module.exports = {
                 image: req.body.image ,
                 description: req.body.description,
             })
+          
             .then((products) => {
              //   res.redirect(`/productos/${id}`);
-             return res.redirect("admin/lista")
+             return res.redirect("/lista")
               })
 
             .catch((errors) => {
@@ -125,7 +126,7 @@ module.exports = {
         })
         .then((products) => {
 
-         return res.redirect("admin/lista")
+         return res.redirect("/lista")
           })
 
         .catch((errors) => {

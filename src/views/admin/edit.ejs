@@ -11,9 +11,9 @@
 
 
     <h2>Editar producto</h2>
-<!-- SI PONGO ESTO DEJA DE ANDAR EL DELETE/
-      <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=PUT" method="POST"> -->
-
+<!--NO FUNCIONA -->
+     <!--  <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=PUT" method="POST"> </form>
+ -->
     <h2><%= product.title %></h2> 
        <div class="field">
         <label for="first_name">Titulo</label>
@@ -45,7 +45,7 @@
 
 
         <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=delete" method="POST">
-            <button class="button is-danger">BORRAR</button>
+            <button class="button is-danger">BORRAR</button> </form>
 
 
 
