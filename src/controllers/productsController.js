@@ -54,6 +54,11 @@ module.exports = {
         },
 
         guardar: function (req, res) {
+            let productImage = req.body;
+            if (req.file) {
+                productImage.image = req.file.filename;
+            } 
+            console.log(req.body)
             db.Products.create({
                 product_name: req.body.product_name,
                 title: req.body.title ,
@@ -113,15 +118,14 @@ module.exports = {
 //EDICION
     update: function (req, res) {
         db.Products.update({
-            product_name: req.body.product_name,
-            title: req.body.title ,
+            title: req.body.title,
             price: req.body.price,
             image: req.body.image ,
             description: req.body.description,
 
         }, {
             where: {
-                id: req.params.id
+                id: req.body.id
             }
         })
         .then((products) => {

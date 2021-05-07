@@ -22,80 +22,39 @@
     </div>
     <h3 class="color-h3">Elegi tu próximo destino</h3>
 
-        <br>
-    <div class="container"> <!-- que la pagina este en containter-->
-    <div class="pic-container1"> <!-- que las paquetes esten en fila-->
-  
-    <!--PAQUETE1-->
-        <div class="pic-item">
-            <img src="/images/barilo2.jpg" alt="picture">
-            <div class="button">
-                <button class= btn sm btn-pink-outline>
-                    <a href="/lista/1">+INFO</a>
-                </button>
-            </div>
-            <p>
-               <nav><a href="/lista/1">Patagonia en verano</a></nav> 
-            </p>
-            <div class="card-text">
-                <p>Recorré el sur con nosotros, te mostramos los mejores paisajes y actividades.</p>
-            </div>
-            <div class="price">
-                <p>$50.990</p>
-            </div>
-        </div>
 
-    <!--PAQUETE2-->
-        <div class="pic-item">
-            <img src="/images/norte2.jpg" alt="picture">
-            <div class="button">
-                <button class= btn sm btn-pink-outline>
-                    <a href="/lista/2">+INFO</a>
-                </button>
-            </div>
-               <p>
-                    <nav><a href="/lista/2">Recorriendo el norte: Jujuy 360°</a></nav> 
-                </p>
-                <div class="card-text">
-                    <p>Conocé todos los pasiajes del norte y sus atracciones.</p>
+<section>
+    <div id="paquete-container">
+        <%products.forEach(product => { %>
+            <div class="paquete-columna">
+                <div class="paquete-item">
+                    <div class="paquete-fila">
+                        <div class="paqueta-pic">
+                           <a href="/lista/<%= product.id%>"><img src="<%=product.image%>" alt="picture"></a>
+
+                        </div>
+                    </div>
+                    <div class="paquete-fila">
+                        <h4><%= product.title%></h4>
+                        <p><%= product.descrption%></p>
+                        <p><%= product.price%></p>
+                        <button class= btn sm btn-pink-outline>
+                            <a href="/lista/<%= product.id%>">VER DETALLE</a>
+                        </button>
+                    </div>
                 </div>
-                <div class="price">
-                    <p>$40.500</p>
-                </div>
-        </div>
-
-    <!--PAQUETE3-->
-        <div class="pic-item">
-            <img src="images/vino2.jpg" alt="picture">
-            <div class="button">
-                <button class= btn sm btn-pink-outline>
-                    <a href="/lista/3">+INFO</a>
-                </button>
             </div>
-            <p>
-                <nav><a href="/lista/3">La ruta del vino en mendoza</a></nav> 
-            </p>
-            <div class="card-text">
-                <p>Conocé las mejores bodegas de la región</p>
-            </div>
-            <div class="price">
-                <p>$52.990</p>
-            </div>
-        </div>
-        
+            <% }) %>
     </div>
-    </div>
-     
-
-        <!-- PARTE CON BD -->
-        
-        
-
-  
+</section>
 </main>
+
+
 
     <footer>
     <%- include('partials/footer.ejs') %>
 </footer>
+
+
 </body>
 </html>

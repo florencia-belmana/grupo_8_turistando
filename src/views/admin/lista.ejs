@@ -10,7 +10,7 @@
     </header>
     <main>
         <br>
-        <form action="/crear">
+        <form action="/crear" method="GET">
             <input type="submit" value="Crear nuevo paquete"/>
         </form>
         <br>
@@ -23,7 +23,7 @@
                     <p class='product'>
                         <a href='/lista/<%= product.id%>'>
 
-                        <img src="<%=product.image%>" height="100"/>
+                      <figure>  <img src="/lista/<%=product.image%>" height="100"/></figure>
                          <br>         
                    </a> <%=product.title%>  ( <a>$ </a><%= product.price%> )
            

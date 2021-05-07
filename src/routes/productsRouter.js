@@ -39,6 +39,8 @@ router.get("/lista/:id", controller.detail)
 
 //EDICION
 router.get("/admin/edit/:id", controller.getproduct)
+
+
 router.put("/admin/edit/:id", upload.single('image'),controller.update) 
 
 //DELETE
