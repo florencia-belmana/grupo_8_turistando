@@ -3,8 +3,8 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override'); //npm install method-override --save para usar metodo put y delete
-
-
+const fs = require("fs") // fileSync (readFileSync(), Es un método que trae el paquete nativo file system que nos permite recuperar datos de un archivo para poder usarlos.
+                        //Para poder decodificar los datos que el método devuelve es fundamental pasarle un segundo parámetro aclarando el tipo de encoding. "utf-8" ej.
 //
 const session = require('express-session'); //npm instal express-session
 const auth = require('./src/middlewares/auth');

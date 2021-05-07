@@ -3,6 +3,7 @@ const  router = express.Router ( ) ;
 const multer = require ('multer');
 const path = require('path');path-multer
 const controller  =  require ( '../controllers/usersController' );
+const fs = require("fs")
 
 ///C
 const validate = require('../middlewares/usersValidation')

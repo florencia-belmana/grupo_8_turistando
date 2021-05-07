@@ -1,7 +1,9 @@
 module.exports = {
     
     index: (req, res) => {
+       // console.log("alvaro", req.session.userLogged.user_type_id)
         res.render("index");
+
     },
 
     indexAdmin: (req, res) => {

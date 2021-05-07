@@ -56,7 +56,7 @@ module.exports = {
     },  
     
     //////////////////////// le saque bcrypt por las dudas 
-    authenticate: (req, res) => {
+    authenticate: async (req, res) => {
         // Validamos los datos del login
         let errors = validationResult(req);
             console.log(errors.mapped());
@@ -64,15 +64,19 @@ module.exports = {
         // Si no hay errores
         if (errors.isEmpty()) {
             // Verifico que el usuario exista
-            let user =  db.Users.findOne({ where:{'email': req.body.email}});
+            let user = await db.Users.findOne({ where:{'email': req.body.email}});
+                
+            console.log(user.dataValues.password)
             //JSON let user = usersTable.findByField('email', req.body.email);
     
             // Si el usuario existe
             if (user) {
                 // La contraseña es la correcta
-                if (/* bcrypt.compareSync( */(req.body.password== db.Users.password)) {
+                console.log(req.body.password)
+               // if (/* bcrypt.compareSync( */(req.body.password == user.dataValues.password)) {
+                if ((req.body.password == user.dataValues.password)) {
                     req.session.user = user;    
-                    return res.redirect('/userList/' + db.Users.id)
+                    return res.redirect('/user/' + user.dataValues.id)
     
                 // Si la contraseña es incorrecta
                 } else {
@@ -117,14 +121,19 @@ module.exports = {
         // Valido los campos - aca ver req.file
          let errors = validationResult(req);
         // Me fijo si no hay errores
+        
          if (errors.isEmpty()) {
 
             // Generamos el nuevo usuario
             let user = req.body;
+            if (req.file) {
+                user.image = req.file.filename;
+            } 
 
             // user.password = bcrypt.hashSync(user.password);
            user.password = user.password
- 
+
+            console.log(req.body)
             db.Users.create({
                 first_name: req.body.first_name,
                 last_name: req.body.last_name ,
@@ -135,21 +144,20 @@ module.exports = {
                 category_id: req.body.category_id
 
             })
-            .then(() => {
-                return res.redirect("users/detail", {user})
+            .then((user) => {
+               // console.log(user.dataValues.id)
+               return res.redirect('user/' + user.dataValues.id)
             })
             .catch((errors) => {
                 console.log(errors);
                 res.send("Ha ocurrido un error")
               });
 
-             if (req.file) {
-                user.image = req.file.filename;
-            } 
+             
 
             //USUARIO CREADO - REDIRECT INDEX 
-            //let userId = usersTable.create(user);
-            return res.redirect("/")
+            //let userId = usersTable.create(user); JSON
+            
             //NO REDIRECCIONA A ID 
             //return await res.redirect('/userList/' + {user}) 
     
