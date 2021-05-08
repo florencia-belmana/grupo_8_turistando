@@ -10,6 +10,8 @@ const session = require('express-session'); //npm instal express-session
 const auth = require('./src/middlewares/auth');
 
 
+
+
 // Configuro el directorio de recursos estáticos
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -57,7 +59,16 @@ app.use('/users', usersRouter);
 //Not found
 app.use((req,res,next)=> {
   res.status(404).render("404")
-})
+});
+
+
+//API
+const apiRouter = require ('./src/routes/apiRouter');
+app.use('/api', apiRouter);
+
+
+
+
 
 // Iniciar el servidor
 app.listen(3000, () => console.log('El servidor está corriendo en el puerto 3000.'));
