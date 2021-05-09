@@ -1,6 +1,11 @@
 const db = require ("../../database/models");
 //const products = require("../../database/models/products");
 
+// validacion
+
+const { body } = require('express-validator');
+
+
 module.exports = {
     buenosaires:(req, res)  =>  {
        res.render ('products/buenosaires')
@@ -11,26 +16,21 @@ module.exports = {
     
             })
         },
-    
+
        //esto no sirve ahora, era uno general para que contenga todos los dem+
         //paquetes:(req, res) => {
            // res.render ("products/paquetes", {
     
           //  })
    //     },
-
      /*   paquete1:(req, res) => {
             res.render ("products/paquete1", {
-    
             })
         },
-
         paquete2:(req, res) => {
             res.render ("products/paquete2", {
-    
             })
         },
-
         paquete3:(req, res) => {
             res.render ("products/paquete3", {
     
@@ -54,13 +54,14 @@ module.exports = {
         },
 
         guardar: function (req, res) {
-            let productImage = req.body;
             if (req.file) {
+            let productImage = req.body;
+            
+                console.log(req.file)
                 productImage.image = req.file.filename;
             } 
-            console.log(req.body)
+            
             db.Products.create({
-                product_name: req.body.product_name,
                 title: req.body.title ,
                 price: req.body.price,
                 image: req.body.image ,

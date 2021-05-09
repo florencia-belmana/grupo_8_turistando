@@ -62,9 +62,8 @@ app.use((req,res,next)=> {
 });
 
 
-//API
-const apiRouter = require ('./src/routes/apiRouter');
-app.use('/api', apiRouter);
+//Api
+
 
 
 

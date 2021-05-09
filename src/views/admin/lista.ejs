@@ -21,11 +21,15 @@
             <div class='products'>
                 <%products.forEach(product => { %>
                     <p class='product'>
-                        <a href='/lista/<%= product.id%>'>
+                          <a href='/lista/<%= product.id%>'>
 
-                      <figure>  <img src="/lista/<%=product.image%>" height="100"/></figure>
-                         <br>         
-                   </a> <%=product.title%>  ( <a>$ </a><%= product.price%> )
+                      <figure> <img src="/lista/<%=product.image%>" height="100"/></figure>
+                
+                         </a>
+
+                       <h4>  #<%= product.id %> <h4>
+                      <h4> <%=product.title%>  </h4>
+                     <h4> <%= product.price%> </h4>
            
                          <div class="button">
                           <button class= btn sm btn-pink-outline>
