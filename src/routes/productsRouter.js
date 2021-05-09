@@ -5,7 +5,7 @@ const multer = require ('multer');
 const path = require('path');path-multer
 
 
-//VALIDACION
+//VALIDACION - directamente acá
 const { body } = require('express-validator')
 const validateCreateProducts = [ 
         body('title').notEmpty().withMessage('El campo debe contener el titulo'),
@@ -13,9 +13,10 @@ const validateCreateProducts = [
         body('price').notEmpty().withMessage('El campo debe tener el precio'),
     
 ];
-/* const validate = require('../middlewares/productsValidation') */
 
 
+
+//multer
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
         callback(null, path.join(__dirname, '../../public/images/destinos/'));
@@ -47,7 +48,7 @@ router.post("/crear", upload.single('image'), validateCreateProducts ,controller
 router.get("/lista", controller.lista)
 router.get("/lista/:id", controller.detail)
 
-//EDICION - UPLOAD
+//EDICION - UPDATE
 router.get("/admin/edit/:id", controller.getproduct)
 router.put("/admin/edit/:id", upload.single('image'),controller.update) 
 

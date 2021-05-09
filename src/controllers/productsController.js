@@ -2,8 +2,7 @@ const db = require ("../../database/models");
 //const products = require("../../database/models/products");
 
 // validacion
-
-const { body } = require('express-validator');
+const { validationResult } = require('express-validator');
 
 
 module.exports = {
@@ -54,6 +53,21 @@ module.exports = {
         },
 
         guardar: function (req, res) {
+
+        //respecta a validation: si hay error me vuelve a crear,
+        //sino, me llevea a la lista de todos los products.
+        let errors = validationResult(req);
+            if(errors.isEmpty()){
+                let product = req.body;
+            }
+            else {
+                res.render("products/crear", { errors: errors.array(),
+                old: req.body
+                });
+            }
+
+        //hasta acá es validation
+
             if (req.file) {
             let productImage = req.body;
             
