@@ -1,4 +1,3 @@
-
 const path = require('path');
 const express = require('express');
 const app = express();
@@ -17,7 +16,6 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
-//////CCCCCCCC
 
 // Sessiones y cookies
 app.use(session({

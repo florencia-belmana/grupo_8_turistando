@@ -80,8 +80,15 @@ module.exports = {
 
          },
          lista: function (req, res){
+        
              db.Products.findAll()
+             
              .then(products => {
+               products.forEach(producto => {
+                   if (producto.image == "")
+                   producto.image = 'default.png'
+               });
+            
                 return res.render('admin/lista', { products })
             })
                 

@@ -3,11 +3,11 @@ const  router = express.Router ( ) ;
 const controller  =  require ( '../controllers/apiController' );
 
 
-/* router.get( '/productsList' , controller.productsList );
+router.get( '/productList' , controller.productList );
 router.get( '/productDetail/:id' , controller.productDetail );
 router.post( '/productCreate' , controller.productCreate );
 router.put( '/productUpdate/:id' , controller.productUpdate );
-router.delete('/productDestroy', apiController.productDestroy);
+router.delete('/productDestroy', controller.productDestroy);
 
- */
+
 module.exports = router

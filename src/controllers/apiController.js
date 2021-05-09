@@ -8,7 +8,7 @@ module.exports = {
                 res.
                     status(200)
                     .json({
-                        data:products,
+                        data: products,
                         status:'success'
                     })
             })
