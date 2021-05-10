@@ -48,14 +48,15 @@
             <input type="text" name="id" id="id" value="<%= product.id %>">
         </div>
     </div>  
-    </div>
+    <!-- </div> -->
 
     <button class="button is-danger">GUARDAR EDICION</button>
         
     </form>
-
+<br>
         <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=delete" method="POST">
-            <button class="button is-danger">BORRAR</button> </form>
+            <button class="button is-danger">BORRAR</button> 
+        </form>
 
 
 

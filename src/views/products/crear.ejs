@@ -10,7 +10,7 @@
     </header>
     <main>
         
-            <h3>CREAR PAQUETE</h3>
+            <h2>CREAR PAQUETE</h2>
 
             <% if (locals.errors) { 
                 errors.forEach(error => { %>
@@ -20,23 +20,34 @@
                 %>
 
         <form action="/crear" method="POST" enctype="multipart/form-data"> 
-        <div>
+
+    <div class="field">
             <label for="">Titulo</label>
+        <div>
             <input type="text" name="title" value="<%= locals.old && old.title ? old.title : ''%>">
         </div>
-       
-        <div>
+    </div>
+
+    <div class="field">
             <label for="image">Imagen</label>
-            <input type="file" name="image" id="image">
+            <div>
+            <input type="file" name="image" id="image" value="<%= locals.old && old.image ? old.image : ''%>">
         </div>
-        <div>
+    </div>   
+
+     <div class="field">
             <label for="">Descripción</label>
+            <div>
             <input type="text" name="description" value="<%= locals.description && old.description ? old.description : ''%>">
-        </div>
-        <div>
+            </div>
+    </div>
+
+    <div class="field">
             <label for="">Precio</label>
+            <div>
             <input type="text" name="price" value="<%= locals.old && old.price ? old.price : ''%>">
         </div>
+    </div>
 
         <div>
      <!--  <div class="field">
