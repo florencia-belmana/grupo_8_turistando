@@ -54,10 +54,6 @@ app.use('/', usersRouter);
 app.use('/user', usersRouter);
 app.use('/users', usersRouter);
 
-//Not found
-app.use((req,res,next)=> {
-  res.status(404).render("404")
-});
 
 
 //Api
@@ -66,6 +62,10 @@ const apiRouter = require('./src/routes/apiRouter');
 app.use('/api', apiRouter);
 
 
+//Not found
+app.use((req,res,next)=> {
+  res.status(404).render("404")
+});
 
 
 // Iniciar el servidor
