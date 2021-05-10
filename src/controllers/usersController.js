@@ -64,7 +64,7 @@ module.exports = {
         // Si no hay errores
         if (errors.isEmpty()) {
             // Verifico que el usuario exista
-            let user = await db.Users.findOne({ where:{'email': req.body.email}});
+            let user = await db.Users.findOne({ where:{email: req.body.email}});
                 
             console.log(user.dataValues.password)
             //JSON let user = usersTable.findByField('email', req.body.email);
