@@ -195,7 +195,7 @@ module.exports = {
     },
     ///EDIT POST
     update: (req, res) => {
-        db.Products.update({
+        db.Users.update({
             first_name: req.body.first_name,
             last_name: req.body.last_name ,
             email: req.body.email,
@@ -209,10 +209,10 @@ module.exports = {
                 id: req.params.id
             }
         })
-        .then((products) => {
-
-         return res.redirect("users/detail")
-          })
+        .then((users) => {
+                let id = req.params.id
+                res.render('user/' + id)
+            })
 
         .catch((errors) => {
             console.log(errors);

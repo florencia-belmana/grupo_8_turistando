@@ -24,18 +24,18 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-//perfil user habría que hacer una vista para /user/:id igual que la de detail
-router.get('/user/:id', guestMiddleware, controller.userProfile);
+
 
 //Vista de usuarios de admin
-router.get('/userList', authMiddleware, controller.userList);
-router.get('/userList/:id', authMiddleware, controller.detail);
+router.get('/userList', controller.userList);
+router.get('/userList/:id', controller.detail);
 
 //Procesa el formulario de creación
 router.get( '/register' , controller.register );
 router.post('/', upload.single('image'), validate.register, controller.store); 
 
-//edit y destroy
+//Perfil de usuario, edit y destroy
+router.get('/user/:id', controller.userProfile);
 router.get('/edit/:id', controller.edit);
 router.put('/edit/:id', upload.single('image'), validate.update, controller.update);
 router.delete('/edit/:id', controller.destroy);
