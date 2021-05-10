@@ -4,6 +4,8 @@ const  controller  =  require ( '../controllers/productsController' )
 const multer = require ('multer');
 const path = require('path');path-multer
 
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 //VALIDACION - directamente acá
 const { body } = require('express-validator')
@@ -56,19 +58,19 @@ router.get( '/paquete2' , controller.paquete2 ) ;router.get( '/paquete3' , contr
 /// SEQUELIZE - CRUD -
 //CREAR
 router.get("/products", controller.crear)
-router.get("/crear", controller.crear)
-router.post("/crear", upload.single('image'), validateCreateProducts ,controller.guardar)
+router.get("/crear", authMiddleware, controller.crear)
+router.post("/crear", authMiddleware, upload.single('image'), validateCreateProducts ,controller.guardar)
 
 //LECTURA - READ
 router.get("/lista", controller.lista)
 router.get("/lista/:id", controller.detail)
 
 //EDICION - UPDATE
-router.get("/admin/edit/:id", controller.getproduct)
-router.put("/admin/edit/:id", upload.single('image'),controller.update) 
+router.get("/admin/edit/:id", authMiddleware, controller.getproduct)
+router.put("/admin/edit/:id", authMiddleware, upload.single('image'),controller.update) 
 
 //DELETE
-router.delete('/admin/edit/:id', controller.destroy);
+router.delete('/admin/edit/:id', authMiddleware, controller.destroy);
 
 
 

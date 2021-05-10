@@ -5,8 +5,11 @@ const path = require('path');path-multer
 const controller  =  require ( '../controllers/usersController' );
 const fs = require("fs")
 
-///C
-const validate = require('../middlewares/usersValidation')
+///middlewares
+const validate = require('../middlewares/usersValidation');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 
 //configuracion de almacenamiento
 
@@ -25,8 +28,8 @@ const upload = multer({ storage });
 router.get('/user/:id', controller.userProfile);
 
 //Vista de usuarios de admin
-router.get('/userList', controller.userList);
-router.get('/userList/:id', controller.detail);
+router.get('/userList', authMiddleware, controller.userList);
+router.get('/userList/:id', authMiddleware, controller.detail);
 
 //Procesa el formulario de creación
 router.get( '/register' , controller.register );
@@ -42,6 +45,19 @@ router.get( '/login', controller.login ) ;
 router.post('/login', validate.login, controller.authenticate);
 
 router.get('/logout', controller.logout);
+
+
+//para chequear si hay una sesión abierta
+
+router.get("/check", function (req, res){
+    if(req.session.user == undefined){
+        res.send("No estas logueado");
+    } else { 
+        res.send("El usuario logeado es: " + req.session.user.first_name + " " + req.session.user.last_name +". Categoría: " + req.session.user.category_id )
+        console.log(req.session)
+    }
+
+})
 
 
 module.exports = router
