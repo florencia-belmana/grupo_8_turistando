@@ -1,6 +1,10 @@
 const db = require ("../../database/models");
 //const products = require("../../database/models/products");
 
+// validacion
+const { validationResult } = require('express-validator');
+
+
 module.exports = {
     buenosaires:(req, res)  =>  {
        res.render ('products/buenosaires')
@@ -11,26 +15,21 @@ module.exports = {
     
             })
         },
-    
+
        //esto no sirve ahora, era uno general para que contenga todos los dem+
         //paquetes:(req, res) => {
            // res.render ("products/paquetes", {
     
           //  })
    //     },
-
      /*   paquete1:(req, res) => {
             res.render ("products/paquete1", {
-    
             })
         },
-
         paquete2:(req, res) => {
             res.render ("products/paquete2", {
-    
             })
         },
-
         paquete3:(req, res) => {
             res.render ("products/paquete3", {
     
@@ -54,8 +53,29 @@ module.exports = {
         },
 
         guardar: function (req, res) {
+
+        //respecta a validation: si hay error me vuelve a crear,
+        //sino, me llevea a la lista de todos los products.
+        let errors = validationResult(req);
+            if(errors.isEmpty()){
+                let product = req.body;
+            }
+            else {
+                res.render("products/crear", { errors: errors.array(),
+                old: req.body
+                });
+            }
+
+        //hasta acá es validation
+
+            if (req.file) {
+            let productImage = req.body;
+            
+                console.log(req.file)
+                productImage.image = req.file.filename;
+            } 
+            
             db.Products.create({
-                product_name: req.body.product_name,
                 title: req.body.title ,
                 price: req.body.price,
                 image: req.body.image ,
@@ -74,8 +94,15 @@ module.exports = {
 
          },
          lista: function (req, res){
+        
              db.Products.findAll()
+             
              .then(products => {
+               products.forEach(producto => {
+                   if (producto.image == "")
+                   producto.image = 'default.png'
+               });
+            
                 return res.render('admin/lista', { products })
             })
                 
@@ -113,15 +140,14 @@ module.exports = {
 //EDICION
     update: function (req, res) {
         db.Products.update({
-            product_name: req.body.product_name,
-            title: req.body.title ,
+            title: req.body.title,
             price: req.body.price,
             image: req.body.image ,
             description: req.body.description,
 
         }, {
             where: {
-                id: req.params.id
+                id: req.body.id
             }
         })
         .then((products) => {

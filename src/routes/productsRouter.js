@@ -1,4 +1,3 @@
-
 const  express  =  require ( 'express' ) ;
 const  router = express.Router ( ) ;
 const  controller  =  require ( '../controllers/productsController' )
@@ -6,13 +5,40 @@ const multer = require ('multer');
 const path = require('path');path-multer
 
 
+//VALIDACION - directamente acá
+const { body } = require('express-validator')
+const validateCreateProducts = [ 
+        body('title').notEmpty().withMessage('El campo debe contener el titulo'),
+        body('description').notEmpty().withMessage('El campo debe contener una decripcion del producto'),
+        body('price').notEmpty().withMessage('El campo debe tener el precio'),
+        body('image').custom((value, { req }) => {
+            let file = req.file;
+            let aceptedExtensions = ['.jpg', 'png', '.gif']; 
+
+            if (!file) {
+            throw new Error ('Debes subir una imagen');
+            }
+            else {
+                let fileExtensions = path.extname(file.originalname);
+                if(!aceptedExtensions.includes(fileExtensions)){
+                    throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+                }
+            }
+            return true;
+            })
+            
+];
+
+
+
+//multer
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
         callback(null, path.join(__dirname, '../../public/images/destinos/'));
     },
     filename: (req, file, callback) => {
         
-        callback(null, 'destino' + path.extname(file.originalname));
+        callback(null, 'destino-' + Date.now() + path.extname(file.originalname));
     }
 });
 const upload = multer({ storage });
@@ -27,22 +53,23 @@ router.get( '/carrito' , controller.carrito )
 /* router.get( '/paquete1' , controller.paquete1 ) ;
 router.get( '/paquete2' , controller.paquete2 ) ;router.get( '/paquete3' , controller.paquete3 ) ; */
 
-/// SEQUELIZE
+/// SEQUELIZE - CRUD -
 //CREAR
 router.get("/products", controller.crear)
 router.get("/crear", controller.crear)
-router.post("/crear", upload.single('image'), controller.guardar)
+router.post("/crear", upload.single('image'), validateCreateProducts ,controller.guardar)
 
-//LECTURA
+//LECTURA - READ
 router.get("/lista", controller.lista)
 router.get("/lista/:id", controller.detail)
 
-//EDICION
+//EDICION - UPDATE
 router.get("/admin/edit/:id", controller.getproduct)
 router.put("/admin/edit/:id", upload.single('image'),controller.update) 
 
 //DELETE
-
 router.delete('/admin/edit/:id', controller.destroy);
+
+
 
 module.exports = router

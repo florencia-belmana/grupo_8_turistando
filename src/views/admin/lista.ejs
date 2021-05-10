@@ -10,7 +10,7 @@
     </header>
     <main>
         <br>
-        <form action="/crear">
+        <form action="/crear" method="GET">
             <input type="submit" value="Crear nuevo paquete"/>
         </form>
         <br>
@@ -21,11 +21,15 @@
             <div class='products'>
                 <%products.forEach(product => { %>
                     <p class='product'>
-                        <a href='/lista/<%= product.id%>'>
+                          <a href='/lista/<%= product.id%>'>
 
-                        <img src="<%=product.image%>" height="100"/>
-                         <br>         
-                   </a> <%=product.title%>  ( <a>$ </a><%= product.price%> )
+                      <figure> <img src="images/destinos/<%=product.image%>" height="100"/></figure>
+                            
+                         </a>
+
+                       <h4>  #<%= product.id %> <h4>
+                      <h4> <%=product.title%>  </h4>
+                     <h4> <%= product.price%> </h4>
            
                          <div class="button">
                           <button class= btn sm btn-pink-outline>

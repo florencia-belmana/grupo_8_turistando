@@ -12,13 +12,13 @@
 
     <h2>Editar producto</h2>
 <!--NO FUNCIONA -->
-     <!--  <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=PUT" method="POST"> </form>
- -->
+      <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=PUT" method="POST"> 
+
     <h2><%= product.title %></h2> 
        <div class="field">
         <label for="first_name">Titulo</label>
         <div>
-            <input type="text" name="titulo" id="first_name" value="<%= product.title %>">
+            <input type="text" name="title" id="first_name" value="<%= product.title %>">
         </div>     
     </div>
 
@@ -35,17 +35,28 @@
             <input type="file" name="image" id="image" value="<%= product.image %>">
         </div>
     </div>  
-    </div>
 
-        <div class="button">
-            <button class= btn sm btn-pink-outline>
-                <a href="/lista">GUARDAR EDICI[ON</a>
-            </button>
+    <div class="field">
+        <label for="price">Descripcion</label>
+        <div>
+            <input type="text" name="description" id="description" value="<%= product.description %>">
         </div>
+    </div>  
 
+    <div class="field" style="display: none;">
+        <div>
+            <input type="text" name="id" id="id" value="<%= product.id %>">
+        </div>
+    </div>  
+    <!-- </div> -->
 
+    <button class="button is-danger">GUARDAR EDICION</button>
+        
+    </form>
+<br>
         <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=delete" method="POST">
-            <button class="button is-danger">BORRAR</button> </form>
+            <button class="button is-danger">BORRAR</button> 
+        </form>
 
 
 

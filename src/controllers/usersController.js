@@ -48,7 +48,16 @@ module.exports = {
 
     ///LOGIN Y AUTENTICACION
     login:(req, res)  =>  {
-        res.render ('users/login')
+     /*   /*  validacion solo de este campo y en el controller en value */
+        /* let errors = validateResult(req);
+        if (errors.isEmpty()){
+            let user = req.body;
+        }
+            else {
+                res.render('users/login', {old: req.body});
+            } */ 
+
+        res.render ('users/login') 
     },
     logout: (req, res) => {
         req.session.destroy();
