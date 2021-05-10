@@ -25,7 +25,7 @@ const upload = multer({ storage });
 
 
 //perfil user habría que hacer una vista para /user/:id igual que la de detail
-router.get('/user/:id', controller.userProfile);
+router.get('/user/:id', guestMiddleware, controller.userProfile);
 
 //Vista de usuarios de admin
 router.get('/userList', authMiddleware, controller.userList);
