@@ -211,7 +211,7 @@ module.exports = {
         })
         .then((users) => {
                 let id = req.params.id
-                res.render('user/' + id)
+                res.redirect('/user/' + id)
             })
 
         .catch((errors) => {
