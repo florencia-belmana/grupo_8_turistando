@@ -16,9 +16,9 @@
 
     <h2><%= product.title %></h2> 
        <div class="field">
-        <label for="first_name">Titulo</label>
+        <label for="title">Titulo</label>
         <div>
-            <input type="text" name="title" id="first_name" value="<%= product.title %>">
+            <input type="text" name="title" id="title" value="<%= product.title %>">
         </div>     
     </div>
 
@@ -30,20 +30,21 @@
     </div>
 
     <div class="field">
-        <label for="price">Imagen</label>
+        <label for="image">Imagen</label>
+     
+
         <div>
             <input type="file" name="image" id="image" value="<%= product.image %>">
+
         </div>
     </div>  
 
     <div class="field">
-        <label for="price">Descripcion</label>
+        <label for="description">Descripcion</label>
         <div>
-            
             <input type="text" name="description" id="description" value="<%= product.description %>">
         </div>
     </div>  
-
 
     <div class="field" style="display: none;">
         <div>
