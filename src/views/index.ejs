@@ -11,17 +11,15 @@
         <ul>
    
        <li> <a href="/index-admin">Sección para administradores</a></ul>
-        <li><a href="/user/2"> Tu perfil de usuario </a> </li>
+
+        <li><a href="/user/<%= ( user ? user.id : "login") %> "> Tu perfil de usuario </a> </li>
         </ul>
         <h2> Turisteando es la pagina que estabas buscando para empezar tus vacaciones por Argentina </h2>
         <div class="pic-container1">
-        <ul>
-            <li><a href="/user/2"> Bienvenido: viajer@ / name ! - que el el name se pase cuando se haga el login / viajero si no esta registrado</a> </li>
-            <li><a href="/logout">Cerra sesión </li>
-        </ul>
+       
     </div>
     <h3 class="color-h3">Elegi tu próximo destino</h3>
-
+    
 
 <section>
     <div id="paquete-container">

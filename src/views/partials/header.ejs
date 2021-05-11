@@ -10,14 +10,22 @@
 
       <div class="header header-right">
           <nav>
+            <h3 class="color-h3"> Bienvenido <%= ( user ? user.first_name : "visitante") %> <i class="fas fa-plane-departure"></i></h3>
+            <span class="separador">|
             <a href="/">Inicio</a>
             <span class="separador">|
             <a href="/login">Ingresá</a>
             <span class="separador">|
             <a href="/register"> Registrate </a>
-            <span class="separador">|
+            
+            <br>
+            
+            
+            <div>
             <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-           
+            <span class="separador">|
+            <a href="/logout"> Cerra sesión</a>
+            </div>
                 
                 <br>
                 
