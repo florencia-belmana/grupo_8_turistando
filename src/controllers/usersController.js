@@ -64,7 +64,6 @@ module.exports = {
         res.redirect('/');
     },  
     
-    //////////////////////// le saque bcrypt por las dudas 
     authenticate: async (req, res) => {
         // Validamos los datos del login
         let errors = validationResult(req);
@@ -82,8 +81,9 @@ module.exports = {
             if (user) {
                 // La contraseña es la correcta
                 console.log(req.body.password)
-               // if (/* bcrypt.compareSync( */(req.body.password == user.dataValues.password)) {
-                if ((req.body.password == user.dataValues.password)) {
+                if (bcrypt.compareSync(req.body.password, user.password)) {
+               // if ((req.body.password == user.dataValues.password)) { sin bcrypt
+                    req.session.auth = true
                     req.session.user = user;    
                     return res.redirect('/user/' + user.dataValues.id)
     
@@ -132,6 +132,26 @@ module.exports = {
         // Me fijo si no hay errores
         
          if (errors.isEmpty()) {
+             // Si no hubo errores, busco si existe ese usuario		
+		    db.Users.findOne({
+                where: {
+                     email: req.body.email
+                }
+            })
+                .then( user => {
+                    if (user) {
+                          return res.render ('users/register',
+                    { 
+                        errors:{
+                            email:{
+                            msg:'Este usuario ya está registrado'
+                            }
+                        },
+                     oldData: req.body
+                    });
+                 }
+         })
+             .catch(error => {console.log(error)});
 
             // Generamos el nuevo usuario
             let user = req.body;
@@ -139,16 +159,19 @@ module.exports = {
                 user.image = req.file.filename;
             } 
 
-            // user.password = bcrypt.hashSync(user.password);
-           user.password = user.password
+          user.password = bcrypt.hashSync(user.password);
+          //user.password = user.password // sin bcrypt
 
             console.log(req.body)
+            //Si me llegó una imagen la guardo, sino pongo una por default (hablando del nombre y no la imagen en si)
+            let image = (req.body.image) ? req.body.image : 'default.png';
+            // Creo el usuario
             db.Users.create({
                 first_name: req.body.first_name,
                 last_name: req.body.last_name ,
                 email: req.body.email,
                 password: req.body.password ,
-                image: req.body.image,
+                image: image,
                 country: req.body.country,
                 category_id: req.body.category_id
 
@@ -195,12 +218,16 @@ module.exports = {
     },
     ///EDIT POST
     update: (req, res) => {
+        //Si me llegó una imagen la guardo, sino pongo una por default (hablando del nombre y no la imagen en si)
+        let image = (req.body.image) ? req.body.image : 'default.png';
+       // user.password = bcrypt.hashSync(user.password);
+        
         db.Users.update({
             first_name: req.body.first_name,
             last_name: req.body.last_name ,
             email: req.body.email,
             password: req.body.password ,
-            image: req.body.image,
+            image: image,
             country: req.body.country,
             category_id: req.body.category_id
 
