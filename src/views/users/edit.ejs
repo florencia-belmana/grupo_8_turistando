@@ -45,7 +45,7 @@
                                 <label for="image">Imagen de perfil</label>
                                 <h3> Tu foto actual: </h3><img src="/images/users/<%= users.image %>" alt="">
                                 <div class="control">
-                                    <input type="file" name="image" id="image">
+                                    <input type="file" name="image" id="image" value="default.png" placeholder="" required>
                                 </div>
                                 <p class="feedback"></p>
                             </div>
@@ -53,7 +53,7 @@
                             <div class="field">
                                 <label for="password">Password</label>
                                 <div class="control">
-                                    <input type="password" name="password" id="password" value="<%= users.password %>" >
+                                    <input type="password" name="password" id="password" value="" placeholder="Ingresa nueva contraseña" required>
                                 </div>
                                 <p class="feedback"></p>
                             </div>

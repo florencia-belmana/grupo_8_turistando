@@ -218,11 +218,12 @@ module.exports = {
         //Si me llegó una imagen la guardo, sino pongo una por default (hablando del nombre y no la imagen en si)
       //  let image = (req.body.image) ? req.body.image : 'default.png';
        // user.password = bcrypt.hashSync(user.password);
+
         db.Users.update({
             first_name: req.body.first_name,
             last_name: req.body.last_name ,
             email: req.body.email,
-            password: req.body.password ? bcrypt.hashSync(req.body.password) : user.password,
+            password: bcrypt.hashSync(req.body.password),
             image: req.file ? req.file.filename : req.body.image,
             country: req.body.country,
             category_id: req.body.category_id

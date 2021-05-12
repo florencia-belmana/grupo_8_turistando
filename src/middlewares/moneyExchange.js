@@ -6,6 +6,7 @@ module.exports = async (req, res, next) => {
     try {
         const apiResponse = await fetch(API_EXCHANGE_URL)
         const exchange = await apiResponse.json()
+        
 
         const oficial = exchange.find(change => 
             change.casa.nombre === 'Dolar Oficial')
