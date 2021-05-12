@@ -22,13 +22,18 @@
         </div>
         <div class="card-content">
             <h3><%= users.first_name %> <%= users.last_name %></h3>
-            <p>Categoría: <%= users.category %></p>
+            <h3> Pais: <%= users.country %> </h3>
+            <p>Categoría: <%= users.category_id  =="1" ? "Administrador" : "Viajero" %> </p>
+
             <p>Email: <a href="mailto:<%= users.email %>" target="_blank"><%= users.email %></a></p>
             <div>
                
-                <a class="button is-warning" href="/edit/<%= users.id %>">Editar</a>
+                <a class="button is-warning" href="/edit/<%= users.id %>"> 
+                    <button class="button is-danger">Editar datos </button>
+                </a>
+
                 <form class="form is-inline" action="/edit/<%= users.id %>?_method=delete" method="POST">
-                    <button class="button is-danger">Borrar</button>
+                    <button class="button is-danger">Borrar usuario </button>
                 </form>
 
             </div>
