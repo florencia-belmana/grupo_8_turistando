@@ -16,7 +16,7 @@
                 <div class="card-left">
                     <figure>
                         
-                        <img src="images/users/<%= user.image ? user.image : 'default.png' %>" alt="">
+                        <img width="15%" src="images/users/<%= user.image%>" alt="">
                     </figure>
                     <h3>#<%= user.id %></h3>
                 </div>
@@ -25,7 +25,7 @@
                     <p>Categoría: <%= user.category %></p>
                     <p>Email: <a href="mailto:<%= user.email %>" target="_blank"><%= user.email %></a></p>
                     <div>
-                        <a class="button" href="/userList/<%= user.id %>">Ver detalle</a>
+                        <button class="button is-danger" ><a href="/userList/<%= user.id %>">Ver detalle</button></a>
                     </div>
                 </div>   
             </article>

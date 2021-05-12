@@ -7,7 +7,6 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs'); //npm install bcryptjs 
 
-//
 //DATABASE
 let db = require ("../../database/models")
 
@@ -15,7 +14,6 @@ module.exports = {
     ///LISTADO DE USUARIOS Y DETAIL POR GET
     userList:(req, res) => {
         db.Users.findAll()
-
             .then(users => {
                 return res.render('users/userList', { users })
         })
@@ -98,7 +96,7 @@ module.exports = {
                     }
                     return res.render('users/login', { errors: errors, old: req.body });
                 }
-                // Si el usuario no existe
+            // Si el usuario no existe
             } else {
                 let errors = {
                     email: {
@@ -107,8 +105,8 @@ module.exports = {
                         location: 'body'
                     }
                 }
-                    return res.render('users/login', { errors: errors, old: req.body });
-                    }
+                return res.render('users/login', { errors: errors, old: req.body });
+            }
 
                  // Si hay errores
             } else {
@@ -122,16 +120,16 @@ module.exports = {
     register:(req, res) => {
         res.render ("users/register", {
     
-            })
+        })
     }, 
 
     ////////STORE POST
     store: async (req, res) => {
         // Valido los campos - aca ver req.file
-         let errors = validationResult(req);
+        let errors = validationResult(req);
         // Me fijo si no hay errores
         
-         if (errors.isEmpty()) {
+        if (errors.isEmpty()) {
              // Si no hubo errores, busco si existe ese usuario		
 		    db.Users.findOne({
                 where: {
@@ -150,7 +148,7 @@ module.exports = {
                      oldData: req.body
                     });
                  }
-         })
+                })
              .catch(error => {console.log(error)});
 
             // Generamos el nuevo usuario
@@ -159,8 +157,8 @@ module.exports = {
                 user.image = req.file.filename;
             } 
 
-          user.password = bcrypt.hashSync(user.password);
-          //user.password = user.password // sin bcrypt
+            user.password = bcrypt.hashSync(user.password);
+            //user.password = user.password // sin bcrypt
 
             console.log(req.body)
             //Si me llegó una imagen la guardo, sino pongo una por default (hablando del nombre y no la imagen en si)
@@ -183,9 +181,7 @@ module.exports = {
             .catch((errors) => {
                 console.log(errors);
                 res.send("Ha ocurrido un error")
-              });
-
-             
+            });
 
             //USUARIO CREADO - REDIRECT INDEX 
             //let userId = usersTable.create(user); JSON
@@ -209,19 +205,19 @@ module.exports = {
             .catch((errors) => {
                 console.log(errors);
                 res.send("Ha ocurrido un error")
-              });
+            });
 
         //VIEJO
        /* let user = usersTable.find(req.params.id);
         res.render('users/edit', { user });
         */ 
     },
+
     ///EDIT POST
     update: (req, res) => {
         //Si me llegó una imagen la guardo, sino pongo una por default (hablando del nombre y no la imagen en si)
       //  let image = (req.body.image) ? req.body.image : 'default.png';
        // user.password = bcrypt.hashSync(user.password);
-        
         db.Users.update({
             first_name: req.body.first_name,
             last_name: req.body.last_name ,
@@ -231,7 +227,6 @@ module.exports = {
             country: req.body.country,
             category_id: req.body.category_id
 
-
         }, {
             where: {
                 id: req.params.id
@@ -240,12 +235,12 @@ module.exports = {
         .then((users) => {
                 let id = req.params.id
                 res.redirect('/user/' + id)
-            })
+        })
 
         .catch((errors) => {
             console.log(errors);
             res.send("Ha ocurrido un error")
-          });
+        });
 
            /* let user = req.body;
             user.id = Number(req.params.id);
@@ -283,9 +278,9 @@ module.exports = {
                 title: 'Listado de usuarios', 
                 users
             })*/
-        },
+    },
 
-        userProfile:(req, res) => {
+    userProfile:(req, res) => {
             let id = req.params.id
             db.Users.findOne({ where: { id } })
                 .then(users => {
@@ -295,13 +290,11 @@ module.exports = {
                     console.log(errors);
                     res.send("Ha ocurrido un error")
                 });
-            },
+    },
 
-
-        notAllowed: (req, res)=>{
-
+    notAllowed: (req, res)=>{
             return res.render("/notAllowed")
-        },
+    },
   
     }
 

@@ -66,12 +66,13 @@ router.get("/lista", controller.lista)
 router.get("/lista/:id", controller.detail)
 
 //EDICION - UPDATE
+router.get("/admin/:id", controller.getproduct)
+//router.get("/lista/:id", controller.getproduct)
 router.get("/admin/edit/:id", controller.getproduct)
 router.put("/admin/edit/:id", upload.single('image'),controller.update) 
 
 //DELETE
 router.delete('/admin/edit/:id', controller.destroy);
-
 
 
 module.exports = router

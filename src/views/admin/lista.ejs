@@ -24,18 +24,18 @@
                     <p class='product'>
                           <a href='/lista/<%= product.id%>'>
 
-                      <figure> <img src="images/destinos/<%=product.image%>" height="100"/></figure>
+                            <h3>imagen:</h3> <figure> <img src="/images/destinos/<%=product.image%>" height="100"/></figure>
                             
                          </a>
 
-                       <h4>  #<%= product.id %> <h4>
-                      <h4> <%=product.title%>  </h4>
-                     <h4> <%= product.price%> </h4>
+                       <h4> Id paquete: #<%= product.id %> <h4>
+                      <h4> Titulo: <%=product.title%>  </h4>
+                     <h4> $ ARS <%= product.price%> </h4>
                      
            
                          <div class="button">
                           <button class= btn sm btn-pink-outline>
-                               <a href="/lista/<%= product.id%>">VER DETALLE</a>
+                               <a href="/lista/<%= product.id%>">VER PUBLICACIÓN</a>
                            </button>
                           </div>
                         <br>

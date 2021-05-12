@@ -6,54 +6,22 @@ const { validationResult } = require('express-validator');
 
 
 module.exports = {
-    buenosaires:(req, res)  =>  {
-       res.render ('products/buenosaires')
-   }, 
-        
-    carrito:(req, res) => {
-            res.render ("products/carrito", {
-    
-            })
-        },
-
-       //esto no sirve ahora, era uno general para que contenga todos los dem+
-        //paquetes:(req, res) => {
-           // res.render ("products/paquetes", {
-    
-          //  })
-   //     },
-     /*   paquete1:(req, res) => {
-            res.render ("products/paquete1", {
-            })
-        },
-        paquete2:(req, res) => {
-            res.render ("products/paquete2", {
-            })
-        },
-        paquete3:(req, res) => {
-            res.render ("products/paquete3", {
-    
-            })
-           },*/
-
-//CREAR PRODUCTOS
-        
-       crear:(req, res) => {
-           
-           res.render ("products/crear");
-            db.Products.findAll()
+ 
+    //CREAR PRODUCTOS
+    crear:(req, res) => {
+        res.render ("products/crear");
+        db.Products.findAll()
             .then((products)=> {
                 return res.render("/lista", {products:products});
             })
             .catch((error) => {
                 console.log(error);
                 res.send(error);
-              });
+            });
 
-        },
+    },
 
-        guardar: function (req, res) {
-
+    guardar: function (req, res) {
         //respecta a validation: si hay error me vuelve a crear,
         //sino, me llevea a la lista de todos los products.
         let errors = validationResult(req);
@@ -67,7 +35,6 @@ module.exports = {
             }
 
         //hasta acá es validation
-
             if (req.file) {
             let productImage = req.body;
             
@@ -85,50 +52,44 @@ module.exports = {
             .then((products) => {
              //   res.redirect(`/productos/${id}`);
              return res.redirect("/lista")
-              })
+            })
 
             .catch((errors) => {
                 console.log(errors);
                 res.send("Ha ocurrido un error")
-              });
+            });
 
-         },
-         lista: function (req, res){
-        
-             db.Products.findAll()
-             
-             .then(products => {
-               products.forEach(producto => {
-                   if (producto.image == "")
-                   producto.image = 'default.png'
-               });
-            
+    },
+
+    lista: function (req, res){
+        db.Products.findAll()
+            .then(products => {
+                products.forEach(producto => {
+                    if (producto.image == "")
+                        producto.image = 'default.png'
+                });
                 return res.render('admin/lista', { products })
             })
-                
-                .catch((errors) => {
-                    console.log(errors);
-                    res.send("Ha ocurrido un error")
-                  });
+            .catch((errors) => {
+                console.log(errors);
+                res.send("Ha ocurrido un error")
+            });
          },
 
-// getproduct metodo nuevo para que al editar productos me traiga solo el que tengo que editar
-
-   getproduct: (req, res) => {
-    db.Products.findByPk(req.params.id)
-        .then(function (response) {
-           let product = response.dataValues;
-          /*  res.send(product) */
-         res.render('admin/edit', { product }) 
-        })
-        .catch(err => console.log(err))
+    // getproduct metodo nuevo para que al editar productos me traiga solo el que tengo que editar
+    getproduct: (req, res) => {
+        db.Products.findByPk(req.params.id)
+            .then(function (response) {
+                let product = response.dataValues;
+                /*  res.send(product) */
+                res.render('admin/edit', { product }) 
+            })
+            .catch(err => console.log(err))
  
-},
+    },
 
-
-//DETALLE DE CADA PRODUCTO
-  
-  detail: (req, res) => {
+    //DETALLE DE CADA PRODUCTO
+    detail: (req, res) => {
         let id = req.params.id
         db.Products.findOne({ where: { id } })
             .then(product => {
@@ -137,53 +98,75 @@ module.exports = {
             .catch(err => console.log(err))
     },
 
-//EDICION
+    //EDICION
     update: function (req, res) {
         db.Products.update({
             title: req.body.title,
             price: req.body.price,
             image: req.body.image ,
             description: req.body.description,
-
         }, {
             where: {
                 id: req.body.id
             }
         })
         .then((products) => {
-
-         return res.redirect("/lista")
-          })
+            return res.redirect("/lista")
+        })
 
         .catch((errors) => {
             console.log(errors);
             res.send("Ha ocurrido un error")
-          });
+        });
 
     },
 
-  //DELETE
-
-  destroy: (req, res) => {
-
-    const id = req.params.id
-    db.Products.destroy( {
-        where : {
-            id
-        }
-    })
-    .then ( () => { 
-        
-         res.redirect ("/")
-     
-    })
-    .catch((errors) => {
-        console.log(errors);
-        res.send("Ha ocurrido un error")
-      });
-
+    //DELETE
+    destroy: (req, res) => {
+        const id = req.params.id
+        db.Products.destroy( {
+            where : {
+                id
+            }
+        })
+        .then ( () => { 
+             res.redirect ("/")
+        })
+        .catch((errors) => {
+            console.log(errors);
+            res.send("Ha ocurrido un error")
+        });
    },
+   
+    carrito:(req, res) => {
+         res.render ("products/carrito", {
+        })
+    },
 
+
+   //No se usan mas
+   buenosaires:(req, res)  =>  {
+    res.render ('products/buenosaires')
+    }
+    
+     /*  esto no sirve ahora, era uno general para que contenga todos los dem+
+        paquetes:(req, res) => {
+           res.render ("products/paquetes", {
+    
+        })
+       },
+        paquete1:(req, res) => {
+            res.render ("products/paquete1", {
+            })
+        },
+        paquete2:(req, res) => {
+            res.render ("products/paquete2", {
+            })
+        },
+        paquete3:(req, res) => {
+            res.render ("products/paquete3", {
+            })
+        },*/
 
 
 }

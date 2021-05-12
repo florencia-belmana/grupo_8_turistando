@@ -28,8 +28,8 @@ const upload = multer({ storage });
 
 
 //Vista de usuarios de admin
-router.get('/userList', authMiddleware, controller.userList);
-router.get('/userList/:id', authMiddleware, controller.detail);
+router.get('/userList', controller.userList);
+router.get('/userList/:id', controller.detail);
 
 //Procesa el formulario de creación
 router.get( '/register' , controller.register );

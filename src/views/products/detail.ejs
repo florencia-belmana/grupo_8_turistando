@@ -10,20 +10,20 @@
     </header>
 
 
-    <div class="container">
+    <div class="container"> <!-- Eso hace que este en fila hay que darle css -->
     <div class="product-container">
-        <h2>Detalle de productos: <%= product.title %></h2>
+        <h2>Paquete:  <%= product.title %></h2>
        
         <article class="conjunto">
         <div class="product-info">
         <figure>
-        <img src="images/destinos/<%= product.image %>" alt=""/></figure>
+        <img src="/images/destinos/<%= product.image %>" alt=""/></figure>
         <h3>#<%= product.id %></h3>
        </div>
 
        <div class="product-info">
-           <p>Descripción del paquete: <%= product.description %> </p>
-        <p>Precio: <%= product.price %> </p>
+           <p>Descripción: <%= product.description %> </p>
+        <p>Precio: ARS $ <%= product.price %> </p>
         </div>
 
             <div class="textopaquete">
@@ -49,12 +49,14 @@
             <div class="items"><i class="fas fa-car"></i>Traslados</div>
             <div class="items"> <i class="fas fa-concierge-bell"></i>Alojamiento</div>
         </article>
+        <hr>
         <div class="button">
             <button class= btn sm btn-pink-outline>
-                <a href="/carrito">RESERVAR</a>
+                <a href="/carrito">Ir al carrito</a>
             </button>
-       
-        </div>
+            <hr>
+            <div class ="confirmar"><input type="submit" value="RESERVA YA!"></div>
+        </div> <p>ir al carrito es un link, el boton es un type submit</p>
         <br>
     </div>   
     </div> 
