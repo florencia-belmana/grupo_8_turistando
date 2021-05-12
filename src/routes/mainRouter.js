@@ -7,7 +7,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/', controller.index);
 router.get('/index-admin', controller.indexAdmin);
 router.get('/contacto', controller.contact);
-
+router.get('/no-permitido', controller.notAllowed);
 
 
 module.exports = router;

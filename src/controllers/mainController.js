@@ -12,14 +12,12 @@ module.exports = {
 
             });
            return res.render('index', { products })
-       })
+        })
            
-           .catch((errors) => {
-               console.log(errors);
+        .catch((errors) => {
+            console.log(errors);
                res.send("Ha ocurrido un error")
-             });
-
-
+        });
 
 
     },
@@ -30,6 +28,11 @@ module.exports = {
 
     contact: (req, res) => {
         res.render("contact");
+        
+    },
+
+    notAllowed: (req, res) => {
+        res.render("notAllowed");
         
     },
 
