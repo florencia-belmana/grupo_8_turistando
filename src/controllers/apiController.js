@@ -52,8 +52,9 @@ module.exports = {
     },
 
 
-    productCreate(req, resp){
+    productCreate(req, res){
         const body = req.body
+        console.log(req.body)
         db.Products.create(body)
         .then(product => {
             res.status(200)
@@ -72,15 +73,21 @@ module.exports = {
       })
     },
 
-    productUpdate(req, resp){
+    productUpdate(req, res){
         const body = req.body
         db.Products.update(body, {
-            id: req.params.id
+            where: {
+                id: req.params.id
+            }
+           
+
         })
+
+        
         .then(() => {
             db.Products.findByPk(req.params.id)
             .then(product => {
-                res.tatus(201)
+                res.status(201)
                 .json({
                     data: product,
                     status:'success'
@@ -89,7 +96,7 @@ module.exports = {
         })
     },
 
-    productDestroy(req, resp){
+    productDestroy(req, res){
         const body = req.body
         db.Products.destroy({
             where: {
