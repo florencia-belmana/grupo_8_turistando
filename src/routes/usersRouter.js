@@ -7,8 +7,9 @@ const fs = require("fs")
 
 ///middlewares
 const validate = require('../middlewares/usersValidation');
-const guestMiddleware = require('../middlewares/guestMiddleware');
+const userMiddleware = require('../middlewares/userMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 
 //configuracion de almacenamiento
@@ -27,8 +28,8 @@ const upload = multer({ storage });
 
 
 //Vista de usuarios de admin
-router.get('/userList', controller.userList);
-router.get('/userList/:id', controller.detail);
+router.get('/userList', authMiddleware, controller.userList);
+router.get('/userList/:id', authMiddleware, controller.detail);
 
 //Procesa el formulario de creación
 router.get( '/register' , controller.register );

@@ -3,8 +3,9 @@ function authMiddleware (req, res, next){
         if (req.session.user.category_id == 1) {
             next();
         } 
-        else { res.redirect('/notAllowed')
+        else { res.render('/notAllowed')
         }
+        
     }   
     
        

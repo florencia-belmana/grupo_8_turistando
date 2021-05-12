@@ -4,7 +4,7 @@ const  controller  =  require ( '../controllers/productsController' )
 const multer = require ('multer');
 const path = require('path');path-multer
 
-const guestMiddleware = require('../middlewares/guestMiddleware');
+const userMiddleware = require('../middlewares/userMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 //VALIDACION - directamente acá

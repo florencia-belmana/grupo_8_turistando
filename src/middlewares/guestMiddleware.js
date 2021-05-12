@@ -1,7 +1,7 @@
 function guestMiddleware (req, res, next){
     if (req.session.user.category_id == undefined) {
         next();
-    } else {"Ya estas logueado" }
+    } else {"Debes cerrar sesión para continuar" }
 }
 
 module.exports = guestMiddleware
