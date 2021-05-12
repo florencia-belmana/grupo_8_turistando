@@ -54,7 +54,7 @@ module.exports = {
 
     productCreate(req, resp){
         const body = req.body
-        db.Product.create(body)
+        db.Products.create(body)
         .then(product => {
             res.status(200)
                 .json({
@@ -74,7 +74,7 @@ module.exports = {
 
     productUpdate(req, resp){
         const body = req.body
-        db.Products.upload(body, {
+        db.Products.update(body, {
             id: req.params.id
         })
         .then(() => {
