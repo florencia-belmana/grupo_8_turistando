@@ -4,6 +4,7 @@
     <%- include('partials/head.ejs') %>
     <link rel="stylesheet" href="/css/products.css">
     <link rel="stylesheet" href="/css/partners.css">
+    <link rel="stylesheet" href="/css/dark.css">
 </head>
 <body>
 
@@ -18,7 +19,37 @@
         <h2> Turisteando es la pagina que estabas buscando para empezar tus vacaciones por Argentina </h2>
         <br>
         <div class="pic-container1">
+          
+          <!-- JS FRONTTTTTTTTT -------------------------------------------------->  
+          <style>
+           .dark{
+                background: black;
+                color: white
+            }
+            .light{
+                background: white;
+                color: black;
+            }
+        </style>
+        <script>
+        let opcion = confirm("Elegir un modo");
+            if (opcion == true) {
+                document.querySelector('body').classList.remove("light")
+                document.querySelector('body').classList.add("dark")
 
+            } else {
+                document.querySelector('body').classList.remove("dark")
+                document.querySelector('body').classList.add("light")
+            }
+            
+            function myFunction() {
+                document.querySelector('body').classList.toggle("dark");
+             }
+
+        </script>
+        <button onclick="myFunction()">Boton para ojos cansados</button>
+        
+        <!----------------------------------------------------->
        
     </div>
     <section>
