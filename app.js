@@ -30,7 +30,10 @@ app.use(auth);
 app.use(express.urlencoded({ extended: false }));//De esta forma le estamos aclarando a la aplicación que todo aquello que llegue desde un formulario, queremos capturarlo en forma de objeto literal.
 app.use(express.json());                         // Y a su vez, tener la posibilidad de convertir esa información en un formato JSON, en caso de necesitarlo
 app.use(methodOverride('_method'));             //Para poder sobreescribir el método original y poder implementar los métodos PUT o DELETE
-
+//cookieParser
+/* const recordameMiddleware = require('./src/middlewares/recordameMiddleware');
+app.use(cookieParser()); 
+app.use(recordameMiddleware); */
 
 //app.get('/', (req, res) => {
   //  res.sendFile(path.join(__dirname, 'src/views/index.html'));

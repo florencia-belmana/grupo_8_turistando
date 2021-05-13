@@ -57,6 +57,8 @@ module.exports = {
 
         res.render ('users/login') 
     },
+
+
     logout: (req, res) => {
         req.session.destroy();
         res.redirect('/');
@@ -83,6 +85,13 @@ module.exports = {
                // if ((req.body.password == user.dataValues.password)) { sin bcrypt
                     req.session.auth = true
                     req.session.user = user;    
+
+
+                //cookie
+                  /*   if(req.body.recordarme != undefined){
+                        res.cookie('recordame', user.email, { maxAge: 60000})
+                    }
+ */
                     return res.redirect('/user/' + user.dataValues.id)
     
                 // Si la contraseña es incorrecta
