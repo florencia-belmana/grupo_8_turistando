@@ -24,29 +24,50 @@
     <div class="field">
             <label for="">Titulo</label>
         <div>
-            <input type="text" name="title" value="<%= locals.old && old.title ? old.title : ''%>">
+            <input type="text" 
+            name="title" 
+            value="<%= locals.old && old.title ? old.title : ''%>" class="form-control <%= locals.errors && errors.title ? 'is-invalid' : null %>">
         </div>
+        <% if (locals.errors && errors.title) { %>
+        <p class="feedback is-danger"><%= errors.title.msg %></p>
+        <% } %>
     </div>
 
     <div class="field">
             <label for="image">Imagen</label>
             <div>
-            <input type="file" name="image" id="image" value="<%= locals.old && old.image ? old.image : ''%>">
+            <input type="file" 
+            name="image" id="image" 
+            value="<%= locals.old && old.image ? old.image : ''%>" 
+            class="form-control <%= locals.errors && errors.image ? 'is-invalid' : null %>">
         </div>
+        <% if (locals.errors && errors.image) { %>
+        <p class="feedback is-danger"><%= errors.image.msg %></p>
+        <% } %>
     </div>   
 
      <div class="field">
             <label for="">Descripción</label>
             <div>
-            <input type="text" name="description" value="<%= locals.description && old.description ? old.description : ''%>">
+            <input type="text" 
+            name="description" 
+            value="<%= locals.description && old.description ? old.description : ''%>" class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>">
             </div>
+            <% if (locals.errors && errors.description) { %>
+        <p class="feedback is-danger"><%= errors.description.msg %></p>
+        <% } %>
     </div>
 
     <div class="field">
             <label for="">Precio</label>
             <div>
-            <input type="text" name="price" value="<%= locals.old && old.price ? old.price : ''%>">
+            <input type="text" 
+            name="price" 
+            value="<%= locals.old && old.price ? old.price : ''%>" class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>">
         </div>
+        <% if (locals.errors && errors.price) { %>
+        <p class="feedback is-danger"><%= errors.price.msg %></p>
+        <% } %>
     </div>
 
         

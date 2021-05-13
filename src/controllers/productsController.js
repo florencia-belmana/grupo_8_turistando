@@ -27,12 +27,7 @@ module.exports = {
         let errors = validationResult(req);
             if(errors.isEmpty()){
                 let product = req.body;
-            }
-            else {
-                res.render("products/crear", { errors: errors.array(),
-                old: req.body
-                });
-            }
+         
 
         //hasta acá es validation
             if (req.file) {
@@ -58,7 +53,15 @@ module.exports = {
                 console.log(errors);
                 res.send("Ha ocurrido un error")
             });
+            
 
+            }
+            else {
+                res.render("products/crear", { errors: errors.array(),
+                old: req.body
+                });
+            }
+            
     },
 
     lista: function (req, res){
@@ -100,6 +103,12 @@ module.exports = {
 
     //EDICION
     update: function (req, res) {
+       /*  if (req.file) {
+            let productImage = req.body;
+            
+                console.log(req.file)
+                productImage.image = req.file.filename;
+            }  */
         db.Products.update({
             title: req.body.title,
             price: req.body.price,

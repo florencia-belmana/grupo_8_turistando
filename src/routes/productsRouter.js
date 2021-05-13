@@ -59,7 +59,7 @@ router.get( '/paquete2' , controller.paquete2 ) ;router.get( '/paquete3' , contr
 //CREAR
 router.get("/products", controller.crear)
 router.get("/crear", controller.crear)
-router.post("/crear", upload.single('image'), validateCreateProducts ,controller.guardar)
+router.post("/crear", upload.single('image'), validateCreateProducts, controller.guardar)
 
 //LECTURA - READ
 router.get("/lista", controller.lista)
