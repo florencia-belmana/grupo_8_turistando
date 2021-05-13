@@ -145,7 +145,7 @@ module.exports = {
                             msg:'Este usuario ya está registrado'
                             }
                         },
-                     oldData: req.body
+                     old: req.body
                     });
                  }
                 })
