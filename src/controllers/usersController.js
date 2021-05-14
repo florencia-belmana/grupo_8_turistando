@@ -88,10 +88,10 @@ module.exports = {
 
 
                 //cookie
-                  /*   if(req.body.recordarme != undefined){
-                        res.cookie('recordame', user.email, { maxAge: 60000})
+                    if(req.body.recordarme != undefined){
+                        res.cookie('recordame', user.email, { maxAge: 60000 })
                     }
- */
+ 
                     return res.redirect('/user/' + user.dataValues.id)
     
                 // Si la contraseña es incorrecta
