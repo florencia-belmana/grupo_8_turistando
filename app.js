@@ -7,6 +7,7 @@ const fs = require("fs") // fileSync (readFileSync(), Es un método que trae el 
 //
 const session = require('express-session'); //npm instal express-session
 const auth = require('./src/middlewares/auth');
+const maintenance = require('./src/middlewares/maintenance');
 
 const cookieParser = require('cookie-parser') // npm instal cookie-parser --save para utilizar cookies
 
@@ -51,7 +52,7 @@ app.use('/', mainRouter);
 const productsRouter = require('./src/routes/productsRouter');
 app.use('/', productsRouter);
 app.use('/crear', productsRouter);
-app.use('/products', productsRouter);
+app.use('/products',  productsRouter);
 
 //Usuarios
 const usersRouter = require('./src/routes/usersRouter');
@@ -64,6 +65,7 @@ app.use('/users', usersRouter);
 //Api
 
 const apiRouter = require('./src/routes/apiRouter');
+
 app.use('/api', apiRouter);
 
 
