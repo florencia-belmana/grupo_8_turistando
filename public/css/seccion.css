@@ -1,0 +1,34 @@
+.content-secction{
+   width: 100%;
+   margin: 20px auto;
+   background-color: cornflowerblue;
+   overflow: hidden;
+ 
+}
+
+.content-secction ul li{
+  /*  VER PORQUE NO LLEGA AL TOTAL DE LA BARRA EL HOVER */
+   text-align: center;
+   list-style: none;
+
+}
+.content-secction ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: white;
+ 
+}
+
+.content-secction ul li a:hover{
+   background-color: blue;
+ }
+
+    /*box-sizing: content-box;
+    width: 350px;
+    height: 100px;
+    
+    padding: 20px;
+    margin: 20px auto;
+   text-align:left;
+  */
+    

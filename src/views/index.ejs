@@ -4,38 +4,36 @@
     <%- include('partials/head.ejs') %>
     <link rel="stylesheet" href="/css/products.css">
     <link rel="stylesheet" href="/css/partners.css">
+    <link rel="stylesheet" href="/css/seccion.css">
     <link rel="stylesheet" href="/css/dark.css">
 </head>
 <body>
 
     <%- include('partials/header.ejs') %>
     <main>
-        <ul>
-   
-       <li> <a href="/index-admin">Sección para administradores</a></ul>
+      <div>
+        <nav class="content-secction">
+           <ul>
+             <li><a href="/index-admin" class="seccion">Sección para administradores</a>
+             <li><a href="/user/<%= ( user ? user.id : "../login") %> " class="seccion"> Tu perfil de usuario </a> </li>
+           </ul>
+        </nav>
+      </div>
 
-        <li><a href="/user/<%= ( user ? user.id : "../login") %> "> Tu perfil de usuario </a> </li>
-        </ul>
-        <h2> Turisteando es la pagina que estabas buscando para empezar tus vacaciones por Argentina </h2>
+         <h2> Turisteando es la pagina que estabas buscando para empezar tus vacaciones por Argentina </h2>
         <br>
-        <div class="pic-container1">
-          
-          <!-- JS FRONTTTTTTTTT -------------------------------------------------->  
-    
-        <!----------------------------------------------------->
-       
-    </div>
+
+        <div class="pic-container1"> 
+          <!-- JS FRONTTTTTTTTT ------------->     
+        </div>
+
     <section>
-      
     <h3 class="color-h3">Elegí tu próxima aventura</h3>
-    
-    <br>+
-   
+       <br>+
     <%- include('partials/cotizacion.ejs') %>
     <hr>
-
-<br>
-</section>
+    <br>
+    </section>
 
 
         <div class="container">
@@ -123,8 +121,7 @@
 <footer>
     <%- include('partials/footer.ejs') %>
 </footer>
-
+<script src="/js/header.js"></script>
 
 </body>
-<script src="/js/header.js"></script>
 </html>
