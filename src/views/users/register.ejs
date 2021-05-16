@@ -1,14 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs') %>
-<!--     <script src="/js/formulario.js"></script> -->
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
   
-    
     <main>
         <div class="container">
             <section>
@@ -17,14 +14,13 @@
                         <hr>
                         <h1 style="color: black;">Registrate acá!</h1>
                         
-
-                        <form class="form-reservation" action="/users" method="POST" enctype="multipart/form-data">
-                        
-                            <!--desde class="form-reservation" dentro del form hasta el div que contiene ul es validacion de js-front  
-                    <div class="errores">
-                               <ul></ul>
-                           </div>
-                            -->
+                        <!--esto respecta a errores de validacion del js-f-->
+                         <div class="errores">
+                            <ul>
+                            </ul>
+                        </div>
+                      <!--hasta acá-->    
+                        <form class="reservation" action="/users" method="POST" enctype="multipart/form-data">
 
                             <div class="field">
                                 <label for="first_name">Nombre</label>
@@ -77,7 +73,7 @@
                                 <label for="country">Selecciona tu país</label>
                                 <div class="row">
                                     <label for="country">País</label>
-                                    <select name="country" id="country" required >
+                                    <select name="country" id="country">
                                         <option value="">Selecciona un país</option>
                                         <option value="arg">Argentina</option>
                                         <option value="bra">Brasil</option>
@@ -94,7 +90,7 @@
                                 <div class="field">
                                     <label for="category">Categoría</label>
                                     <div class="control">
-                                        <select name="category_id" id="category_id" required>
+                                        <select name="category_id" id="category_id">
                                             <option value="">Seleccione una opción</option>
                                             <option value="1">Administrador</option>
                                             <option value="2">Viajero</option>
@@ -181,6 +177,6 @@
     <%- include('../partials/footer.ejs') %>
 </footer>
 
-
+<script src="/js/form.js"></script>
 </body>
 </html>

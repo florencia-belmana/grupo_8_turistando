@@ -45,7 +45,7 @@ a {
     box-sizing: content-box;
     padding: 5px; 
    /*SI PONGO ESTO, SE MARCA TMB EL RECUADRO EN EL HEADER:  box-sizing: content-box;
-    box-shadow: 1px 1px 3px black; */
+    box-shadow: 1px 1px 3px black; 
   
 
 /*    display: flex; con estos se me arma bloque uno al lado del otro y divido a la mitad como debe ser pero se me ven dos productos nomas.
