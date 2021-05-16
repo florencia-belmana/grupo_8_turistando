@@ -12,11 +12,11 @@
           <nav>
             <h3 class="color-h3"> Bienvenid@:  <%= ( user ? user.first_name : "visitante") %> <i class="fas fa-plane-departure"></i></h3>
             <span class="separador">|
-            <a href="/">Inicio</a>
+            <a href="/" class="vinculo">Inicio</a>
             <span class="separador">|
-            <a href="/login">Ingresá</a>
+            <a href="/login" class="vinculo">Ingresá</a>
             <span class="separador">|
-            <a href="/register"> Registrate </a>
+            <a href="/register" class="vinculo"> Registrate </a>
             
             <br>
             
@@ -24,7 +24,7 @@
             <div>
             <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
             <span class="separador">|
-            <a href="/logout"> Cerra sesión</a>
+            <a href="/logout" class="close-button"> Cerra sesión</a>
             </div>
                 
                 <br>
@@ -82,4 +82,6 @@
 </div>
     <!-- para que funcionen las acciones de next y previos del carrusel-->
     <script src="/js/carousel.js"></script>
+    <script src="/js/header.js"></script>
 </header>
+

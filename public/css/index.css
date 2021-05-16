@@ -11,6 +11,17 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+  /*   display: flex;
+    
+    justify-content: space-around; */
+ /*    display: flex; 
+  margin: auto;
+  overflow: hidden; 
+  text-align: center;
+  flex-direction: row;
+  box-sizing: content-box;
+  
+  padding: 5px;  */
 }
 
 a {
@@ -34,7 +45,9 @@ h2{
     margin-top: -5%;
     
 }
-
+.vinculo{
+    color: black;
+}
 
 .top{
         display: flex;
