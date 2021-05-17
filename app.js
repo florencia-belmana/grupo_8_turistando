@@ -62,11 +62,18 @@ app.use('/users', usersRouter);
 
 
 
-//Api
+//Api products
 
 const apiRouter = require('./src/routes/apiRouter');
 
 app.use('/api', apiRouter);
+
+// Api users
+/* 
+const apiUserRouter = require('./src/routes/apiUserRouter');
+
+app.use('/api', apiUserRouter); */
+
 
 
 //Not found
