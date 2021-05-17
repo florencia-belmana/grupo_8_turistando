@@ -17,3 +17,14 @@ window.addEventListener("load", function(){
         }) 
     }
 })
+
+// mostrar ocultar login register // carrito cerrar sesion
+//let user = req.session.user
+/*  window.addEventListener("load", function() {
+    let guest = document.querySelector("#guest")
+    if (user) { guest.style.display="none"}
+});
+window.addEventListener("load", function() {
+    let user2 = document.querySelector("#user")
+    if (user) { user2.style.display="block"}
+}); */
