@@ -3,7 +3,7 @@
 window.addEventListener("load", function() {
     let closeButtom = document.querySelector(".close-button")
     closeButtom.addEventListener("click", function(){
-        alert ("Hey! Cerraste sesión")
+        alert ("Cerraste sesión")
     })
 });
 
