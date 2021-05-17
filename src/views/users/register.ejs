@@ -15,17 +15,18 @@
                         <h1 style="color: black;">Registrate acá!</h1>
                         
                         <!--esto respecta a errores de validacion del js-f-->
-                         <div class="errores">
+                        <div class="errores">
                             <ul>
                             </ul>
                         </div>
-                      <!--hasta acá-->    
-                        <form class="reservation" action="/users" method="POST" enctype="multipart/form-data">
+                        <!--hasta acá-->    
+
+                        <form class="reservation" id="register-form" action="/users" method="POST" enctype="multipart/form-data">
 
                             <div class="field">
                                 <label for="first_name">Nombre</label>
                                 <div class="control">
-                                    <input type="text" name="first_name" id="first_name" value="<%= locals.old && old.first_name ? old.first_name : '' %>">
+                                    <input type="text" name="first_name" id="first_name" value="<%= locals.old && old.first_name ? old.first_name : "" %>">
                                 </div>
                                <!--  <p class="feedback is error">Un error</p>-->
                                <% if (locals.errors && errors.first_name) { %>
@@ -100,7 +101,7 @@
                          
                             <div class="field">
                                 <div class="control">
-                                    <input type="submit" value="Registrate">
+                                    <input type="submit" value="Registrate" class="okButtom">
                                 </div>
                             </div> 
                         </form>  
@@ -178,5 +179,6 @@
 </footer>
 
 <script src="/js/form.js"></script>
+<script src="../js/details.js"></script>
 </body>
 </html>

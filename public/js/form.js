@@ -1,6 +1,7 @@
 /* const e = require("express"); */
 window.addEventListener("load", function(){
-    let form = document.querySelector("form.reservation");
+
+    let form = document.querySelector("#register-form");
     form.addEventListener("submit", function(e){
     /*     e.preventDefault(); */
 
@@ -27,7 +28,10 @@ window.addEventListener("load", function(){
 
 
     })
-})
+   
+   
+    });
+
 
 
 
