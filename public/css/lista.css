@@ -6,7 +6,7 @@ body {
 
 
 .products{
-    background-color: cornflowerblue;
+   /*   background-color: cornflowerblue;*/
     padding: 1rem;
     font-size: 1.2rem;
     display: flex;
@@ -14,3 +14,4 @@ body {
     max-width: 1198px;
     margin: 0 auto;
 }
+
