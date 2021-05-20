@@ -65,40 +65,7 @@ a {
     box-sizing: content-box;
     
 }
-.paquete-item{
-   
-}
-.paquete-fila{
-   
-}
-.paquete-pic{
-   
-}
 
-/* .paquete-pic {
- 
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-around;
-    margin: 0 -.5rem;
-}
- */
-
-
-
-/*de aca hasta button clases viejas
-
-/* .container-paquete {
-
-    background-color:#0d47a1;
-    overflow: hidden;
-    text-align: center;
-    display: flex;
-}
-
- */
 
 .pic-container1 {
     display: flex;
