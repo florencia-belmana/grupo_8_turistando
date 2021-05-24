@@ -83,7 +83,6 @@ module.exports = {
 
         })
 
-        
         .then(() => {
             db.Products.findByPk(req.params.id)
             .then(product => {
