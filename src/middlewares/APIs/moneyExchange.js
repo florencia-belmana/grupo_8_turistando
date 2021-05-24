@@ -5,11 +5,13 @@ const API_EXCHANGE_URL = 'https://www.dolarsi.com/api/api.php?type=valoresprinci
 module.exports = async (req, res, next) => {
     try {
         const apiResponse = await fetch(API_EXCHANGE_URL)
-        const exchange = await apiResponse.json()
         
+        const exchange = await apiResponse.json()
+      // console.log("exchange", exchange)
 
         const oficial = exchange.find(change => 
             change.casa.nombre === 'Dolar Oficial')
+         
 
         const blue = exchange.find(change => 
             change.casa.nombre === 'Dolar Blue')
@@ -23,7 +25,7 @@ module.exports = async (req, res, next) => {
             turista: turista ? turista.casa.venta : 'N/A',
         }
     } catch(err) {
-        console.log('API DOLAR SI NO FUNCIONO')
+        console.log('API DOLAR-SI NO FUNCIONO')
     }
 
 

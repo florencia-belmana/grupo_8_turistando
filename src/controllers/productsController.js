@@ -50,7 +50,7 @@ module.exports = {
             })
 
             .catch((errors) => {
-                console.log(errors);
+             //   console.log(errors);
                 res.send("Ha ocurrido un error")
             });
             

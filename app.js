@@ -10,7 +10,7 @@ const auth = require('./src/middlewares/auth');
 const maintenance = require('./src/middlewares/maintenance');
 
 const cookieParser = require('cookie-parser') // npm instal cookie-parser --save para utilizar cookies
-
+const cors = require('cors') //El intercambio de recursos de origen cruzado o CORS (Cross-origin resource sharing, en sus siglas en inglés) es un mecanismo que permite que se puedan solicitar recursos restringidos (como por ejemplo, las tipografías) en una página web desde un dominio diferente del dominio que sirvió el primer recurso
 
 // Configuro el directorio de recursos estáticos
 app.use(express.static('public'));
@@ -35,7 +35,6 @@ app.use(methodOverride('_method'));             //Para poder sobreescribir el m�
 //cookieParser
 app.use(cookieParser()); 
 const recordameMiddleware = require('./src/middlewares/recordameMiddleware');
-
 app.use(recordameMiddleware); 
 
 //app.get('/', (req, res) => {
@@ -63,16 +62,19 @@ app.use('/users', usersRouter);
 
 
 //Api products
-
 const apiRouter = require('./src/routes/apiRouter');
-
 app.use('/api', apiRouter);
 
 // Api users
-/* 
 const apiUserRouter = require('./src/routes/apiUserRouter');
+app.use('/api', apiUserRouter); 
 
-app.use('/api', apiUserRouter); */
+//Api terceros
+const moneyExchangeMiddleware = require('./src/middlewares/APIs/moneyExchange')
+//const apiProvincias = require('./src/middlewares/APIs/apiProvincias')
+app.use(cors())
+app.use(moneyExchangeMiddleware)
+//app.use(apiProvincias)
 
 
 

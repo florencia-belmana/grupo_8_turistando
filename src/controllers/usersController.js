@@ -80,7 +80,7 @@ module.exports = {
             // Si el usuario existe
             if (user) {
                 // La contraseña es la correcta
-                console.log(req.body.password)
+                //console.log(req.body.password)
                 if (bcrypt.compareSync(req.body.password, user.password)) {
                // if ((req.body.password == user.dataValues.password)) { sin bcrypt
                     req.session.auth = true
@@ -133,7 +133,7 @@ module.exports = {
     }, 
 
     ////////STORE POST
-    store: async (req, res) => {
+    store: (req, res) => {
         // Valido los campos - aca ver req.file
         let errors = validationResult(req);
         // Me fijo si no hay errores
