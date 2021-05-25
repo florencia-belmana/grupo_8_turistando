@@ -1,8 +1,10 @@
+
 const db = require("../../database/models");
 
 module.exports = {
 
     productList(req, res){
+       
         db.Products.findAll()
             .then(products => {
                 res.

@@ -12,6 +12,7 @@ const maintenance = require('./src/middlewares/maintenance');
 const cookieParser = require('cookie-parser') // npm instal cookie-parser --save para utilizar cookies
 
 
+
 // Configuro el directorio de recursos estáticos
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -75,7 +76,6 @@ const moneyExchangeMiddleware = require('./src/middlewares/APIs/moneyExchange')
 
 app.use(moneyExchangeMiddleware)
 //app.use(apiProvincias)
-
 
 
 //Not found
