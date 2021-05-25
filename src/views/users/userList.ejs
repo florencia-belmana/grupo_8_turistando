@@ -12,26 +12,29 @@
         <h1>Lista Usuarios</h1>
 
         <% users.forEach(user => { %>
-            <article class="card">
+            <article class="card" >
                 <div class="card-left">
-                    <figure>
+                    <figure style="display: flex; flex-direction: column; text-align: center;width: 100px;">
                         
-                        <img width="15%" src="images/users/<%= user.image%>" alt="">
-                    </figure>
-                    <h3>#<%= user.id %></h3>
+                        <img src="images/users/<%= user.image%>" alt="" style="box-shadow: 0 0 15 #999; width: 100px;">
+                    
+                    <h3>ID usuario #<%= user.id %></h3>
                 </div>
-                <div class="card-content">
+                <div class="card-content" style="display:inline-block; margin: auto">
                     <h3><%= user.first_name %> <%= user.last_name %></h3>
-                    <p>Categoría: <%= user.category %></p>
+                    <p>Categoría: <%= user.category_id  =="1" ? "Administrador" : "Viajero" %> </p>
                     <p>Email: <a href="mailto:<%= user.email %>" target="_blank"><%= user.email %></a></p>
                     <div>
                         <button class="button is-danger" ><a href="/userList/<%= user.id %>">Ver detalle</button></a>
                     </div>
-                </div>   
+                </div>  
+            </figure> 
             </article>
+            <hr>
         <% }) %>
-
+      
     </div>
+    
 </main>
 
 <footer>
