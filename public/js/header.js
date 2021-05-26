@@ -5,19 +5,18 @@ window.addEventListener("load", function() {
     closeButtom.addEventListener("click", function(){
         alert ("Cerraste sesión")
     })
-});
+
 
 // cambio de color de texto al hacer click
 
-window.addEventListener("load", function(){
     let vinculos = document.querySelectorAll(".vinculo")
     for (let i = 0; i < vinculos.length; i++){
         vinculos[i].addEventListener("click", function(){
             this.style.color = "purple"
         }) 
     }
-})
 
+});
 // mostrar ocultar login register // carrito cerrar sesion
 //let user = req.session.user
 /*  window.addEventListener("load", function() {
