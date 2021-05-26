@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+
 const form = document.querySelector("#form-login");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
@@ -44,6 +44,7 @@ form.addEventListener("submit", function(e){
     if (errors == true){
         e.preventDefault()
     }
+    console.log (errors)
 })
 
-})
+

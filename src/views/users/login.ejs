@@ -6,7 +6,6 @@
 
     <header> 
         <%- include('../partials/header.ejs') %>  
-    
     </header>
 
     <body>
@@ -36,7 +35,7 @@
                                         <input type="password" name="password" id="password" placeholder="">
                                     </div>
                                     <% if (locals.errors && errors.password) { %>
-                                    <p class="feedback is-danger"><%= errors.password.msg %></p>
+                                        <p class="feedback is-danger"><%= errors.password.msg %></p>
                                     <% } %>
 
                                     <div class= "errorPassword errorMensaje"></div>
@@ -49,11 +48,12 @@
                                         <div class="control">
                                             <select name="category_id" id="category_id" >
                                                 <option value="">Seleccione una opción</option>
-                                                <option name="2" value="2">Viajero</option>
-                                                <option name="1" value="1">Administrador</option>
+                                                    <option name="2" value="2">Viajero</option>
+                                                    <option name="1" value="1">Administrador</option>
                                             </select>
                                         </div>
                                     </div>
+                             </div>
                             <br>
 
                             <div class="row">
@@ -71,7 +71,7 @@
                         <!-- END LOGIN FORM -->
                         <!-- FORGET PW -->
                         <form action ="/login" >
-                        <p><input type="submit" href="#" value="Olvidé la contraseña"></p>
+                            <p><input type="submit" href="#" value="Olvidé la contraseña"></p>
                         </form> 
                         <br>
                         <!-- ENDFORGET PW -->
@@ -82,11 +82,11 @@
                         <p><input type="submit" value="No tenes cuenta? Registrate acá!"></p>
                     </form> 
                     <!-- END REGISTER -->
-                    
+                    <script src="../js/user-log.js"></script>
         <footer>
             <%- include('../partials/footer.ejs') %>
         </footer>
-         <script src="../../../public/js/user-log.js"></script>
-         <script src="../js/details.js"></script> 
+       
+        <!--  <script src="../js/details.js"></script>  -->
     </body>
 </html>
