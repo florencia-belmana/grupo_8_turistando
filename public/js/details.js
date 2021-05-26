@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-    let elNombre = document.querySelector("#first_name");
+    let elNombre = document.querySelector("#password");
     elNombre.addEventListener("focus", function(){
         
 

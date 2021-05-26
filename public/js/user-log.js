@@ -15,8 +15,8 @@ function resetErrors(){
     })
 }
 
-window.addEventListener("submit", function(e){
-
+form.addEventListener("submit", function(e){
+console.log("prueba", e)
     let errors = false
     resetErrors()
     
@@ -41,7 +41,7 @@ window.addEventListener("submit", function(e){
     }
 */
 
-
+    console.log ("errors", errors)
     if (errors == true){
         e.preventDefault()
     }

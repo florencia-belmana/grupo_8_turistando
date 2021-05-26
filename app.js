@@ -10,8 +10,9 @@ const auth = require('./src/middlewares/auth');
 const maintenance = require('./src/middlewares/maintenance');
 
 const cookieParser = require('cookie-parser') // npm instal cookie-parser --save para utilizar cookies
+const cors = require ("cors")
 
-
+app.use(cors())
 
 // Configuro el directorio de recursos estáticos
 app.use(express.static('public'));
