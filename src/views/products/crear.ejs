@@ -9,9 +9,9 @@
         <%- include('../partials/header.ejs') %>
     </header>
     <main>
-        
+        <div class="create-p">
             <h2>CREAR PAQUETE</h2>
-
+<!--este if respecta  a las v del back. -->
             <% if (locals.errors) { 
                 errors.forEach(error => { %>
                 <p class="feedback is-danger"><%= error.msg %></p>
@@ -19,20 +19,24 @@
              }
                 %>
 
-        <form action="/crear" method="POST" enctype="multipart/form-data"> 
+        <form class="form-creat"  action="/crear" method="POST" enctype="multipart/form-data"> 
+
 
     <div class="field">
             <label for="">Titulo</label>
         <div>
             <input type="text" 
             name="title" 
-            value="<%= locals.old && old.title ? old.title : ''%>" class="form-control <%= locals.errors && errors.title ? 'is-invalid' : null %>">
+            value="<%= locals.old && old.title ? old.title : ''%>" class="form-control <%= locals.errors && errors.title ? 'is-invalid' : null %>" require>
         </div>
         <% if (locals.errors && errors.title) { %>
         <p class="feedback is-danger"><%= errors.title.msg %></p>
         <% } %>
     </div>
 
+
+
+    
     <div class="field">
             <label for="image">Imagen</label>
             <div>
@@ -81,12 +85,14 @@
 
             </form>
            
-
+        </div>
 
 </main>
 
     <footer>
         <%- include('../partials/footer.ejs') %>
 </footer>
+<script src="/js/product-valid.js"></script> 
+
 </body>
 </html>
