@@ -1,50 +1,52 @@
-
 const form = document.querySelector("#form-login");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
-const errorEmail = document.querySelector(".error-email");
-const errorPassword = document.querySelector(".error-password");
-const errorMensaje = document.querySelectorAll(".error-mensaje");
+const errorEmail = document.querySelector(".errorEmail");
+const errorPassword = document.querySelector(".errorPassword");
+const  errorMessages = document.querySelectorAll(".errorMessage");
 
 
-
-function resetErrors(){
-    errorMensaje.forEach(error =>{
-        error.style.display ="none"
+// recorriendo todos los mensajes de error y los ocultamos
+function resetFormErrors() {
+    console.log('hola')
+    errorMessages.forEach(errorMessage => {
+        errorMessage.style.display = "none"
     })
 }
 
-form.addEventListener("submit", function(e){
+email.addEventListener("focus", resetFormErrors)
+password.addEventListener("focus", resetFormErrors)
 
+form.addEventListener("submit", function(e) {
     let errors = false
-    resetErrors()
+
+    // llamamos a la función que oculta los mensajes de error
+    resetFormErrors()
     
     if (email.value.length == 0){
-        errorEmail.innerText = "Por fasadsadsdvor, complete su email"
+        errorEmail.innerText = "Por favor, complete su email"
         errorEmail.style.display = "block"
-        errors = true
-    } else if (email.value.length < 2){
-        errorEmail.innerText = "El maildasasdasddsa debe ser más largo"
+        errors = true 
+    } else if (email.value.length < 2) {
+        errorEmail.innerText = 'El mail es incorrecto'
         errorEmail.style.display = "block"
         errors = true
     }
-  
+    
     if (password.value.length == 0){
-        errorPassword.innerText = "Por favordaadsdasdsad, complete su contraseña"
+        errorPassword.innerText = "Por favor, complete su contraseña"
         errorPassword.style.display = "block"
         errors = true
-    } else if (password.value.length < 5){
-        errorPassword.innerText = "Su contraseasddsasdadsasdaña debe ser más larga"
+    } else if (password.value.length < 4) {
+        errorPassword.innerText = 'La contraseña tiene que tener minimo 5 caracteres'
         errorPassword.style.display = "block"
         errors = true
-    }
+    } 
 
-   
-    if (errors == true){
+    // con que haya un solo campo con error, ya no se va a enviar el formulario
+    if (errors) {
         e.preventDefault()
     }
-    console.log (errors)
+
 })
-
-

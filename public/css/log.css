@@ -1,5 +1,6 @@
 
 /* LOGIN Y REGISTER FORMS Y BOTONES */
+/* Y ERRORES */
 
 /* Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -26,6 +27,8 @@ h1 {
 /* div containing form */
 form {
   text-align: center;
+  max-width: 680px;
+  margin: auto;
 }
 
 /* username and password fields */
@@ -77,4 +80,12 @@ input[type="submit"]:active {
 
 input[type="submit"]:hover {
   background-color: #6FC6FF;
+}
+
+
+
+
+.errorMessage{
+  color: red;
+  display: none;
 }

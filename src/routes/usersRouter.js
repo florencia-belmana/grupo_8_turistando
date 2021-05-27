@@ -1,5 +1,5 @@
-const  express  =  require ( 'express' ) ;
-const  router = express.Router ( ) ;
+const express  =  require ( 'express' ) ;
+const router = express.Router ( ) ;
 const multer = require ('multer');
 const path = require('path');path-multer
 const controller  =  require ( '../controllers/usersController' );
