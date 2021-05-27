@@ -12,7 +12,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     
-    
 }
 
 a {
@@ -23,12 +22,7 @@ a {
 h2{
     text-align: center;
 }
-.contendor {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-   
-}
+
 
 .header {
     font-size: 20px;
