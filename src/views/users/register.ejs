@@ -27,6 +27,7 @@
                                     <% if (locals.errors && errors.first_name) { %>
                                         <p class="feedback is-danger"><%= errors.first_name.msg %></p>
                                     <% } %>
+                                    <div class= "errorName errorMessage"></div>
                                     </div>
 
                                     <div class="field">
@@ -35,8 +36,9 @@
                                                 <input type="text" name="last_name" id="last_name" value="<%= locals.old && old.last_name ? old.last_name : '' %>">
                                             </div>
                                             <% if (locals.errors && errors.last_name) { %>
-                                            <p class="feedback is-danger"><%= errors.last_name.msg %></p>
+                                                <p class="feedback is-danger"><%= errors.last_name.msg %></p>
                                             <% } %>
+                                            <div class= "errorLastName errorMessage"></div>
                                     </div>
 
                                     <div class="field">
@@ -47,6 +49,7 @@
                                             <% if (locals.errors && errors.email) { %>
                                                 <p class="feedback is-danger"><%= errors.email.msg %></p>
                                             <% } %>
+                                            <div class= "errorEmail errorMessage"></div>
                                     </div>
 
                                     <div class="field">
@@ -55,6 +58,10 @@
                                                 <input type="file" accept=".jpg, .jpeg, .png" name="image" id="image" default="/">
                                             </div>
                                             <p class="feedback"></p>
+                                            <% if (locals.errors && errors.email) { %>
+                                                <p class="feedback is-danger"><%= errors.email.msg %></p>
+                                            <% } %>
+                                            <div class= "errorImage errorMessage"></div>
                                     </div>
 
                                     <div class="field">
@@ -63,13 +70,14 @@
                                                 <input type="password" name="password" id="password">
                                             </div>
                                             <p class="feedback"></p>
+                                            <div class= "errorPassword errorMessage"></div>
                                     </div>
 
                                     <div class="field">
                                         <label for="country">Selecciona tu país</label>
                                             <div class="row">
                                                 <label for="country">País</label>
-                                                <select name="country" id="country">
+                                                <select name="country" id="country" required>
                                                     <option value="">Selecciona un país</option>
                                                     <option value="arg">Argentina</option>
                                                     <option value="bra">Brasil</option>
@@ -97,7 +105,7 @@
 
                                         <div class="field">
                                             <div class="control">
-                                                <input type="submit" value="Registrate" class="okButtom">
+                                                <input type="submit" value="Registrate">
                                             </div>
                                         </div> 
                                 </form>  
@@ -115,7 +123,7 @@
             <%- include('../partials/footer.ejs') %>
         </footer>
 
-        <script src="/js/form.js"></script>
+        <script src="/js/user-register.js"></script>
         <script src="../js/details.js"></script>
     </body>
 </html>

@@ -1,4 +1,4 @@
-const form = document.querySelector("#form-login");
+const form = document.querySelector("#login-form");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
@@ -9,7 +9,6 @@ const  errorMessages = document.querySelectorAll(".errorMessage");
 
 // recorriendo todos los mensajes de error y los ocultamos
 function resetFormErrors() {
-    console.log('hola')
     errorMessages.forEach(errorMessage => {
         errorMessage.style.display = "none"
     })
