@@ -1,5 +1,60 @@
-// Create form
-const form = document.querySelector("#form-create");
+window.addEventListener("load", function(){
+    let formulario = document.querySelector("form.reservation");
+    formulario.addEventListener("submit", function(e){
+        let errores = [];
+
+        let campoTitulo = document.querySelector("input.title");
+        if(campoTitulo.value == ""){
+            errores.push("el campo debe estar completo")
+        }
+
+        let campoPrecio = document.querySelector("input.price");
+        if(campoPrecio.value == ""){
+            errores.push("el campo debe estar completo")
+        }
+
+        let campoDescription = document.querySelector("input.description");
+        if(campoDescription.value == ""){
+            errores.push("el campo debe estar completo")
+        }
+
+        if(errores.length > 0){
+            e.preventDefault();
+
+            let ulErrores = document.querySelector("div.errores ul");
+            for(let i = 0; i < errores.length; i++){
+                ulErrores.innerHTML += "<li>" + errores[i] + "</li>" 
+            }
+        }
+    })
+})
+
+
+
+
+
+
+
+/*ES LA UNICA forma Q NO TIRA ERROR EN CONSOLA
+ function validateForm() {
+    const campoName = document.form["form.reservation"]["title"].value;
+    if (campoName == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  }
+
+
+
+
+ */
+
+
+
+
+
+
+/* const form = document.querySelector("#form-reservation");
 const title = document.querySelector('#title');
 const image = document.querySelector('#image');
 const price = document.querySelector('#price');
@@ -68,7 +123,7 @@ form.addEventListener("submit", function(e) {
         e.preventDefault()
     }
 
-})
+}) */
 /* 
 
 title.addEventListener('blur', function (e) {

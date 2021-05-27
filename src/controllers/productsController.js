@@ -147,10 +147,23 @@ module.exports = {
         });
    },
    
+   //DEBERIA IR COMO EN DETAIL PERO SE rompe
+/*    detail: (req, res) => {
+    let id = req.params.id
+    db.Products.findOne({ where: { id } })
+        .then(product => {
+            res.render('products/carrito', { product })
+        })
+        .catch(err => console.log(err))
+}, */
+
     carrito:(req, res) => {
          res.render ("products/carrito", {
         })
     },
+
+
+
 
 
    //No se usan mas

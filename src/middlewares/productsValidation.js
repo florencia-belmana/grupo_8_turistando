@@ -1,5 +1,6 @@
-const { check } = require('express-validator');
-
+/* 
+esta directamente en product routes */
+/* const { body } = require('express-validator')
 const validateCreateProducts = [ 
         body('title').notEmpty().withMessage('El campo debe contener el titulo'),
         body('description').notEmpty().withMessage('El campo debe contener una decripcion del producto'),
@@ -21,3 +22,5 @@ const validateCreateProducts = [
             })
             
 ];
+
+ */

@@ -12,14 +12,8 @@
         <div class="create-p">
             <h2>CREAR PAQUETE</h2>
 <!--este if respecta  a las v del back. -->
-            <% if (locals.errors) { 
-                errors.forEach(error => { %>
-                <p class="feedback is-danger"><%= error.msg %></p>
-                <% }) 
-             }
-                %>
-
-        <form class="form-creat"  action="/crear" method="POST" enctype="multipart/form-data"> 
+        
+        <form class="form-reservation"  action="/crear" method="POST" enctype="multipart/form-data"> 
 
 
     <div class="field">
@@ -81,7 +75,13 @@
         </div>
      </div> 
 
-        
+     <% if (locals.errors) { 
+        errors.forEach(error => { %>
+        <p class="feedback is-danger"><%= error.msg %></p>
+        <% }) 
+     }
+        %>
+
 
             </form>
            
@@ -93,6 +93,8 @@
         <%- include('../partials/footer.ejs') %>
 </footer>
 <script src="/js/product-valid.js"></script> 
+        <script src="../js/details.js"></script> 
+
 
 </body>
 </html>
