@@ -21,25 +21,26 @@ body{
   padding: 0.7em 0;
 }
 
-.container2{
+.box-partner{
   padding: 1em 0;
   float: left;
   width: 50%;
+  display: grid;
 }
 @media screen and (max-width: 640px){
-  .container2{
+  .box-partner{
     display: block;
     width: 100%;
   }
 }
 
 @media screen and (min-width: 900px){
-  .container2{
+  .box-partner{
     width: 33.33333%;
   }
 }
 
-.container2 .title{
+.box-partner .title{
   color: #1a1a1a;
   text-align: center;
   margin-bottom: 10px;
