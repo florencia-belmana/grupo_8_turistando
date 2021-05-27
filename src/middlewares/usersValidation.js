@@ -21,6 +21,17 @@ module.exports = {
             .isLength({min: 5}).withMessage("Debe tener minimo 5 caracteres"),
        
              // check("user-type").notEmpty()
+            /*  body('image').custom((value, {req}) => {
+                if (req.file) {
+                    const extensions = ['.png', '.jpg', '.jpeg', '.jfif'];
+                    const extension = path.extname(req.file.originalname);
+                    
+                    if (!extensions.includes(extension.toLowerCase())) {
+                        throw new Error('File extension is not supported!');
+                    }
+                }
+    
+                return true; */
 
     ],
     update: [
@@ -32,6 +43,17 @@ module.exports = {
         check('email')
             .isEmail().withMessage('Debes completar un email valido')
              // check("user-type").notEmpty()
+               /*  body('image').custom((value, {req}) => {
+                if (req.file) {
+                    const extensions = ['.png', '.jpg', '.jpeg', '.jfif'];
+                    const extension = path.extname(req.file.originalname);
+                    
+                    if (!extensions.includes(extension.toLowerCase())) {
+                        throw new Error('File extension is not supported!');
+                    }
+                }
+    
+                return true; */
            
     ]
 };

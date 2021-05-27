@@ -14,7 +14,16 @@
       <div>
         <nav class="content-secction">
            <ul>
-             <li><a href="/index-admin" class="seccion">Sección para administradores</a>
+             
+            <% if(user) { %> 
+            <% if (user.category_id == 1){ %>
+              <li><a href="/index-admin" class="seccion">Sección para administradores</a>
+                <hr>
+                
+          <% } %>
+          <% } %> 
+               
+                            
              <li><a href="/user/<%= ( user ? user.id : "../login") %> " class="seccion"> Tu perfil de usuario </a> </li>
            </ul>
         </nav>

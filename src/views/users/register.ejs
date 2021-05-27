@@ -14,7 +14,7 @@
                 <section>
                     <div class="columns is-centered">
                         <div class="column is-6">
-                            <hr>
+                          <hr>
                             <h1 style="color: black;">Registrate acá!</h1>
 
                                 <form class="reservation" id="register-form" action="/users" method="POST" enctype="multipart/form-data">
@@ -23,11 +23,11 @@
                                             <div class="control">
                                                 <input type="text" name="first_name" id="first_name" value="<%= locals.old && old.first_name ? old.first_name : "" %>">
                                             </div>
-                                        <!--  -->   <p class="feedback is error"></p>
-                                    <% if (locals.errors && errors.first_name) { %>
-                                        <p class="feedback is-danger"><%= errors.first_name.msg %></p>
-                                    <% } %>
-                                    <div class= "errorName errorMessage"></div>
+                                                <p class="feedback is error"></p>
+                                                    <% if (locals.errors && errors.first_name) { %>
+                                                        <p class="feedback is-danger"><%= errors.first_name.msg %></p>
+                                                     <% } %>
+                                                    <div class= "errorName errorMessage"></div>
                                     </div>
 
                                     <div class="field">
@@ -35,6 +35,7 @@
                                             <div class="control">
                                                 <input type="text" name="last_name" id="last_name" value="<%= locals.old && old.last_name ? old.last_name : '' %>">
                                             </div>
+                                            <p class="feedback is error"></p>
                                             <% if (locals.errors && errors.last_name) { %>
                                                 <p class="feedback is-danger"><%= errors.last_name.msg %></p>
                                             <% } %>
@@ -46,6 +47,7 @@
                                             <div class="control">
                                                 <input type="text" name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %>">
                                             </div>
+                                            <p class="feedback is error"></p>
                                             <% if (locals.errors && errors.email) { %>
                                                 <p class="feedback is-danger"><%= errors.email.msg %></p>
                                             <% } %>
@@ -57,9 +59,9 @@
                                             <div class="control">
                                                 <input type="file" accept=".jpg, .jpeg, .png" name="image" id="image" default="/">
                                             </div>
-                                            <p class="feedback"></p>
-                                            <% if (locals.errors && errors.email) { %>
-                                                <p class="feedback is-danger"><%= errors.email.msg %></p>
+                                            <p class="feedback is error"></p>
+                                            <% if (locals.errors && errors.image) { %>
+                                                <p class="feedback is-danger"><%= errors.image.msg %></p>
                                             <% } %>
                                             <div class= "errorImage errorMessage"></div>
                                     </div>
@@ -69,15 +71,15 @@
                                             <div class="control">
                                                 <input type="password" name="password" id="password">
                                             </div>
-                                            <p class="feedback"></p>
+                                            <p class="feedback is error"></p>
                                             <div class= "errorPassword errorMessage"></div>
                                     </div>
 
                                     <div class="field">
                                         <label for="country">Selecciona tu país</label>
                                             <div class="row">
-                                                <label for="country">País</label>
-                                                <select name="country" id="country" required>
+                                                <label for="country"></label>
+                                                <select name="country" id="country"  required>
                                                     <option value="">Selecciona un país</option>
                                                     <option value="arg">Argentina</option>
                                                     <option value="bra">Brasil</option>
@@ -112,7 +114,7 @@
                         </div>
                     </div>
                 </section>
-                <br>
+            <br>
                 <form action ="/login" >
                     <p><input type="submit" value="Ya tenes cuenta? inicia sesión"></p>
                 </form>

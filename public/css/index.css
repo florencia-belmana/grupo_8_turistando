@@ -35,6 +35,13 @@ h2{
     
 }
 
+/* IMAGEN AVATAR */
+.header-right .avatar{
+    width: 90px;
+    height: 90px;
+    margin: auto;
+}
+
 
 .top{
         display: flex;
