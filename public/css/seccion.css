@@ -1,8 +1,12 @@
+/* MENU MITAD DE INDEX */
+
+
 .content-secction{
    width: 40%;
    margin: 20px auto;
-   background-color: cornflowerblue;
    overflow: hidden;
+   background-color: lightslategray;
+ 
  
 }
 
@@ -15,12 +19,13 @@
 .content-secction ul li a {
   padding: 10px 20px;
   display: block;
-  color: white;
+  color: whitesmoke;
  
 }
 
 .content-secction ul li a:hover{
-   background-color: blue;
+   background-color: whitesmoke;
+   color: black;
  }
 
     /*box-sizing: content-box;

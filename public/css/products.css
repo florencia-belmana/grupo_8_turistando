@@ -1,11 +1,4 @@
-/* *{box-sizing: border-box;} */
-
 /* Clases generales */
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
-    
-  }
 
 .header {
     font-size: 20px;
@@ -36,34 +29,24 @@ a {
 /* box de fotos*/
 
 .container {
-   /* 
-    width: 90%; */
     margin: auto;
     overflow: hidden;
     text-align: center;
     flex-direction: row;
     box-sizing: content-box;
     padding: 5px; 
-   /*SI PONGO ESTO, SE MARCA TMB EL RECUADRO EN EL HEADER:  box-sizing: content-box;
-    box-shadow: 1px 1px 3px black; 
-  
+    display: grid;
+    
+     
 
-/*    display: flex; con estos se me arma bloque uno al lado del otro y divido a la mitad como debe ser pero se me ven dos productos nomas.
-  
-    box-shadow: 1px 1px 3px black;
-    border-radius: 5px; */
-    
-  /*    */
 }
-.paquete-columna{
-  /*  */  background-color:#0d47a1;
-    color: #ffffff;
-    margin: 4rem;
-    display: block;
-    box-shadow: 1px 1px 3px black;
-    border-radius: 5px;
-    box-sizing: content-box;
+.producto .content{
     
+    border-radius: 2px; 
+    
+    
+    
+
 }
 
 

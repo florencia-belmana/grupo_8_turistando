@@ -83,9 +83,20 @@ input[type="submit"]:hover {
 }
 
 
+.errorName,
+.errorLastName,
+.errorEmail,
+.errorPassword,
+.errorImage
+ {
+    color: red;
+    font-weight: bolder;
+    
 
+}
 
-.errorMessage{
-  color: red;
-  display: none;
+.errorMensaje {
+    display: none;
+    color: red;
+    
 }

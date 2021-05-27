@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <%- include('partials/head.ejs') %>
-   <!--  <link rel="stylesheet" href="/css/products.css"> -->
     <link rel="stylesheet" href="/css/partners.css">
     <link rel="stylesheet" href="/css/seccion.css">
     <link rel="stylesheet" href="/css/dark.css">
@@ -14,7 +13,16 @@
       <div>
         <nav class="content-secction">
            <ul>
-             <li><a href="/index-admin" class="seccion">Sección para administradores</a>
+             
+            <% if(user) { %> 
+            <% if (user.category_id == 1){ %>
+              <li><a href="/index-admin" class="seccion">Sección para administradores</a>
+                <hr>
+                
+          <% } %>
+          <% } %> 
+               
+                            
              <li><a href="/user/<%= ( user ? user.id : "../login") %> " class="seccion"> Tu perfil de usuario </a> </li>
            </ul>
         </nav>
@@ -35,8 +43,10 @@
 
 
       <section> 
-        <h1 class="main-title">Estas pueden ser tus proximas aventuras:</h1>  
-        <div class="container" >  <!-- containerun poco mas grande , container1 medio, conteiner 2 izquierda -->
+        <h1 class="main-title">Estas pueden ser tus proximas aventuras:</h1>
+        
+        <div class="container" >  
+          
             <%products.forEach(product => { %>
               <div class ="producto" >
                 <h1 class="title"><%= product.title%></h1>
@@ -48,6 +58,7 @@
                           <h3 class="content-title"><%= product.description%></h3>
                           <p class="content-text"> ARS $: <%= product.price%> p/p</p>
                           <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
+                          
                           </div>
                         </a>
                   </div>
@@ -57,55 +68,15 @@
         </div>
       </section>
 
-
-
-        <!--  
-                <div class="container">
-                <%products.forEach(product => { %>
-                    <div class="paquete-columna">
-                        <div class="paquete-item">
-                            <div class="paquete-fila">
-                                <div class="paquete-pic" >
-                                  <a href="/lista/<%= product.id%>"><img src="images/destinos/<%=product.image%>" alt="picture"></a>
-
-                                </div>
-                            </div>
-                            <div class="paquete-fila" style="font-size: 40px">
-                                <h4><%= product.title%></h4>
-                                <p><%= product.description%></p>
-                                <p>ARS $: <%= product.price%></p>
-                                <button class= btn sm btn-pink-outline>
-                                    <a href="/lista/<%= product.id%>">VER DETALLE</a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <br>
-                    <% }) %>
-            </div>
-            
-            </div>
-        </section>-->
-    
-              <p class="title-pd">PRODUCTOS DESTACADOS</p>
-              <section class="p-destacados">
-                <section><a href= ""><img class= "p-d" src= ""></a></section>
-                <section><a href= ""><img class= "p-d" src= ""></a></section>
-                <section><a href= ""><img class= "p-d" src= ""></a></section>
-       
-              </section>
-
-
       <br>
+      <hr>
 
 
 
       <section class="partners" > 
         <div class="partners">
           <h1 class="main-title" >Trabajan con nosotros:</h1>
-
-          <div class="container2">
+          <div class="box-partner">
               <h3 class="title">LATAM</h3>
                 <div class="content">
                   <a href="https://www.latam.com/es_ar/" target="_blank">
@@ -119,7 +90,7 @@
                </div>
           </div>
 
-         <div class="container2">
+         <div class="box-partner">
             <h3 class="title">HOSTELWORLD</h3>
               <div class="content">
                <a href="https://www.hostelworld.com/" target="_blank">
@@ -132,7 +103,7 @@
                   </a>
               </div>
           </div>
-          <div class="container2">
+          <div class="box-partner">
             <h3 class="title">Assist Card</h3>
               <div class="content">
                <a href="https://www.assistcard.com/ar" target="_blank">

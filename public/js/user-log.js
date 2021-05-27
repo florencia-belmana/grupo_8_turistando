@@ -1,15 +1,14 @@
-const form = document.querySelector("#form-login");
+const form = document.querySelector("#login-form");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
 const errorEmail = document.querySelector(".errorEmail");
 const errorPassword = document.querySelector(".errorPassword");
-const  errorMessages = document.querySelectorAll(".errorMessage");
+const errorMessages = document.querySelectorAll(".errorMessage");
 
 
 // recorriendo todos los mensajes de error y los ocultamos
 function resetFormErrors() {
-    console.log('hola')
     errorMessages.forEach(errorMessage => {
         errorMessage.style.display = "none"
     })
@@ -23,17 +22,18 @@ form.addEventListener("submit", function(e) {
 
     // llamamos a la función que oculta los mensajes de error
     resetFormErrors()
-    
+
+     /* email */
     if (email.value.length == 0){
         errorEmail.innerText = "Por favor, complete su email"
         errorEmail.style.display = "block"
         errors = true 
-    } else if (email.value.length < 2) {
+    } else if (email.value.length < 5) {
         errorEmail.innerText = 'El mail es incorrecto'
         errorEmail.style.display = "block"
         errors = true
-    }
-    
+    } 
+    /* PW */
     if (password.value.length == 0){
         errorPassword.innerText = "Por favor, complete su contraseña"
         errorPassword.style.display = "block"
@@ -44,7 +44,6 @@ form.addEventListener("submit", function(e) {
         errors = true
     } 
 
-    // con que haya un solo campo con error, ya no se va a enviar el formulario
     if (errors) {
         e.preventDefault()
     }
