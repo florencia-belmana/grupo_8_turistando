@@ -28,11 +28,12 @@ form.addEventListener("submit", function(e) {
         errorEmail.innerText = "Por favor, complete su email"
         errorEmail.style.display = "block"
         errors = true 
-    } else if (email.value.length < 2) {
+    } else if (email.value.length < 5) {
         errorEmail.innerText = 'El mail es incorrecto'
         errorEmail.style.display = "block"
         errors = true
-    }
+    } 
+
     
     if (password.value.length == 0){
         errorPassword.innerText = "Por favor, complete su contraseña"

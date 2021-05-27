@@ -2,7 +2,7 @@ window.addEventListener('load', function(){
     let elNombre = document.querySelector("#email");
     let laPw = document.querySelector("#password");
 
-    laPw.addEventListener("mouseover", function(){
+ /*     laPw.addEventListener("mouseover", function(){
        
 
         laPw.style.backgroundColor="lightblue"
@@ -14,6 +14,6 @@ window.addEventListener('load', function(){
 
         elNombre.style.backgroundColor="lightblue"
 
-    })
+    }) */
 }
-)
+) 
