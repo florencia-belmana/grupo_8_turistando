@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/paquetes.css">
+    <link rel="stylesheet" href="/css/detail.css">
 </head>
 <body>
     <header>
@@ -11,58 +11,45 @@
 
 
     <div class="container"> <!-- Eso hace que este en fila hay que darle css -->
-    <div class="product-container">
-        <h2>Paquete:  <%= product.title %></h2>
-       
-        <article class="conjunto">
-        <div class="product-info">
-        <figure>
-        <img src="/images/destinos/<%= product.image %>" alt=""/></figure>
+        <div class="product-container">
+                    <h2 class="nombre"><%= product.title %></h2>
+                    <article class="conjunto">
+                        <div class="product-info">
+                            <figure>
+                            <img src="/images/destinos/<%= product.image %>" alt=""/>
+                            </figure>
+                        </div>
 
-       </div>
+                        <div class="product-info">
+                            <p>Descripción: <br> <%= product.description %> </p>
+                            <br>
+                            <p>Precio: ARS $ <br> <%= product.price %> </p>
+                        </div>
+                    </article>
+                        <br>
+            
+                    <article class="include">
+                        <p>Nuestro paquete incluye</p>
+                        <div class="items"><i class="fas fa-plane"></i>Avion</div>
+                        <div class="items"><i class="fas fa-car"></i>Traslados</div>
+                        <div class="items"> <i class="fas fa-concierge-bell"></i>Alojamiento</div>
+                    </article>
 
-       <div class="product-info">
-           <p>Descripción: <%= product.description %> </p>
-        <p>Precio: ARS $ <%= product.price %> </p>
-        </div>
+                    <hr>
+                    <br>
+                    <div class="button">
+                        <button class= btn sm btn-pink-outline>
+                        <a href="/carrito">Ir al carrito</a>
+                        </button>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+       </div>   
+    </div>
 
-            <div class="textopaquete">
-                <h2 class="h2">Excursiones y actividades</h2>
-            </div>
 
-            <div class="itemspaquete"></div>
-           <!--  ESTO NO SIRVE, PONER ITEMS DE CADA PAQUETE EN DESCRIPCION -->
-            <!-- <div>
-                <ul class="lista">
-                    <li>Gastronomia</li>
-                    <li>Recorrida por los lagos</li>
-                    <li>Dia de camping</li>
-                    <li>Mountain tracking</li>
-                    <li>Salidas nocturnas</li>
-                </ul>
-            </div> -->
-         </article>
-     
-      
-        <article class="include">
-           <p>Nuestro paquete incluye</p>
-            <div class="items"><i class="fas fa-plane"></i>Avion</div>
-            <div class="items"><i class="fas fa-car"></i>Traslados</div>
-            <div class="items"> <i class="fas fa-concierge-bell"></i>Alojamiento</div>
-        </article>
-        <hr>
-        <div class="button">
-            <button class= btn sm btn-pink-outline>
-                <a href="/carrito">Ir al carrito</a>
-            </button>
-            <hr>
-<!--             <div class ="confirmar"><input type="submit" value="RESERVA YA!"></div>
- -->        </div> <!-- <p>ir al carrito es un link, el boton es un type submit</p> -->
-        <br>
-    </div>   
-    </div> 
-    
-</div>
+
 <footer>
     <%- include('../partials/footer.ejs') %>
 </footer>
