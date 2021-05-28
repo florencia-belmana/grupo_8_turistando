@@ -46,8 +46,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-router.get( '/buenosaires' , controller.buenosaires ) ;
-router.get( '/carrito' , controller.carrito )
+
 
 //RUTAS VIEJAS ANTES DE DB
 // router.get( '/paquetes' , controller.paquetes ) ;
