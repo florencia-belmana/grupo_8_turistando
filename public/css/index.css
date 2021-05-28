@@ -11,8 +11,19 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+/*      margin: auto; */
+    display: flex; 
 }
 
+
+/* box de fotos */
+
+/* .contenedor{
+
+}
+.producto{
+
+} */
 a {
     color: black;
     text-decoration: none;
@@ -21,13 +32,13 @@ a {
 h2{
     text-align: center;
 }
-.contendor {
+/* .contendor {
     width: 100%;
     max-width: 1200px;
     margin: auto;
     
    
-}
+} */
 
 .header {
     font-size: 20px;
@@ -48,6 +59,8 @@ h2{
         border-radius: var(--default-padding);
         overflow: hidden;
     }
+
+    /*solo texto de barra busqueda*/
 .texto-barra{
     background-color:lightblue;
   /*   display: flex; */
