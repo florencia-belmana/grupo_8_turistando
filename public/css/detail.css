@@ -3,17 +3,24 @@
     }
 
 
-
 .product-container{
-    border-style: solid;
-    
+
+    }
+
+.nombre{
+    font-size: 30px;
+    background-color: lightslategray;
+    height: 50px;
+    padding: 10px 20px;
 }
 
-
-.product-info{
-
+p{
+    font-size: 20px;
 }
 
-.include{
-  
-}
+/* .button{
+    font-size: 30px;
+    background-color: lightslategray;
+    height: 50px;
+    padding: 10px 20px;
+} */

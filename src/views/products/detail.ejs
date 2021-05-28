@@ -13,13 +13,14 @@
     <div class="container"> <!-- Eso hace que este en fila hay que darle css -->
         <div class="product-container">
                     <h2 class="nombre"><%= product.title %></h2>
+                    <br>
                     <article class="conjunto">
                         <div class="product-info">
-                            <figure>
-                            <img src="/images/destinos/<%= product.image %>" alt=""/>
+                            <figure class="detalle-foto">
+                            <img src="/images/destinos/<%= product.image %>" alt="" class="imagen"/>
                             </figure>
                         </div>
-
+                        <br>
                         <div class="product-info">
                             <p>Descripción: <br> <%= product.description %> </p>
                             <br>
@@ -34,7 +35,7 @@
                         <div class="items"><i class="fas fa-car"></i>Traslados</div>
                         <div class="items"> <i class="fas fa-concierge-bell"></i>Alojamiento</div>
                     </article>
-
+                    <br>
                     <hr>
                     <br>
                     <div class="button">
