@@ -48,7 +48,14 @@ h2{
         border-radius: var(--default-padding);
         overflow: hidden;
     }
+.texto-barra{
+    background-color:lightblue;
+  /*   display: flex; */
+    text-align: center;
+    width: 100%;
+    
 
+}
 
     @media (min-width: 600px) {
         .pic-item {

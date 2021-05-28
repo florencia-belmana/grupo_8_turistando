@@ -103,22 +103,24 @@ module.exports = {
 
     //EDICION
     update: function (req, res) {
-       /*  if (req.file) {
+      
+     if (req.file) {
             let productImage = req.body;
             
                 console.log(req.file)
                 productImage.image = req.file.filename;
-            }  */
+            }   
         db.Products.update({
             title: req.body.title,
             price: req.body.price,
-            image: req.body.image ,
+            image: req.body.image,
             description: req.body.description,
         }, {
             where: {
                 id: req.body.id
             }
         })
+
         .then((products) => {
             return res.redirect("/lista")
         })
