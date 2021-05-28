@@ -54,7 +54,8 @@ CREATE TABLE `products` (
   `description` varchar(255) COLLATE utf8_bin NOT NULL,
   `createdAt` timestamp NULL DEFAULT NULL,
   `updateAt` timestamp NULL DEFAULT NULL,
-  `deletedAt` timestamp NULL DEFAULT NULL
+  `deletedAt` timestamp NULL DEFAULT NULL,
+  `destacado` VARCHAR(45) COLLATE utf8_bin NOT NULL ;
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --

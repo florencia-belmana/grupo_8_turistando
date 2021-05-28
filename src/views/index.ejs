@@ -27,34 +27,34 @@
            </ul>
         </nav>
       </div>
+  <!--API-->
+    <section> 
+        <br>
+          <%- include('partials/cotizacion.ejs') %>
+        <hr>
+     </section>
+     <div>
+      <h3 style="text-align: center;"> Turisteando es la pagina que estabas buscando para empezar tus vacaciones por Argentina </h3>
+     </div>
+     
+     <!--  <h1 class="color-h3">Estas pueden ser tus proximas aventuras:</h1> -->
 
-      <h2> Turisteando es la pagina que estabas buscando para empezar tus vacaciones por Argentina </h2>
       <br>
       <div class="pic-container1"> 
-      <!-- JS FRONTTTTTTTTT---->     
+      <!-- barra de busqueda -->
+      <section>
+        <div class="header header-right">
+           <form action="search" method="GET">
+               <i class="fas fa-search"></i><input type="text" name="search" placeholder="Buscar producto">
+              <button class= btn sm btn-pink-outline>
+               <a href="/">Buscar</a>
+              </button>
+            </form>
+        </div>
+      </section> 
       </div>
 
       <section>
-            <!-- BUSCADOR -->
-  
-       <div class="header header-right">
-        <form action="search" method="GET">
-        <i class="fas fa-search"></i><input type="text" name="search" placeholder="Buscar producto">
-        <button class= btn sm btn-pink-outline>
-         <a href="/">Buscar</a>
-        </button>
-        </form>
-   </div>
-        <h1 class="color-h3">Estas pueden ser tus proximas aventuras:</h1>
-         <br>
-           <%- include('partials/cotizacion.ejs') %>
-         <hr>
-      </section>
-
-
-      <section> 
-        <h1 class="main-title">Estas pueden ser tus proximas aventuras:</h1>
-        
         <div class="container" >  
           
             <%products.forEach(product => { %>
@@ -62,7 +62,7 @@
                 <h1 class="title"><%= product.title%></h1>
                   <div class="content">
                         <a href="/lista/<%= product.id%>" target="_blank">
-                        <div class="content-overlay"> PUEDE IR OTRO TEXTO</div>
+                        <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
                         <div><img class="content-image" src="images/destinos/<%=product.image%>"></div>
                         <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
                           <h3 class="content-title"><%= product.description%></h3>
@@ -72,16 +72,22 @@
                           </div>
                         </a>
                   </div>
-                </div>
-            <% }) %>
               
+                <% }) %>
+              </div>
         </div>
       </section>
+    </section>
+<!--   <p class="titulo-pd">PRODUCTOS DESTACADOS</p>
+
+    <section class= "section-productos-destacados"> 
+    
+    </section> -->
+    
+
 
       <br>
       <hr>
-
-
 
       <section class="partners" > 
         <div class="partners">
@@ -127,15 +133,7 @@
               </div>
           </div>
         </section>
-
-
-
-
-
-        
     </main>
-
-
 
 <footer>
     <%- include('partials/footer.ejs') %>

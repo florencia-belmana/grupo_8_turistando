@@ -25,6 +25,10 @@ module.exports = function (sequelize, dataTypes) {
       description: {
         type: dataTypes.TEXT,
       },
+
+      destacado:{
+        type: dataTypes.TEXT,
+      }
      /* createdAt: {
         type: dataTypes.DATE,
         allowNull: true

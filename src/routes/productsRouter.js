@@ -63,7 +63,7 @@ router.get("/crear", controller.crear)
 router.post("/crear", upload.single('image'), validateCreateProducts, controller.guardar)
 
 //LECTURA - READ
-router.get("/lista", authMiddleware, controller.lista)
+router.get("/lista", controller.lista)
 router.get("/lista/:id", controller.detail)
 
 //EDICION - UPDATE
