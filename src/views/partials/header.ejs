@@ -28,6 +28,14 @@
                 </div>
             <% } %> 
             <hr>
+            <% if(user) { %> 
+              <% if (user.category_id == 1){ %>
+                <a href="/index-admin" class="seccion"> Sección para administradores <i class="fas fa-building"></i></a>
+                  <hr>
+                  
+            <% } %>
+            <% } %> 
+                 
               <a href="/" class="vinculo"> <i class="fas fa-concierge-bell "> </i> Inicio</a>
              
               
