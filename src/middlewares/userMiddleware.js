@@ -1,7 +1,15 @@
 function userMiddleware (req, res, next){
-    if (req.session.user.category_id != undefined) {
-        next();
-    } else {"Debes loguearte para continuar" }
+    if (req.session.user==undefined){
+        
+        res.render('users/login') 
+         
+            
+        
+    }
+
+     next()
 }
+
+
 
 module.exports = userMiddleware

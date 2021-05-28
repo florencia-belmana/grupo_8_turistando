@@ -56,13 +56,14 @@ router.get( '/carrito' , controller.carrito )
 router.get( '/paquete2' , controller.paquete2 ) ;router.get( '/paquete3' , controller.paquete3 ) ; */
 
 /// SEQUELIZE - CRUD -
+
 //CREAR
 router.get("/products", controller.crear)
 router.get("/crear", controller.crear)
 router.post("/crear", upload.single('image'), validateCreateProducts, controller.guardar)
 
 //LECTURA - READ
-router.get("/lista", controller.lista)
+router.get("/lista", authMiddleware, controller.lista)
 router.get("/lista/:id", controller.detail)
 
 //EDICION - UPDATE

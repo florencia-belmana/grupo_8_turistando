@@ -35,6 +35,12 @@ h2{
     
 }
 
+.avatar{
+    width: 70px;
+    height: 70px;
+    
+}
+
 
 .top{
         display: flex;

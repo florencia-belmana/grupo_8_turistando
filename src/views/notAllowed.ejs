@@ -1,17 +1,21 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('partials/head.ejs') %>
-</head>
-<body>
-    <%- include('partials/header.ejs') %>
+    <head>
+        <%- include('partials/head.ejs') %>
+    </head>
+    <body>
+        <%- include('partials/header.ejs') %>
 
-    <h1 style = "color: black;">Seccion restringida - ingresa como administrador </h1>
+        <h1 style = "color: black;">Seccion restringida - ingresa como administrador </h1>
 
-    
-    <footer>
-        <%- include('partials/footer.ejs') %>
+        <div class="button">
+            <form action ="/login" >
+                <p><input type="submit" href="#" value="LOGEATE PARA CONTINUAR"></p>
+            </form> 
+        </div>
+        <footer>
+            <%- include('partials/footer.ejs') %>
         </footer>
-        </body>
-        </html>
+    </body>
+ </html>
