@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <%- include('partials/head.ejs') %>
+<!-- <link rel="stylesheet" href="/css/index.css">  -->
     <link rel="stylesheet" href="/css/partners.css">
     <link rel="stylesheet" href="/css/seccion.css">
-    <link rel="stylesheet" href="/css/dark.css">
-   <!--  <link rel="stylesheet" href="/css/index.css"> -->
+    <link rel="stylesheet" href="/css/indexhome.css">
+    
+  
 </head>
 
 <body>
@@ -38,13 +40,14 @@
          <h3> Turisteando es la pagina que estabas buscando para empezar tus vacaciones por Argentina </h3>
      </div>
      
-     <!--  <h1 class="color-h3">Estas pueden ser tus proximas aventuras:</h1> -->
+    
 
       <br>
     <div class="pic-container1"> 
+
       <!-- barra de busqueda -->
       <section>
-        <div class="header header-right">
+        <div class="search">
            <form action="search" method="GET">
                <i class="fas fa-search"></i><input type="text" name="search" placeholder="Buscar producto">
               <button class= btn sm btn-pink-outline>
@@ -55,9 +58,11 @@
       </section> 
       </div>
 
-      <section>
+<!--  DESDE ACA PRODUCTOS DESCATADOS        -->
+      <section class="first">
         <div class="container" >  
-          <h1> Paquetes destacados! </h1>
+          <div class="pd"><h1> Paquetes destacados! </h1></div>
+          <br>
           <div class="destacado">
 
             <div class ="listaProducto">
@@ -69,7 +74,7 @@
                   <div class="content">
                         <a href="/lista/<%= product.id%>" target="_blank">
                         <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
-                        <div><img class="content-image" src="images/destinos/<%=product.image%>"></div>
+                        <div><img class="content-images" src="images/destinos/<%=product.image%>" style=max-width:100%;  width:auto; height:auto;></div>
                         <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
                           <h3 class="content-title"><%= product.description%></h3>
                           <p class="content-text"> ARS $: <%= product.price%> p/p</p>
@@ -81,12 +86,15 @@
                 <% } %>
           <% }) %>
         </div>
+<!--  HASTA ACA PRODUCTOS DESCATADOS        -->
       <br>
       <hr>
       <br>
-          </div>
-          <h1> Nuestras aventuras: </h1>
-          <div class ="listaProducto">
+    </div>
+         
+          <div class=""><h1> Nuestras aventuras: </h1></div>
+          <br>
+          <div class ="listaProducto2">
             <%products.forEach(product => { %>
               <% if (product.destacado == "NO"){ %>
               <div class = producto >
@@ -94,7 +102,7 @@
                   <div class="content">
                         <a href="/lista/<%= product.id%>" target="_blank">
                         <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
-                        <div><img class="content-image" src="images/destinos/<%=product.image%>"></div>
+                        <div><img class="content-images" src="images/destinos/<%=product.image%>" style=”max-width:100%; width:auto; height:auto;”></div>
                         <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
                           <h3 class="content-title"><%= product.description%></h3>
                           <p class="content-text"> ARS $: <%= product.price%> p/p</p>
@@ -107,7 +115,7 @@
                 <% }) %>
               </div>
         </div>
-      </section>
+     <!--  </section> -->
     </section>
 
 

@@ -23,7 +23,7 @@
                                 <p>Categoría: <%= users.category %></p>
                                 <p>Email: <a href="mailto:<%= users.email %>" target="_blank"><%= user.email %></a></p>
                             <div>
-                                <a class="button is-warning" href="/edit/<%= user.id %>">Editar</a>
+                                <a class="button is-warning" href="/edit/<%= user.id %>">Editar</a><br>
                                 <form class="form is-inline" action="/edit/<%= user.id %>?_method=delete" method="POST">
                                     <button class="button is-danger">Borrar</button>
                                 </form>

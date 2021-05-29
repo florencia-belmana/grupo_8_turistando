@@ -14,7 +14,7 @@
     float: center;
     width: 100%;
     position: relative;
-    width: 100%;
+    width: 90%;
 /*     max-width: 400px; */
     margin: auto;
     overflow: hidden;
@@ -29,7 +29,7 @@
         width: 25%;
       /*   max-width: 400px; */
         margin: auto;
-        
+        text-align: center;
     }
 .id-paquete{
     font-size: 18px;
@@ -39,7 +39,7 @@
 
 
 .tamaño{
-   height: 500px;
+   height: 400px;
 }
 
 

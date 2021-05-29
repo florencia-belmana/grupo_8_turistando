@@ -1,0 +1,53 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+/*aplica solo a barra search*/
+.search
+{
+
+}
+
+.first{
+    
+    box-sizing: content-box;
+    justify-content: center;
+    /* background-color: orange; */
+}
+.pd{
+    background-color: lightskyblue;
+    border-radius: 5rem; 
+}
+
+.listaProducto{
+    position: relative;
+    display: flex;
+     /* justify-content: center;  */
+    height: 100%;
+    width: 100%;
+    background-color:rgba(247, 247, 247, 0.884);
+   /*  align-items: center; */
+ justify-content: space-around; 
+
+
+}
+
+
+ .content-images{
+/*   height: auto;
+    width: auto;  */
+    padding-top: 20px; 
+    height: 400px;
+    
+   
+} 
+/*productos NO destacados*/
+.listaProducto2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: auto;
+   /*  align-items: center; */
+   float: left;
+}
