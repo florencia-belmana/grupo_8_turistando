@@ -56,10 +56,13 @@
       </div>
 
       <section>
-        <div class="container" >  
-          
+        <div class="container" style="align-items: flex-end;">  
+          <h1> Paquetes destacados! </h1>
+          <div class="destacado">
+            <div class ="listaProducto">
             <%products.forEach(product => { %>
-              <div class ="producto" >
+            <% if (product.destacado == "SI"){ %>
+              <div class = producto >
                 <h1 class="title"><%= product.title%></h1>
                   <div class="content">
                         <a href="/lista/<%= product.id%>" target="_blank">
@@ -73,18 +76,40 @@
                           </div>
                         </a>
                   </div>
-              
+                </div>
+                <% } %>
+          <% }) %>
+        </div>
+      <br>
+      <hr>
+      <br>
+          </div>
+          <h1> Nuestras aventuras: </h1>
+          <div class ="listaProducto">
+            <%products.forEach(product => { %>
+              <% if (product.destacado == "NO"){ %>
+              <div class = producto >
+                <h1 class="title"><%= product.title%></h1>
+                  <div class="content">
+                        <a href="/lista/<%= product.id%>" target="_blank">
+                        <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
+                        <div><img class="content-image" src="images/destinos/<%=product.image%>"></div>
+                        <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
+                          <h3 class="content-title"><%= product.description%></h3>
+                          <p class="content-text"> ARS $: <%= product.price%> p/p</p>
+                          <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
+                          
+                          </div>
+                        </a>
+                        </div>
+                  </div>
+                  <% } %>
                 <% }) %>
               </div>
         </div>
       </section>
     </section>
-<!--   <p class="titulo-pd">PRODUCTOS DESTACADOS</p>
 
-    <section class= "section-productos-destacados"> 
-    
-    </section> -->
-    
 
 
       <br>

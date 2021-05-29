@@ -32,8 +32,7 @@ module.exports = {
         //hasta acá es validation
             if (req.file) {
             let productImage = req.body;
-            
-                console.log(req.file)
+                /* console.log(req.file) */
                 productImage.image = req.file.filename;
             } 
             
