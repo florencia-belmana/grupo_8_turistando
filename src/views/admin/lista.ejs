@@ -15,52 +15,51 @@
         </form>
         <br>
 
-        <ul>   
+         
             <h2 class="nombre">Detalle de paquetes</h2>
-            <div class="container">
-            <hr>
-            <div class='products'>
-                <%products.forEach(product => { %>
-                    <p class='product'>
-                          <a href='/lista/<%= product.id%>'>
-
-                            <h3>imagen:</h3> <figure> <img src="/images/destinos/<%=product.image%>" height="100"/></figure>
-                            
-                         </a>
-
-                       <h4> Id paquete: #<%= product.id %> <h4>
-                      <h4> Titulo: <%=product.title%>  </h4>
-                     <h4> $ ARS <%= product.price%> </h4>
-                     
-           
-                         <div class="button">
-                          <button class= btn sm btn-pink-outline>
-                               <a href="/lista/<%= product.id%>">VER PUBLICACIÓN</a>
-                           </button>
-                          </div>
-                        <br>
-                        <div class="button">
-                            <button class= btn sm btn-pink-outline>
-                                <a href="admin/edit/<%= product.id%>">EDITAR</a>
-                            </button>
-                        </div>
-                        <br>
-                      <!-- <div class="button">
-                            <button class= btn sm btn-pink-outline>
-                                <a href="">BORRAR</a>
-                            </button>
-                        </div> -->
-                        <hr> 
-                        
-                        </p>
-              <% }) %>
-              
+               <div class="cont">
+                <ul class="boxing">  
+                        <hr>
+                        <div class='products'>
+                        <%products.forEach(product => { %>
+                                    <p class='product'>
+                                    <a href='/lista/<%= product.id%>'> <br>
+                                    <h4> Titulo:</h4>
+                                    <p><%=product.title%> </p> <br>
+                                    <figure> 
+                                    <img src="/images/destinos/<%=product.image%>"  class="tamaño"/><br>
+                                    </a>
+                                    <h4> Precio: ARS $ <%= product.price%> </h4><br>
+                                    <h3 class="id-paquete"> N° de referencia: #<%= product.id %></h3><br>
+                                    
+                                <div class="button">
+                                <button class= btn sm btn-pink-outline>
+                                    <a href="/lista/<%= product.id%>">VER PUBLICACIÓN</a>
+                                </button>
+                                </div>
+                                <br>
+                                <div class="button">
+                                    <button class= btn sm btn-pink-outline>
+                                        <a href="admin/edit/<%= product.id%>">EDITAR</a>
+                                    </button>
+                                </div>
+                                <br>
+                            <!-- <div class="button">
+                                    <button class= btn sm btn-pink-outline>
+                                        <a href="">BORRAR</a>
+                                    </button>
+                                </div> -->
+                                <hr> 
+                                
+                                </p>
+                    <% }) %>
+                    
+                    </div>
+                
+                </ul>
             </div>
-           
-        </ul>
-    </div>
     </main>
-    <footer>
+<footer>
         <%- include('../partials/footer.ejs') %>
 </footer>
 </body>
