@@ -32,14 +32,17 @@ module.exports = {
         //hasta acá es validation
             if (req.file) {
             let productImage = req.body;
-                /* console.log(req.file) */
-                productImage.image = req.file.filename;
+                console.log(req.file)
+                productImage.image = req.file.filename; 
+
+               /*  product.image = req.file.filename; */
             } 
             
             db.Products.create({
                 title: req.body.title ,
                 price: req.body.price,
-                image: req.body.image ,
+               image: req.body.image,
+                /* image:image, */
                 description: req.body.description,
             })
           
@@ -103,16 +106,17 @@ module.exports = {
     //EDICION
     update: function (req, res) {
       
-     if (req.file) {
+     /* if (req.file) {
             let productImage = req.body;
             
                 console.log(req.file)
                 productImage.image = req.file.filename;
-            }   
+            }    */
         db.Products.update({
             title: req.body.title,
             price: req.body.price,
-            image: req.body.image,
+            /* image: req.body.image */
+            image: req.file ? req.file.filename : req.body.image,
             description: req.body.description,
         }, {
             where: {
