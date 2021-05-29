@@ -92,8 +92,8 @@ module.exports = {
                         res.cookie('recordame', user.email, { maxAge: 60000 })
                     }
  
-                    return res.redirect('/user/' + user.dataValues.id)
-    
+                    /* return res.redirect('/user/' + user.dataValues.id) */ /* redirecciona a perfil de usuario */
+                    return res.redirect("/") 
                 // Si la contraseña es incorrecta
                 } else {
                     let errors = {
@@ -144,6 +144,7 @@ module.exports = {
                 where: {
                      email: req.body.email
                 }
+
             })
                 .then( user => {
                     if (user) {
@@ -185,6 +186,8 @@ module.exports = {
             })
             .then((user) => {
                // console.log(user.dataValues.id)
+                req.session.auth = true  /* DESPUES DE INICIAR SESIÓN SE QUEDA EL USER LOGEADO */
+                req.session.user = user; 
                return res.redirect('user/' + user.dataValues.id)
             })
             .catch((errors) => {

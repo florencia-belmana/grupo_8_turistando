@@ -56,13 +56,15 @@
       </div>
 
       <section>
-        <div class="container" style="align-items: flex-end;">  
+        <div class="container" >  
           <h1> Paquetes destacados! </h1>
           <div class="destacado">
+
             <div class ="listaProducto">
             <%products.forEach(product => { %>
             <% if (product.destacado == "SI"){ %>
               <div class = producto >
+
                 <h1 class="title"><%= product.title%></h1>
                   <div class="content">
                         <a href="/lista/<%= product.id%>" target="_blank">
@@ -72,7 +74,6 @@
                           <h3 class="content-title"><%= product.description%></h3>
                           <p class="content-text"> ARS $: <%= product.price%> p/p</p>
                           <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
-                          
                           </div>
                         </a>
                   </div>
@@ -98,8 +99,7 @@
                           <h3 class="content-title"><%= product.description%></h3>
                           <p class="content-text"> ARS $: <%= product.price%> p/p</p>
                           <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
-                          
-                          </div>
+                           </div>
                         </a>
                         </div>
                   </div>

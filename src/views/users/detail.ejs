@@ -16,11 +16,12 @@
                                 <figure>
                                     <img src="/images/users/<%= users.image %>" alt="" >
                                 </figure>
-                            <h3>#<%= users.id %></h3>
+                                <h3> Tus datos: </h3>
+                            <h2>Tu id turisteando: #<%= users.id %></h2>
                             </div>
                             <div class="card-content">
                                 <h3><%= users.first_name %> <%= users.last_name %></h3>
-                                <h3> Pais: <%= users.country %> </h3>
+                                <h3>Pais: <%= users.country %> </h3>
                                 <p>Categoría: <%= users.category_id  =="1" ? "Administrador" : "Viajero" %> </p>
                                 <p>Email: <a href="mailto:<%= users.email %>" target="_blank"><%= users.email %></a></p>
                                 <div>

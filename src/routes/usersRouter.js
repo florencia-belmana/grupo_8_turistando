@@ -29,11 +29,11 @@ const upload = multer({ storage });
 
 //Vista de usuarios de admin
 router.get('/userList', controller.userList);
-router.get('/userList/:id', controller.detail);
+router.get('/userList/:id',authMiddleware, controller.detail);
 
 //Procesa el formulario de creación
 router.get( '/register' , controller.register );
-router.post('/', upload.single('image'), validate.register, controller.store); 
+router.post('/', upload.single('image'), validate.register, controller.store ); 
 
 //Perfil de usuario, edit y destroy
 router.get('/user/:id', controller.userProfile);
