@@ -12,17 +12,13 @@
 .cont{
     padding: 1em 0;
     float: center;
-    width: 80%;
+    width: 100%;
     position: relative;
     width: 100%;
-    max-width: 400px;
+/*     max-width: 400px; */
     margin: auto;
     overflow: hidden;
 }
-
-
-  
-
 
 .nombre{
         font-size: 30px;
@@ -30,21 +26,26 @@
         height: 50px;
         padding: 10px 20px;
         color: white;
-        width: 60%;
+        width: 25%;
       /*   max-width: 400px; */
         margin: auto;
+        
     }
 .id-paquete{
     font-size: 18px;
     color: gray;
+    text-align: center;
 }
+
 
 .tamaño{
    height: 500px;
 }
 
 
+
+
 .products{
-   
+    text-align: center;
 }
 
