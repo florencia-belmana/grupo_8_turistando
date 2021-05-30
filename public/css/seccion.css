@@ -36,4 +36,17 @@
     margin: 20px auto;
    text-align:left;
   */
-    
+   
+  
+/*  RESPECTA A SECCION ADMIN  */
+.admin{
+   text-align: center;
+   justify-content: center;
+}
+
+.admintext{
+   font-size: 25px;
+   text-align: center;
+   justify-content: center;   
+   color: rgb(143, 151, 167);
+}

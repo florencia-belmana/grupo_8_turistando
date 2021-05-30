@@ -60,21 +60,21 @@
 
 <!--  DESDE ACA PRODUCTOS DESCATADOS        -->
       <section class="first">
-        <div class="container" >  
-          <div class="pd"><h1> Paquetes destacados! </h1></div>
+        <div class="containerproducts" >  
+          <div class="pd"><h1> PAQUETES DESTACADOS </h1></div>
           <br>
           <div class="destacado">
 
             <div class ="listaProducto">
             <%products.forEach(product => { %>
             <% if (product.destacado == "SI"){ %>
-              <div class = producto >
+              <div class="producto">
 
                 <h1 class="title"><%= product.title%></h1>
                   <div class="content">
                         <a href="/lista/<%= product.id%>" target="_blank">
                         <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
-                        <div><img class="content-images" src="images/destinos/<%=product.image%>" style=max-width:100%;  width:auto; height:auto;></div>
+                        <div><img class="content-images" src="images/destinos/<%=product.image%>"></div>
                         <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
                           <h3 class="content-title"><%= product.description%></h3>
                           <p class="content-text"> ARS $: <%= product.price%> p/p</p>
@@ -92,17 +92,18 @@
       <br>
     </div>
          
-          <div class=""><h1> Nuestras aventuras: </h1></div>
+          <div class=""><h1 class="pd"> NUESTRAS AVENTURAS </h1></div>
           <br>
-          <div class ="listaProducto2">
+          <div class="destacado">
+          <div class ="listaProducto">
             <%products.forEach(product => { %>
               <% if (product.destacado == "NO"){ %>
-              <div class = producto >
+              <div class = "producto" >
                 <h1 class="title"><%= product.title%></h1>
                   <div class="content">
                         <a href="/lista/<%= product.id%>" target="_blank">
                         <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
-                        <div><img class="content-images" src="images/destinos/<%=product.image%>" style=”max-width:100%; width:auto; height:auto;”></div>
+                        <div><img class="content-images" src="images/destinos/<%=product.image%>"></div>
                         <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
                           <h3 class="content-title"><%= product.description%></h3>
                           <p class="content-text"> ARS $: <%= product.price%> p/p</p>
@@ -111,10 +112,12 @@
                         </a>
                         </div>
                   </div>
+                  
                   <% } %>
                 <% }) %>
               </div>
         </div>
+      </div>
      <!--  </section> -->
     </section>
 
