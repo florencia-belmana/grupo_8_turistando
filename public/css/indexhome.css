@@ -52,10 +52,13 @@
 /*     height: auto; */
     /* width: auto; */
     flex-wrap: wrap; 
-    
+   
 }
 .producto{
-/*     background-color: red; */
+/*   TARJETA DE PRODUCTO CON TITULO Y FUTO */
+/*   background-color: pink; */
+
+  
 }
 
  .content-images{
@@ -66,6 +69,7 @@
     margin: 20px auto;
     padding: 5px;
     margin: 5px;
+
 } 
 /*productos NO destacados*/
 /* .listaProducto2{
@@ -78,5 +82,11 @@
   /* float: left;
 } */
 .containerproducts{
-  /*   background-color: yellow; */
+/*   background-color: yellow;  */
 }
+
+
+/* .content1{
+ border: solid gray 1px;
+}
+ */
