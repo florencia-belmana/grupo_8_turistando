@@ -1,33 +1,37 @@
-window.addEventListener("load", function(){
-    let formulario = document.querySelector("form.reservation");
-    formulario.addEventListener("submit", function(e){
-        let errores = [];
+const formulario = document.querySelector(".form-reservation");
 
-        let campoTitulo = document.querySelector("input.title");
-        if(campoTitulo.value == ""){
-            errores.push("el campo debe estar completo")
+formulario.addEventListener("submit", function(e){
+    let errores = [];
+    console.log('el campo debe estar completo');
+    let campoTitulo = document.querySelector("input[name='title']");
+    if(campoTitulo.value == ""){
+        console.log('el campo title debe estar completo');
+        errores.push("el campo debe estar completo")
+    }
+
+ let campoPrecio = document.querySelector("input[name='price']");
+    if(campoPrecio.value == ""){
+        console.log('el campo price debe estar completo');
+        errores.push("el campo debe estar completo")
+    }
+
+    let campoDescription = document.querySelector("input[name='description']");
+    if(campoDescription.value == ""){
+        console.log('el campo description debe estar completo');
+        errores.push("el campo debe estar completo")
+    } 
+
+    if(errores.length >= 0){
+        console.log(errores);
+        e.preventDefault();
+
+        let ulErrores = document.querySelector(".feedback");
+        for(let i = 0; i < errores.length; i++){
+            ulErrores.innerHTML += "<li>" + errores[i] + "</li>" 
         }
-
-        let campoPrecio = document.querySelector("input.price");
-        if(campoPrecio.value == ""){
-            errores.push("el campo debe estar completo")
-        }
-
-        let campoDescription = document.querySelector("input.description");
-        if(campoDescription.value == ""){
-            errores.push("el campo debe estar completo")
-        }
-
-        if(errores.length > 0){
-            e.preventDefault();
-
-            let ulErrores = document.querySelector("div.errores ul");
-            for(let i = 0; i < errores.length; i++){
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>" 
-            }
-        }
-    })
+    }
 })
+
 
 
 

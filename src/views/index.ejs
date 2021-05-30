@@ -67,7 +67,7 @@
 
             <div class ="listaProducto">
             <%products.forEach(product => { %>
-            <% if (product.destacado == "SI"){ %>
+            <% if (product?.destacado === "SI"){ %>
               <div class="producto">
 
                 <h1 class="title"><%= product.title%></h1>
@@ -97,7 +97,7 @@
           <div class="destacado">
           <div class ="listaProducto">
             <%products.forEach(product => { %>
-              <% if (product.destacado == "NO"){ %>
+              <% if (product?.destacado != "SI"){ %>
               <div class = "producto" >
                 <h1 class="title"><%= product.title%></h1>
                   <div class="content">
@@ -172,9 +172,9 @@
         </section>
     </main>
 
-<footer>
+
     <%- include('partials/footer.ejs') %>
-</footer>
+
 
 
 </body>

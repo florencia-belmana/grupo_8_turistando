@@ -9,6 +9,7 @@ module.exports = {
  
     //CREAR PRODUCTOS
     crear:(req, res) => {
+        console.log('estoy entrando en crear paquete, crear');
         res.render ("products/crear");
         db.Products.findAll()
             .then((products)=> {
@@ -22,6 +23,7 @@ module.exports = {
     },
 
     guardar: function (req, res) {
+        console.log('estoy entrando en crear paquete, guardar');
         //respecta a validation: si hay error me vuelve a crear,
         //sino, me llevea a la lista de todos los products.
         let errors = validationResult(req);
@@ -44,6 +46,7 @@ module.exports = {
                image: req.body.image,
                 /* image:image, */
                 description: req.body.description,
+                destacado: req.body.destacado,
             })
           
             .then((products) => {
@@ -86,6 +89,11 @@ module.exports = {
         db.Products.findByPk(req.params.id)
             .then(function (response) {
                 let product = response.dataValues;
+           
+                if (product.image == "")
+                product.image = 'default.png';
+       
+
                 /*  res.send(product) */
                 res.render('admin/edit', { product }) 
             })
@@ -106,17 +114,17 @@ module.exports = {
     //EDICION
     update: function (req, res) {
       
-     /* if (req.file) {
+      if (req.file) {
             let productImage = req.body;
             
                 console.log(req.file)
                 productImage.image = req.file.filename;
-            }    */
+            }    
         db.Products.update({
             title: req.body.title,
             price: req.body.price,
             /* image: req.body.image */
-            image: req.file ? req.file.filename : req.body.image,
+            image: req.file ?  req.file.filename: req.body.image,
             description: req.body.description,
         }, {
             where: {
