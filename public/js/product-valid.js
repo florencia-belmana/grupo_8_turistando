@@ -1,34 +1,46 @@
 const formulario = document.querySelector(".form-reservation");
+const errorPrice = document.querySelector(".errorPrice");
+const errorDescription = document.querySelector(".errorDescription");
+const errorTitle = document.querySelector(".errorTitle");
+const errorMessages = document.querySelectorAll(".errorMessage");
+
+function resetFormErrors() {
+    errorMessages.forEach(errorMessage => {
+        errorMessage.style.display = "none"
+    })
+}
 
 formulario.addEventListener("submit", function(e){
+// llamamos a la función que oculta los mensajes de error
+resetFormErrors()
     let errores = [];
     console.log('el campo debe estar completo');
+
     let campoTitulo = document.querySelector("input[name='title']");
+
     if(campoTitulo.value == ""){
-        console.log('el campo title debe estar completo');
-        errores.push("el campo debe estar completo")
+        errores.push("el campo debe estar completo");
+        errorTitle.innerText = "Por favor, complete el titulo";
+        errorTitle.style.display = "block";
     }
 
- let campoPrecio = document.querySelector("input[name='price']");
+    let campoPrecio = document.querySelector("input[name='price']");
     if(campoPrecio.value == ""){
-        console.log('el campo price debe estar completo');
         errores.push("el campo debe estar completo")
+        errorPrice.innerText = "Por favor, complete el precio"
+        errorPrice.style.display = "block"
     }
 
     let campoDescription = document.querySelector("input[name='description']");
     if(campoDescription.value == ""){
-        console.log('el campo description debe estar completo');
-        errores.push("el campo debe estar completo")
+        errores.push("el campo debe estar completo");
+        errorDescription.innerText = "Por favor, complete el descripcion"
+        errorDescription.style.display = "block"
     } 
 
-    if(errores.length >= 0){
+    if(errores.length > 0){
         console.log(errores);
         e.preventDefault();
-
-        let ulErrores = document.querySelector(".feedback");
-        for(let i = 0; i < errores.length; i++){
-            ulErrores.innerHTML += "<li>" + errores[i] + "</li>" 
-        }
     }
 })
 

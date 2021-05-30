@@ -27,6 +27,7 @@
                 <% if (locals.errors && errors.title) { %>
                 <p class="feedback is-danger"><%= errors.title.msg %></p>
                 <% } %>
+                <div class= "errorTitle errorMessage"></div>
             </div>
 
 
@@ -55,6 +56,7 @@
                     <% if (locals.errors && errors.description) {%>
                 <p class="feedback is-danger"><%= locals.description.msg %></p>
                 <% } %>
+                <div class= "errorDescription errorMessage"></div>
             </div>
 
             <div class="field">
@@ -67,6 +69,7 @@
                 <% if (locals.errors && errors.price) { %>
                 <p class="feedback is-danger"><%= errors.price.msg %></p>
                 <% } %>
+                <div class= "errorPrice errorMessage" ></div>
             </div>
 
             <div class="field">
