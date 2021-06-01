@@ -39,7 +39,7 @@
                     <input type="file" 
                     name="image" id="image" 
                     value="<%= locals.old && old.image ? old.image : ''%>" 
-                    class="form-control <%= locals.errors && errors.image ? 'is-invalid' : null %>">
+                    class="form-control <%= locals.errors && errors.image ? 'is-invalid' : null %>" required>
                 </div>
                 <% if (locals.errors && errors.image) { %>
                 <p class="feedback is-danger"><%= errors.image.msg %></p>
