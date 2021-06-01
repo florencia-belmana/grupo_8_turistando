@@ -126,6 +126,7 @@ module.exports = {
             /* image: req.body.image */
             image: req.file ?  req.file.filename: req.body.image,
             description: req.body.description,
+            destacado: req.body.destacado,
         }, {
             where: {
                 id: req.body.id

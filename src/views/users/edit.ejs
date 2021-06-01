@@ -78,7 +78,7 @@
                                         <label for="category">Categoría</label>
                                         <div class="control">
                                             <select name="category_id" id="category_id">
-                                                <option value="">Seleccione una opción</option>
+                                                <option disabled selected>Seleccione una opción</option>
                                                 <option value="1" <%= users.category_id == '1' ? 'selected' : '1'; %>>Administrador</option>
                                                 <option value="2" <%= users.category_id == '2' ? 'selected' : '2'; %>>Viajero</option>
                                             </select>

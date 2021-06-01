@@ -34,7 +34,7 @@
         
         <img width="15%" src="/images/destinos/<%=product.image %>">
         <div>
-            <input type="file" name="image" id="image" value="default.png" placeholder="">
+            <input type="file" name="image" id="image" value="default.png" placeholder="" required>
         
         </div> 
     </div>  
@@ -52,6 +52,19 @@
         </div>
     </div>  
     <!-- </div> -->
+
+    <div class="field">
+        <label for="destacado">Categoría</label>
+            <div class="control">
+                <select name="destacado" id="destacado">
+                    <option disabled selected>Seleccione una opción</option>
+                    <option value="SI">Destacado</option>
+                    <option value="NO">No Destacado</option>
+                </select>
+            </div>
+        <p class="feedback"></p>
+    </div>
+
 
     <button class="button is-danger">GUARDAR EDICION</button>
         
