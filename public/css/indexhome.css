@@ -12,7 +12,7 @@
     width: 100%;
   /*   box-sizing: content-box; */
     justify-content: center;
-  /*   background-color: orange;  */
+/* background-color: orange;   */
     align-items: center;
     float: left;
 }
@@ -32,7 +32,7 @@
     position: relative;
     display: flex;
     width: 100%;
-/*     background-color: violet; */
+   /*  background-color: violet;  */
    
  /*    flex-direction: column;
     flex-wrap: wrap; */
@@ -56,8 +56,8 @@
 }
 .producto{
 /*   TARJETA DE PRODUCTO CON TITULO Y FUTO */
-/*   background-color: pink; */
-
+/*    background-color: pink; 
+padding: 10px; */
   
 }
 
@@ -82,7 +82,7 @@
   /* float: left;
 } */
 .containerproducts{
-/*   background-color: yellow;  */
+/*  background-color: yellow;   */
 }
 
 
