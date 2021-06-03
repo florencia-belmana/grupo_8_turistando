@@ -36,9 +36,19 @@ module.exports = {
         
     },
 
+    closeSession: (req, res) => {
+        res.render("closeSession");
+        
+    },
+
     carrito: (req, res) => {
         res.render("products/carrito");
         
     },
+    
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect('/');
+    },  
  
 };

@@ -31,8 +31,6 @@ const validateCreateProducts = [
             
 ];
 
-
-
 //multer
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -45,30 +43,21 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-
-
-
-//RUTAS VIEJAS ANTES DE DB
-// router.get( '/paquetes' , controller.paquetes ) ;
-
-/* router.get( '/paquete1' , controller.paquete1 ) ;
-router.get( '/paquete2' , controller.paquete2 ) ;router.get( '/paquete3' , controller.paquete3 ) ; */
-
 /// SEQUELIZE - CRUD -
 
 //CREAR
-router.get("/products", controller.crear)
-router.get("/crear", controller.crear)
+router.get("/products", authMiddleware, controller.crear)
+router.get("/crear", authMiddleware, controller.crear)
 router.post("/crear", upload.single('image'), validateCreateProducts, controller.guardar)
 
 //LECTURA - READ
-router.get("/lista", controller.lista)
+router.get("/lista", authMiddleware, controller.lista)
 router.get("/lista/:id", controller.detail)
 
 //EDICION - UPDATE
-router.get("/admin/:id", controller.getproduct)
+router.get("/admin/:id", authMiddleware,  controller.getproduct)
 //router.get("/lista/:id", controller.getproduct)
-router.get("/admin/edit/:id", controller.getproduct)
+router.get("/admin/edit/:id", authMiddleware, controller.getproduct)
 router.put("/admin/edit/:id", upload.single('image'),controller.update) 
 
 //DELETE
@@ -76,3 +65,10 @@ router.delete('/admin/edit/:id', controller.destroy);
 
 
 module.exports = router
+
+
+//RUTAS VIEJAS ANTES DE DB
+// router.get( '/paquetes' , controller.paquetes ) ;
+
+/* router.get( '/paquete1' , controller.paquete1 ) ;
+router.get( '/paquete2' , controller.paquete2 ) ;router.get( '/paquete3' , controller.paquete3 ) ; */

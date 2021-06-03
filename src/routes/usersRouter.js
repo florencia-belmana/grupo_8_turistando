@@ -12,6 +12,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 
 
+
 //configuracion de almacenamiento
 
 const storage = multer.diskStorage({
@@ -28,21 +29,21 @@ const upload = multer({ storage });
 
 
 //Vista de usuarios de admin
-router.get('/userList', controller.userList);
-router.get('/userList/:id', controller.detail);
+router.get('/userList', authMiddleware, controller.userList);
+router.get('/userList/:id', authMiddleware, controller.detail);
 
 //Procesa el formulario de creación
-router.get( '/register' , controller.register );
+router.get( '/register', guestMiddleware, controller.register );
 router.post('/', upload.single('image'), validate.register, controller.store ); 
 
 //Perfil de usuario, edit y destroy
-router.get('/user/:id', controller.userProfile);
-router.get('/edit/:id', controller.edit);
+router.get('/user/:id',userMiddleware, controller.userProfile);
+router.get('/edit/:id', userMiddleware, controller.edit);
 router.put('/edit/:id', upload.single('image'), validate.update, controller.update);
-router.delete('/edit/:id',  controller.destroy);
+router.delete('/edit/:id', controller.destroy);
 
 //// login
-router.get( '/login', controller.login ) ;
+router.get( '/login', guestMiddleware, controller.login ) ;
 router.post('/login', validate.login, controller.authenticate);
 
 router.get('/logout', controller.logout);

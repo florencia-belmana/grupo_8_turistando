@@ -49,6 +49,7 @@ app.use(recordameMiddleware);
 const mainRouter = require('./src/routes/mainRouter');
 app.use('/', mainRouter);
 
+
 //Productos
 const productsRouter = require('./src/routes/productsRouter');
 app.use('/', productsRouter);
