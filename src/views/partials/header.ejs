@@ -13,7 +13,7 @@
           <nav>
             <% if(user) { %> 
               <h1> Hola  <%= ( user.first_name) %>!  </h1>
-                <a href="/user/<%= (user.id) %>" class="seccion"> <img class="avatar" src="/images/users/<%= user.image %>" alt=""></a>
+                <a href="/user/<%= (user.id) %>" class="seccion"> <img class="avatar" src="/images/users/<%= user.image %>" alt="" style="border-radius: 5rem;"></a>
                   <div class ="#user" >
                     <a href="/carrito"> Tus paquetes <i class="fas fa-plane-departure"></i></a>
                     <span class="separador">|
