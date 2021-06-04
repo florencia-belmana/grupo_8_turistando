@@ -37,7 +37,7 @@ form.addEventListener("submit", function(e) {
         errorName.innerText = "Por favor, complete su nombre"
         errorName.style.display = "block"
         errors = true 
-    } else if (firstName.value.length < 1) {
+    } else if (firstName.value.length <= 1) {
         errorName.innerText = 'El nombre es incorrecto'
         errorName.style.display = "block"
         errors = true
