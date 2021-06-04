@@ -24,10 +24,10 @@
                             </div>
                             <div class="card-content">
                                 <h3> Tus datos: </h3>
-                                <p>Tu id turisteando: #<%= users.id %></h2>
-                                <h3><%= users.first_name %> <%= users.last_name %></h3>
-                                <h3>Pais: <%= users.country %> </h3>
-                                <p>Categoría: <%= users.category_id  =="1" ? "Administrador" : "Viajero" %> </p>
+                                <p>Tu ID turisteando: #<%= users.id %></h2>
+                                <h3>Name: <%= users.first_name %> <%= users.last_name %></h3>
+                                <h3>Country: <%= users.country %> </h3>
+                                <p>Category: <%= users.category_id  =="1" ? "Administrador" : "Viajero" %> </p>
                                 <p>Email: <a href="mailto:<%= users.email %>" target="_blank"><%= users.email %></a></p>
                               
                                     <a class="button is-warning" href="/edit/<%= users.id %>"> 
@@ -35,7 +35,7 @@
                                     </a>
                                     <br>
                                     <form class="form is-inline" action="/edit/<%= users.id %>?_method=delete" method="POST">
-                                        <button class="button is-danger">Borrar usuario </button>
+                                        <button class="button is-danger"">Borrar usuario </button>
                                  
                                     </div>
                                 </form>

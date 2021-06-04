@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    
 }
 p{
     font-size: 20px;
@@ -27,16 +28,18 @@ p{
     position: relative;
     text-align: left;
     margin: 20px auto; 
+   
+  
 }
 
 
 .cardu{
-    width: 50%;
+    width: 40%;
     height: 50%;
     justify-content: center;
  /*    align-items: center; */
 /*     background-color: blue; */
-  /*   border:solid 1px gray;   */ 
+   border:solid 1px gray;   
  /*    width: 100% auto;
     height: 100% auto; */
     position: relative;
@@ -44,6 +47,7 @@ p{
 /*     margin: 0 auto;  */
     margin: 20px auto; 
     padding: 10px; 
+ 
 }
 
 /* .card-left{
