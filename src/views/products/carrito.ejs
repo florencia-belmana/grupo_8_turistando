@@ -27,20 +27,24 @@
             </div> 
              <br>
              <hr>
-            <div class= "resumen">
+
+        <div class= "resumen">
             <h2 style="font-size: 40px;"> Resumen de tus reservas</h2>
-                <div class ="detail">
-                    
-                  <!--  ACÁ SOLO DEBE TRAER EL ID  <p>
-                     <ul style="text-align: left">
-                        <li> <a href ="#"> Item 1 </a><p>Descripción</p></li>
-                        <li> <a href ="#"> Item 2 </a><p>Descripción</p></li>
-                        <li> <a href ="#"> Item 3 </a><p>Descripción</p></li>
-                        <li> <a href ="#"> Item 4 </a><p>Descripción</p></li>
-                     </ul>
-                    </p> -->
+ 
+               <div id="carrito">    
+                    <table id="lista-carrito">
+                        <tbody>
+                            
+                        </tbody>
+                        
+                    </table>
+                
+                    <a href="/carrito" id="vaciar-carrito" style="font-size: 35px; text-align: center;"><input type="submit" value="Vaciar carrito"></a>
                 </div>
-        <div class ="boton-borrar" style="font-size: 35px; text-align: center;"><input type="submit" value="Vaciar carrito"></div>
+            <br>
+        </div>
+           
+       
             <br>
             </div>
         <hr>  
@@ -90,8 +94,11 @@
         </section>
         <br>
     </main>
+
+    <script src="../js/payment.js"></script>
     <footer>
     <%- include('../partials/footer.ejs') %>
     </footer>
+    
 </body>
 </html>

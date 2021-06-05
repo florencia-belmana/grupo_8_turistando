@@ -11,10 +11,12 @@
 
 
     <div class="container"> <!-- Eso hace que este en fila hay que darle css -->
-        <div class="product-container">
-                    <h2 class="nombre"><%= product.title %></h2>
+    
+        <div  class="product-container">
+            <div id="product-list">
+                    <h2 class="nombre"><%= product.title %></h2>  <!-- le saque class="nombre" a h2 -->
                     <br>
-                    <article class="conjunto">
+                    <div class="conjunto">
                         <div class="product-info">
                             <figure class="detalle-foto">
                             <img src="/images/destinos/<%= product.image %>" alt="" class="imagen"/>
@@ -22,35 +24,60 @@
                         </div>
                         <br>
                         <div class="product-info">
-                            <p>Descripción: <br> <%= product.description %> </p>
-                            <br>
-                            <p>Precio: ARS $ <br> <%= product.price %> </p>
+                            <p class ="precio">Precio: ARS $ <%= product.price %> </p>
+                            
+                            <div class="control">
+                                <select name="cantidad" id="cantidad">
+                                    <option disabled selected>Cuantos pasajeros</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                </select>
+                            </div>
+                            
+                            <hr>
+                            <p  class ="descripcion">Descripción:  <%= product.description %> </p>
                         </div>
-                    </article>
-                        <br>
+                    </div>
+                        <hr>
             
-                    <article class="include">
+                    <div class="include">
                         <p>Nuestro paquete incluye</p>
                         <div class="items"><i class="fas fa-plane"></i>Avion</div>
                         <div class="items"><i class="fas fa-car"></i>Traslados</div>
                         <div class="items"> <i class="fas fa-concierge-bell"></i>Alojamiento</div>
-                    </article>
-                    <br>
-             <!--        <hr> -->
-                    <br>
-                    <div class="button">
-                        <button class= btn sm btn-pink-outline>
-                        <a href="/carrito">Ir al carrito</a>
-                        </button>
                     </div>
                     <br>
-                  <!--   <hr> -->
+             
                     <br>
-       </div>   
+
+                    
+                        <a href="#" class="agregar-carrito" style="font-size: 35px; text-align: center;">AGREGAR AL CARRITO</a>
+                   
+
+                    
+                    <br>
+                </div>
+                <div class="button">
+                    <button class= btn sm btn-pink-outline>
+                    <a href="/carrito">Ir al carrito</a>
+                    </button>
+                </div>
+                    <br>
+                    
+      
     </div>
 
+    
 
 
+    
+ </div>
+
+
+    <script src="../js/carrito.js"></script>
 <footer>
     <%- include('../partials/footer.ejs') %>
 </footer>
