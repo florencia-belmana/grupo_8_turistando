@@ -10,6 +10,11 @@ function cargarEventListener(){
 
 }
 
+let closeButtom = document.querySelector(".agregar-carrito")
+closeButtom.addEventListener("click", function(){
+    alert ("Producto Agregado!")
+})
+
 
 //Funciones
 function agregarProducto(e){
