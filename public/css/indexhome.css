@@ -72,6 +72,17 @@ padding: 10px; */
     margin: 5px;
 
 } 
+
+
+.content-imagefirst{
+    height: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    float:none
+}
 /*productos NO destacados*/
 /* .listaProducto2{
     position: relative;
@@ -119,7 +130,7 @@ padding: 10px; */
   .container-3 input#search{
     width: 700px;
     height: 60px;
-    background: #272d3a;
+    background: #afb1b4;
     border: none;
     font-size: 15pt;
     float: left;
@@ -131,7 +142,7 @@ padding: 10px; */
     color: #fff;
   }
   .container-3 input#search::-webkit-input-placeholder {
-    color: #65737e;
+    color: #010a11;
  }
   
  .container-3 input#search:-moz-placeholder { /* Firefox 18- */
