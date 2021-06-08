@@ -21,12 +21,11 @@ function carritoHTML(){
     productos.forEach(producto => {
         const row = document.createElement("tr");
         row.innerHTML =  `
-        <td> ${producto.nombre} </td>
-        <td> ${producto.precio} </td>
-        <td> Imagen: <img src="${producto.imagen}" alt="picture"></td> 
-        <td> ${producto.descripcion} </td>
-        <td> Cantidad: ${producto.cantidad} </td>
-        <td> Total: </td>
+        <td class="carritodetailpic"><img class="fot" src="${producto.imagen}" alt="picture" ></td> 
+        <td class="carritodetail"> ${producto.nombre} </td>
+        <td class="carritodetail"> ${producto.precio} </td>
+        <td class="carritodetail"> ${producto.descripcion} </td>
+     
         `;
         
        console.log(row)
