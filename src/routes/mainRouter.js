@@ -10,7 +10,7 @@ router.get('/index-admin', authMiddleware, controller.indexAdmin);
 router.get('/contacto', controller.contact);
 router.get('/no-permitido', controller.notAllowed);
 router.get('/cerra-sesion', controller.closeSession);
-router.get('/carrito', /* userMiddleware, */ controller.carrito);
+router.get('/carrito',  userMiddleware,  controller.carrito);
 
 
 module.exports = router;

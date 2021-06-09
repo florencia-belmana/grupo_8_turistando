@@ -1,159 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('partials/head.ejs') %>
-<!-- <link rel="stylesheet" href="/css/index.css">  -->
-    <link rel="stylesheet" href="/css/partners.css">
-    <link rel="stylesheet" href="/css/seccion.css">
-    <link rel="stylesheet" href="/css/indexhome.css">
-    
+  <head>
+      <%- include('partials/head.ejs') %>
+      <link rel="stylesheet" href="/css/partners.css">
+      <link rel="stylesheet" href="/css/seccion.css">
+      <link rel="stylesheet" href="/css/indexhome.css">
   
-</head>
+  </head>
 
-<body>
-    <%- include('partials/header.ejs') %>
+  <body>
+    <header>
+      <%- include('partials/header.ejs') %>
+    </header>
     <main>
       <div>
         <nav class="content-secction">
-           <ul>
+          <ul>
              
             <% if(user) { %> 
             <% if (user.category_id == 1){ %>
               <li><a href="/index-admin" class="seccion">Sección para administradores</a>
-                <hr>
-                
-          <% } %>
-          <% } %> 
-               
+              <hr>
+            <% } %>
+            <% } %> 
                             
-             <li><a href="/user/<%= ( user ? user.id : "../login") %> " class="seccion"> Tu perfil de usuario </a> </li>
+              <li><a href="/user/<%= ( user ? user.id : "../login") %> " class="seccion"> Tu perfil de usuario </a> </li>
            </ul>
         </nav>
       </div>
-  <!--API-->
-    <section> 
-<!--  <div><img class="content-imagefirst"src="images/destinos/mund.jpg"></div>  -->
-        <br>
-          <%- include('partials/cotizacion.ejs') %>
-        <hr>
-     </section>
-     <section>
-     <div class="texto-barra">
 
-        <h3 style="font-size: 50px;"> Busca tu proxima aventura</h3>
-     </div>
-    </section>
-     
-    
+      <!--API-->
+      <section> 
+          <!--  <div><img class="content-imagefirst"src="images/destinos/mund.jpg"></div>  -->
+          <br>
+            <%- include('partials/cotizacion.ejs') %>
+          <hr>
+      </section>
 
-      <br>
-    <div class="pic-container1"> 
-
-      <!-- barra de busqueda -->
       <section>
-
-        <!-- <div class="search">
-           <form action="search" method="GET">
-               <i class="fas fa-search"></i>
-               <input type="text" name="search" placeholder="Buscar producto" class="searchhome">
-              <button class= btn sm btn-pink-outline>
-               <a href="/">Buscar</a>
-              </button>
-            </form>
-        </div> -->
-
-        <div class="box">
-          <div class="container-3">
-            
-           <!-- <form action="search" method="GET"> -->
+        <div class="texto-barra">
+          <h3 style="font-size: 50px;"> Tu aventura a unos clicks de distancia </h3>
+        </div>
+      </section>
+      <br>
+        <!-- barra de busqueda -->
+      <section>
+        <div class="pic-container1"> 
+          <div class="box">
+            <div class="container-3">
+            <!-- <form action="search" method="GET"> -->
               <span class="icon"><a href="/"> Ir <i class="fa fa-search"></i></a></span>
               <input type="search" id="search" placeholder="Busca tu proximo destino..." />
-              
+            </div>
           </div>
         </div>
-
       </section> 
-    </div>
-
-<!--  DESDE ACA PRODUCTOS DESCATADOS        -->
-
+      <!--  DESDE ACA PRODUCTOS DESCATADOS        -->
 
       <section class="first">
         <div class="containerproducts" >  
-          <div class="pd"><h1> PAQUETES DESTACADOS </h1></div>
-          <br>
-          <div class="destacado">
-            
-
-            <div class ="listaProducto">
-            <%products.forEach(product => { %>
-            <% if (product?.destacado === "SI"){ %>
-              <div class="producto">
-
-                <h1 class="title"><%= product.title%></h1>
-                  <div class="content">
+          <div class="pd">
+            <div class="pd2">
+            <h1> PAQUETES DESTACADOS </h1></div>
+          </div>
+            <div class="destacado">
+             <div class ="listaProducto">
+              <%products.forEach(product => { %>
+                <% if (product?.destacado === "SI"){ %>
+                  <div class="producto">
+                    <div class="producto-destacado">
+                      
+                    <h1 class="title"><%= product.title%></h1>
+                      <div class="content">
                         <a href="/lista/<%= product.id%>" target="_blank">
-                        <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
-                        <div><img class="content-images" src="images/destinos/<%=product.image%>"></div>
-                        <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
-                          <h3 class="content-title"><%= product.description%></h3>
-                          <p class="content-text"> ARS $: <%= product.price%> p/p</p>
-                          <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
-                          </div>
+                          <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
+                            <div><img class="content-images" src="images/destinos/<%=product.image%>"></div>
+                            <div class="ribbon ribbon-top-left"><span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+                            <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
+                              <h3 class="content-title"><%= product.description%></h3>
+                              <p class="content-text"> ARS $: <%= product.price%> p/p</p>
+                              <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
+                            </div>
                         </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
                 <% } %>
-          <% }) %>
-        </div>
-<!--  HASTA ACA PRODUCTOS DESCATADOS        -->
-      <br>
-      <hr>
-      <br>
-    </div>
-    
-         
-          <div class=""><h1 class="pd"> NUESTRAS AVENTURAS </h1></div>
+              <% }) %>
+            </div>
+            <br>
+            <hr>
+            <br>
+          </div>
           <br>
-          <div class="destacado">
-          <div class ="listaProducto">
-            <%products.forEach(product => { %>
-              <% if (product?.destacado != "SI"){ %>
-              <div class = "producto" >
-                <h1 class="title"><%= product.title%></h1>
-                  <div class="content">
-                        <a href="/lista/<%= product.id%>" target="_blank">
-                        <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
-                        <div><img class="content-images" src="images/destinos/<%=product.image%>"></div>
-                        <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
-                          <h3 class="content-title"><%= product.description%></h3>
-                          <p class="content-text"> ARS $: <%= product.price%> p/p</p>
-                          <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
-                           </div>
-                        </a>
+          <!--  HASTA ACA PRODUCTOS DESCATADOS        -->
+          <div class=""><h1 class="pd"> NUESTRAS AVENTURAS </h1></div>
+            <div class="destacado">
+              <div class ="listaProducto">
+                <%products.forEach(product => { %>
+                  <% if (product?.destacado != "SI"){ %>
+                    <div class = "producto" >
+                      <h1 class="title"><%= product.title%></h1>
+                        <div class="content">
+                          <a href="/lista/<%= product.id%>" target="_blank">
+                            <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
+                            <div><img class="content-images" src="images/destinos/<%=product.image%>"></div>
+                            <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
+                              <h3 class="content-title"><%= product.description%></h3>
+                              <p class="content-text"> ARS $: <%= product.price%> p/p</p>
+                              <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
+                            </div>
+                          </a>
                         </div>
-                  </div>
-                  
+                    </div>
                   <% } %>
                 <% }) %>
               </div>
+            </div>
         </div>
-      </div>
-    </div>
-     <!--  </section> -->
-    </section>
-
-  
-
-
-      <br>
-      <hr>
+        <br>
+        <hr>
+      </section>
 
       <section class="partners"> 
-  
         <div class="partners">
-     <h1 class="main-title" >Colaboradores:</h1>
-          <div class="box-partner">
+          <h1 class="main-title" >Colaboradores:</h1>
+            <div class="box-partner">
               <h3 class="title">LATAM</h3>
                 <div class="content">
                   <a href="https://www.latam.com/es_ar/" target="_blank">
@@ -165,9 +137,8 @@
                       </div>
                   </a>
                </div>
-          </div>
-
-         <div class="box-partner">
+            </div>
+          <div class="box-partner">
             <h3 class="title">HOSTELWORLD</h3>
               <div class="content">
                <a href="https://www.hostelworld.com/" target="_blank">
@@ -193,15 +164,13 @@
                   </a>
               </div>
           </div>
-        </section>
-        
+        </div>
+      </section>
     </main>
 
-    
+    <footer>
+      <%- include('partials/footer.ejs') %>
+    </footer>
 
-    <%- include('partials/footer.ejs') %>
-
-
-
-</body>
+  </body>
 </html>

@@ -47,11 +47,7 @@ a {
 }
 
 
-.pic-container1 {
-    display: flex;
-    justify-content: space-around;
-    margin: 0 -.5rem;
-}
+
 
 .pic-item {
     width: calc(100% - 1rem);

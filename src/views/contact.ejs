@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('partials/head.ejs') %>
-    </head>
-<body>
-    <header>
-        <%- include('partials/header.ejs') %>
-    </header>
-    <h1>Gracias por contactarte</h1>
+        <head>
+            <%- include('partials/head.ejs') %>
+        </head>
+    <body>
+        <header>
+            <%- include('partials/header.ejs') %>
+        </header>
+        <main>
+            <h1>Gracias por contactarte</h1>
 
-    <div>
-        <h2>Contacto</h2>
-        <form action="contacto.html">
-            <div class="row">
-                <label for="email">Email: </label>
-                <input type="email" name="email" id="email" placeholder="Ingresa un email válido">
-            </div>
+            <div>
+                <h2>Contacto</h2>
+                <form action="contacto.html">
+                    <div class="row">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" id="email" placeholder="Ingresa un email válido">
+                    </div>
 
-            <div class="row">
-                <label for="message">Mensaje: </label>
-                <textarea name="message" id="message" rows="5" placeholder="Ingresa la razón del contacto aquí"></textarea>
-            </div>
+                    <div class="row">
+                        <label for="message">Mensaje: </label>
+                        <textarea name="message" id="message" rows="5" placeholder="Ingresa la razón del contacto aquí"></textarea>
+                    </div>
 
-            <div class="row">
-                <button type="submit">Enviar</button>
+                    <div class="row">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-    <footer>
-        <%- include('partials/footer.ejs') %>
-   </footer>
-</body>
+        </main>
+        <footer>
+                <%- include('partials/footer.ejs') %>
+        </footer>
+    </body>
 </html>
