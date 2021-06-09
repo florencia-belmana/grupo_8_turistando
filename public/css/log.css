@@ -14,10 +14,15 @@
   margin: 0 auto;
   padding: 0;
   margin-bottom: 200px;
+  
+  /* height: 10%; */
+  width: auto;
+  border-color: lightslategrey;
+  border-radius: 2rem;
 }
 
 /* login header */
-h1 {
+h2 {
   color:black;
   text-align: center;
   font-size: 30px;
