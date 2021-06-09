@@ -13,7 +13,7 @@
     width: 100%;
   /*   box-sizing: content-box; */
     justify-content: center;
-/* background-color: orange;   */
+/*  background-color: orange;    */
     align-items: center;
     float: left;
 }
@@ -33,7 +33,8 @@
     position: relative;
     display: flex;
     width: 100%;
-   /*  background-color: violet;  */
+/*    
+  background-color: violet;  */
    
  /*    flex-direction: column;
     flex-wrap: wrap; */
@@ -45,7 +46,7 @@
      /* justify-content: center;  */
     height: 100%; 
 /*     width: 100%; */
-    background-color:rgba(247, 247, 247, 0.884);
+    background-color:rgba(240, 242, 243, 0.884);
 /*     align-items: center;  */
     justify-content: space-around; 
     width: 100% auto; 
