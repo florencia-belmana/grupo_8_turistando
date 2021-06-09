@@ -13,10 +13,11 @@
       <%- include('partials/header.ejs') %>
     </header>
     <main>
+      <section class ="hero1">
       <div>
         <nav class="content-secction">
           <ul>
-             
+           
             <% if(user) { %> 
             <% if (user.category_id == 1){ %>
               <li><a href="/index-admin" class="seccion">Sección para administradores</a>
@@ -32,21 +33,22 @@
       <!--API-->
       <section> 
           <!--  <div><img class="content-imagefirst"src="images/destinos/mund.jpg"></div>  -->
-          <br>
-            <%- include('partials/cotizacion.ejs') %>
-          <hr>
+          
       </section>
 
-      <section>
+     
+       
         <div class="texto-barra">
-          <h3 style="font-size: 50px;"> Tu aventura a unos clicks de distancia </h3>
+          <h3> Tu aventura a unos clicks de distancia </h3>
         </div>
-      </section>
+        <br>
       <br>
         <!-- barra de busqueda -->
       <section>
+        <br>
         <div class="pic-container1"> 
           <div class="box">
+            <br>
             <div class="container-3">
             <!-- <form action="search" method="GET"> -->
               <span class="icon"><a href="/"> Ir <i class="fa fa-search"></i></a></span>
@@ -54,27 +56,31 @@
             </div>
           </div>
         </div>
+        <br>
+       
       </section> 
-      <!--  DESDE ACA PRODUCTOS DESCATADOS        -->
+    </section>
 
+      <!--  DESDE ACA PRODUCTOS DESCATADOS        -->
+<div class="container">
       <section class="first">
         <div class="containerproducts" >  
-          <div class="pd">
-            <div class="pd2">
-            <h1> PAQUETES DESTACADOS </h1></div>
-          </div>
+          <!-- <div class="pd"> -->
+            <div class="texto-titles">
+              <h3> Destinos destacados </h3>
+            </div>
+         <!--  </div> -->
             <div class="destacado">
              <div class ="listaProducto">
               <%products.forEach(product => { %>
                 <% if (product?.destacado === "SI"){ %>
                   <div class="producto">
                     <div class="producto-destacado">
-                      
                     <h1 class="title"><%= product.title%></h1>
                       <div class="content">
                         <a href="/lista/<%= product.id%>" target="_blank">
                           <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
-                            <div><img class="content-images" src="images/destinos/<%=product.image%>"></div>
+                            <div><img class="content-images-destacado" src="images/destinos/<%=product.image%>"></div>
                             <div class="ribbon ribbon-top-left"><span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
                             <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
                               <h3 class="content-title"><%= product.description%></h3>
@@ -92,9 +98,11 @@
             <hr>
             <br>
           </div>
-          <br>
+          
           <!--  HASTA ACA PRODUCTOS DESCATADOS        -->
-          <div class=""><h1 class="pd"> NUESTRAS AVENTURAS </h1></div>
+          <div class="texto-titles">
+            <h3> Otros destinos </h3>
+          </div>
             <div class="destacado">
               <div class ="listaProducto">
                 <%products.forEach(product => { %>
@@ -119,12 +127,12 @@
             </div>
         </div>
         <br>
-        <hr>
+      </div>     
       </section>
 
       <section class="partners"> 
         <div class="partners">
-          <h1 class="main-title" >Colaboradores:</h1>
+          <h2 class="main-title" >Colaboradores:</h2>
             <div class="box-partner">
               <h3 class="title">LATAM</h3>
                 <div class="content">
@@ -165,6 +173,7 @@
               </div>
           </div>
         </div>
+      </div>
       </section>
     </main>
 

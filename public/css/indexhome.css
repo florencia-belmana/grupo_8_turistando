@@ -32,8 +32,9 @@
 }
 .destacado{
     position: relative;
-    display: flex;
+    display:block;
     width: 100%;
+    justify-content: space-around;
 /*    
   background-color: violet;  */
    
@@ -51,7 +52,7 @@
 /*     align-items: center;  */
     justify-content: space-around; 
     width: 100% auto; 
-    margin: 20px auto;
+    margin:  auto;
 /*     height: auto; */
     /* width: auto; */
     flex-wrap: wrap; 
@@ -66,14 +67,27 @@ padding: 10px; */
 
  .content-images{
 /*   height: auto;
-    width: auto;  */
+    width: auto;  
  /*    padding-top: 20px;  */
     height: 400px;
     margin: 20px auto;
     padding: 5px;
     margin: 5px;
 
+
 } 
+
+.content-images-destacado{
+  /*   height: auto;
+      width: auto;  
+   /*    padding-top: 20px;  */
+      height: 500px;
+      margin: 20px auto;
+      padding: 5px;
+      margin: 5px;
+  
+  
+  } 
 
 
 .content-imagefirst{
@@ -193,6 +207,9 @@ padding: 10px; */
     width: 100%; 
     /*  height: 400px; */ 
     background: #fff;
+    padding:1rem;
+    border-left: lightslategrey;
+    
     box-shadow: 0 0 15px rgba(0,0,0,.1);
   }
 
@@ -252,4 +269,18 @@ padding: 10px; */
     display: flex;
     justify-content: space-around;
     margin: 0 -.5rem;
+}
+
+.hero1{
+ background-image: url("https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440");
+ background-size:cover;
+ /* height: 10%; */
+ width: auto;
+ background-attachment: fixed;
+ border-radius: 2rem;
+ 
+}
+
+.pd2{
+  font-size: 200px;
 }

@@ -9,7 +9,7 @@ body {
 
 /* centro de la pagina con bordes blancos */
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
 /*      margin: auto; */
     display: flex; 
@@ -54,11 +54,25 @@ h2{
     width: 100%;
     height: 120px;
     padding: 30px 30px;
-    color: lightblue;
+    color: #82c8df;
+    font-size: 60px
     
     
 
 }
+.texto-titles{
+    /*  background-color:lightblue; 
+   /*   display: flex; */
+     text-align: center;
+     width: 100%;
+     height: 120px;
+     padding: 30px 30px;
+     color: lightslategrey;
+     font-size: 50px;
+     
+     
+ 
+ }
 
     @media (min-width: 600px) {
         .pic-item {
